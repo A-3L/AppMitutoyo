@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.2" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+      <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+        <TitledBorder title="Metrica de interiores"/>
+      </Border>
+    </Property>
+    <Property name="name" type="java.lang.String" value="Micrometro de interiores" noResource="true"/>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblRangoInterior" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
+                          <Component id="lblMedida_R" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jtxtRangoInterior" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="jtxtMedida_f" linkSize="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="lblMedicionInterior" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlblPuntosMedicion" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="lblMedida_f" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="32767" attributes="0"/>
+                              <Component id="jtxtMedida_R" linkSize="1" min="-2" pref="49" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="lblMedida_g" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="32767" attributes="0"/>
+                              <Component id="jtxtMedida_g" linkSize="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jtxtMedicionInterior" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="27" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jcbxPuntosMedicion" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblRangoInterior" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtRangoInterior" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtMedida_g" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMedida_g" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblMedida_R" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtMedida_f" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtMedida_R" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMedida_f" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblMedicionInterior" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtMedicionInterior" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlblPuntosMedicion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jcbxPuntosMedicion" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblMedida_R">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="R (mm)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMedida_f">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="f (mm)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMedida_g">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="g (mm)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtMedida_R">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtMedida_f">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtMedida_g">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jcbxPuntosMedicion">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value=" 1"/>
+            <StringItem index="1" value=" 2"/>
+            <StringItem index="2" value=" 3"/>
+            <StringItem index="3" value=" "/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblPuntosMedicion">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Puntos de medicion"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMedicionInterior">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Medicion interior desde"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtMedicionInterior">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblRangoInterior">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Rango Interior (mm)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtRangoInterior">
+    </Component>
+  </SubComponents>
+</Form>

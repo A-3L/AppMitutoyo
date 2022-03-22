@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.2" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+      <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+        <TitledBorder title="Metrica micrometrica"/>
+      </Border>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblParalelismo" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPerpendicularidad" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblRectitud" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAvance" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblPlanitud" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jtxtAvance" linkSize="1" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jtxtPlanitud" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtParalelismo" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtPerpendicularidad" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtRectitud" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblAvance" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtAvance" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblPlanitud" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtPlanitud" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblParalelismo" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtParalelismo" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblPerpendicularidad" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtPerpendicularidad" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblRectitud" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtRectitud" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblAvance">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Avance &#xb1; (&#xb5;m)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPlanitud">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Planitud (&#xb5;m)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblParalelismo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Paralelismo (&#xb5;m)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblPerpendicularidad">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Perpendicularidad (&#xb5;m)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblRectitud">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Rectitud (&#xb5;m)"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtAvance">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtPlanitud">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtParalelismo">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtPerpendicularidad">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtRectitud">
+    </Component>
+  </SubComponents>
+</Form>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.2" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+      <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+        <TitledBorder title="Especificaciones"/>
+      </Border>
+    </Property>
+    <Property name="name" type="java.lang.String" value="Calibre" noResource="true"/>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="lblRefArticulo" min="-2" pref="91" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jtxtRefArticulo" linkSize="4" min="-2" pref="105" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="lblSerie" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="32767" attributes="0"/>
+              <Component id="jtxtSerie" linkSize="4" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblRefArticulo" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtRefArticulo" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblSerie" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtSerie" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Dimensiones"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblLongitud" linkSize="6" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblPeso" linkSize="6" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblMedida_b" linkSize="6" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblMedida_d" linkSize="6" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jtxtLongitud" linkSize="2" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="jtxtPeso" linkSize="2" alignment="0" pref="57" max="32767" attributes="0"/>
+                      <Component id="jtxtMedida_b" linkSize="2" alignment="0" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="jtxtMedida_d" linkSize="2" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="lblMedida_a" linkSize="5" min="-2" pref="73" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="32767" attributes="0"/>
+                          <Component id="jtxtMedida_a" linkSize="2" min="-2" pref="40" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblMedida_e" linkSize="5" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblMedida_c" linkSize="5" min="-2" pref="73" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jtxtMedida_e" linkSize="2" min="-2" pref="39" max="-2" attributes="0"/>
+                              <Component id="jtxtMedida_c" linkSize="2" min="-2" pref="57" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblLongitud" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtLongitud" linkSize="3" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblPeso" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtPeso" linkSize="3" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblMedida_a" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtMedida_a" linkSize="3" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblMedida_b" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtMedida_b" linkSize="3" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblMedida_c" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtMedida_c" linkSize="3" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblMedida_d" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtMedida_d" linkSize="3" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblMedida_e" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtMedida_e" linkSize="3" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblLongitud">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Longitud [mm]"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblPeso">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Peso [gr]"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblMedida_b">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="b [mm]"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblMedida_d">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="d [mm]"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtLongitud">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtPeso">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtMedida_b">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtMedida_d">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblMedida_a">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="a [mm]"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblMedida_c">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="c [mm]"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblMedida_e">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="e [mm]"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtMedida_a">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtMedida_c">
+        </Component>
+        <Component class="javax.swing.JTextField" name="jtxtMedida_e">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="lblRefArticulo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ref. Articulo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtRefArticulo">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="Especificaciones" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblSerie">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Serie"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtSerie">
+    </Component>
+  </SubComponents>
+</Form>
