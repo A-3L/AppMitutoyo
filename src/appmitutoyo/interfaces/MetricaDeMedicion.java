@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package appmitutoyo;
+package appmitutoyo.interfaces;
 
+import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import jguiextensible.JFactory;
@@ -16,6 +17,8 @@ import jguiextensible.JTipoGui;
  */
 public class MetricaDeMedicion {
 
+    private static final long serialVersionUID = 1L;
+
     
     private int graduacion;
     
@@ -27,25 +30,15 @@ public class MetricaDeMedicion {
     
     private int resolucion;
     
-    private  JFactory factory;
-    
-    
     public MetricaDeMedicion() {
         
-        factory = new JFactory();
         
     }
-    
-       protected JGuiExtensible createDialog() {
+  
+    public void validar() {
         
-        JGuiExtensible dialog = factory.createDialog(JTipoGui.TABBED,false);
-               
-        MetricaDeMedicionGUI metrDeMed = new MetricaDeMedicionGUI();
         
-        dialog.addExtensibleChild(metrDeMed);
-        dialog.setName("Metrica de medicion");
        
-        return dialog;       
     }
 
     public static final String PROP_RESOLUCION = "resolucion";
@@ -88,9 +81,12 @@ public class MetricaDeMedicion {
      * @param rango new value of rango
      */
     public void setRango(int rango) {
+        
         int oldRango = this.rango;
         this.rango = rango;
         propertyChangeSupport.firePropertyChange(PROP_RANGO, oldRango, rango);
+        System.out.println(rango+"HECHO");
+        
     }
 
 
@@ -182,5 +178,7 @@ public class MetricaDeMedicion {
         propertyChangeSupport.removePropertyChangeListener(listener);
     }
 
-    
 }
+
+    
+

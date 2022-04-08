@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package appmitutoyo;
+package appmitutoyo.interfaces;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -48,6 +48,7 @@ public class MetricaDeInteriores {
         int oldRangoInterior = this.rangoInterior;
         this.rangoInterior = rangoInterior;
         propertyChangeSupport.firePropertyChange(PROP_RANGOINTERIOR, oldRangoInterior, rangoInterior);
+        System.out.println(rangoInterior + "HECHO");
     }
 
 

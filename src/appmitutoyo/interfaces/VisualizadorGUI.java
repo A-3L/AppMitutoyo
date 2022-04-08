@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
  */
-package appmitutoyo;
+package appmitutoyo.interfaces;
 
 import jguiextensible.JGuiSimple;
 
@@ -11,14 +11,14 @@ import jguiextensible.JGuiSimple;
  * @author a31r1z
  */
 public class VisualizadorGUI extends JGuiSimple {
-
-    private Visualizador visual;
+    
     /**
      * Creates new form Visualizador
      */
     public VisualizadorGUI() {
+        
         initComponents();
-        visual = new Visualizador();
+      
     }
 
     /**
@@ -30,19 +30,22 @@ public class VisualizadorGUI extends JGuiSimple {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         lblVisualizador = new javax.swing.JLabel();
         jcbVisualizador = new javax.swing.JComboBox<>();
         lblResolucion = new javax.swing.JLabel();
         jchkFuncionTolerancia = new javax.swing.JCheckBox();
         ftxtResolucion = new javax.swing.JFormattedTextField();
 
-        setBorder(javax.swing.BorderFactory.createTitledBorder("Visualizador"));
         setName("Visualizador"); // NOI18N
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Visualizador"));
+        jPanel1.setName("Visualizador"); // NOI18N
 
         lblVisualizador.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblVisualizador.setText("Visualizador");
 
-        jcbVisualizador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LCD-6Digitos", "LCD-9Digitos", "TN Monocrome", "Graficos LCD", "Analogico", " " }));
+        jcbVisualizador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccione-", "LCD-6Digitos", "LCD-9Digitos", "TN Monocrome", "Graficos LCD", "Analogico", " " }));
         jcbVisualizador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcbVisualizadorActionPerformed(evt);
@@ -61,62 +64,70 @@ public class VisualizadorGUI extends JGuiSimple {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 1, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jchkFuncionTolerancia)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblVisualizador)
                             .addComponent(lblResolucion))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jcbVisualizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ftxtResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(23, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jchkFuncionTolerancia)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(ftxtResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblVisualizador, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jcbVisualizador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblVisualizador)
+                    .addComponent(jcbVisualizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(lblResolucion)
                     .addComponent(ftxtResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jchkFuncionTolerancia)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jcbVisualizadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbVisualizadorActionPerformed
-       visual.setVisualizador(jcbVisualizador.getSelectedItem().toString());
-       /*ftxtResolucion.setText(visual.getVisualizador());
-       System.out.println(jcbVisualizador.getSelectedItem().toString() +" SelectedItem");
-       System.out.println(visual.getVisualizador() + "getVisualizador");*/
-    }//GEN-LAST:event_jcbVisualizadorActionPerformed
-
     private void ftxtResolucionPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_ftxtResolucionPropertyChange
-     
-   
+
     }//GEN-LAST:event_ftxtResolucionPropertyChange
+
+    private void jcbVisualizadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbVisualizadorActionPerformed
+        jcbVisualizador.getSelectedItem().toString();
+      
+    }//GEN-LAST:event_jcbVisualizadorActionPerformed
        
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField ftxtResolucion;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> jcbVisualizador;
     private javax.swing.JCheckBox jchkFuncionTolerancia;
     private javax.swing.JLabel lblResolucion;
     private javax.swing.JLabel lblVisualizador;
     // End of variables declaration//GEN-END:variables
+@Override
+    protected void actualizarCambio(String id, Object obj) {}
 }

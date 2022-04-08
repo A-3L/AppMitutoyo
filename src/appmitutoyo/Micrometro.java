@@ -4,6 +4,9 @@
  */
 package appmitutoyo;
 
+import appmitutoyo.interfaces.MetricaMicrometricaGUI;
+import appmitutoyo.interfaces.FuncionesGUI;
+import java.util.Arrays;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
 import jguiextensible.JTipoGui;
@@ -23,15 +26,15 @@ public class Micrometro {
     
      protected JGuiExtensible createDialog() {
         
-         JGuiExtensible dialog = factory.createDialog(JTipoGui.SIMPLE, false);
-         JGuiExtensible metMicr = new MetricaMicrometricaGUI();
-         JGuiExtensible funciones = new FuncionesGUI();
+         JGuiExtensible dialog = new MetricaMicrometricaGUI();
+         dialog.setName("Metrica micrometrica");
          
-         dialog.addExtensibleChild(metMicr);
+         JGuiExtensible funciones = new FuncionesGUI();
+         //funciones.setName("Funciones");
+         
          dialog.addExtensibleChild(funciones);
          dialog.setName("Micrometro");
-      
-       
+               
         return dialog;       
     }
     

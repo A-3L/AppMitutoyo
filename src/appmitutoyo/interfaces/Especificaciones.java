@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package appmitutoyo;
+package appmitutoyo.interfaces;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -27,11 +27,10 @@ public class Especificaciones {
     private String serie;
     
     public Especificaciones() {
-        
-       
+           
     }
-   
-      public static final String PROP_SERIE = "serie";
+  
+    public static final String PROP_SERIE = "serie";
 
     /**
      * Get the value of serie

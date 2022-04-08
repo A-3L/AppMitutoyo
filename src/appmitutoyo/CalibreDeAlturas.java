@@ -4,6 +4,7 @@
  */
 package appmitutoyo;
 
+import appmitutoyo.interfaces.MetricaDeMedicionGUI;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -21,25 +22,24 @@ import jguiextensible.JTipoGui;
  */
 public class CalibreDeAlturas extends Calibre{
 
-     JFactory factory;
-     
+    JFactory factory = new JFactory();
+    
     public CalibreDeAlturas() {
         
-      factory = new JFactory();  
     }
     
     @Override
     protected JGuiExtensible createDialog() {
+              
+        JGuiExtensible dialog = factory.createDialog(JTipoGui.TABBED, false);
+        JGuiExtensible especif = super.createDialog();
+        especif.setName("Especificaciones"); 
         
-       
-        MetricaDeMedicion metDeMed = new MetricaDeMedicion();
-        
-        JGuiExtensible cal = super.createDialog();
-        JGuiExtensible dialog= metDeMed.createDialog();
-         
-        dialog.addExtensibleChild(cal);
+        JGuiExtensible metMed = new MetricaDeMedicionGUI();
         dialog.setName("Calibre de Alturas");
        
+        dialog.addExtensibleChild(especif);
+        dialog.addExtensibleChild(metMed);
         return dialog;       
     }
     

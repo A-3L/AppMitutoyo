@@ -4,6 +4,8 @@
  */
 package appmitutoyo;
 
+import appmitutoyo.interfaces.MetricaMicrometricaGUI;
+import appmitutoyo.interfaces.MetricaComparadorGUI;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
 import jguiextensible.JTipoGui;
@@ -22,15 +24,16 @@ public class Comparador {
     }
     
       protected JGuiExtensible createDialog() {
- 
-        
+       
         JGuiExtensible dialog =  factory.createDialog(JTipoGui.SIMPLE,false);
-        JGuiExtensible metComp = new MetricaComparadorGUI();
-         
+        JGuiExtensible metComp = new MetricaComparadorGUI(); 
+        JGuiExtensible metMicr = new MetricaMicrometricaGUI();
+        
         dialog.addExtensibleChild(metComp);
+        dialog.addExtensibleChild(metMicr);
         dialog.setName("Comparador");
        
-        return metComp;       
+      return dialog;       
     }
     
 }

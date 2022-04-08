@@ -4,6 +4,9 @@
  */
 package appmitutoyo;
 
+import appmitutoyo.interfaces.VisualizadorGUI;
+import appmitutoyo.interfaces.Especificaciones;
+import java.util.Arrays;
 import jguiextensible.JGuiExtensible;
 
 /**
@@ -13,7 +16,6 @@ import jguiextensible.JGuiExtensible;
 public class CalibreDigimatic extends Calibre {
 
     private Especificaciones especif;
-    private Visualizador visual;
     
     public CalibreDigimatic() {
         
@@ -26,8 +28,9 @@ public class CalibreDigimatic extends Calibre {
         JGuiExtensible dialog = super.createDialog();
         VisualizadorGUI visualGui = new VisualizadorGUI();
       
-        dialog.addExtensibleChild(visualGui);
+        dialog.addExtensibleChild(visualGui);      
         dialog.setName("Calibre Digimatic");
+       
        
         return dialog;
                

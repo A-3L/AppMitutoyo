@@ -4,6 +4,10 @@
  */
 package appmitutoyo;
 
+import appmitutoyo.interfaces.ArticuloGUI;
+import appmitutoyo.interfaces.DimensionesGUI;
+import appmitutoyo.interfaces.Especificaciones;
+import appmitutoyo.interfaces.MetricaDeInterioresGUI;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import jguiextensible.JFactory;
@@ -27,13 +31,13 @@ public class Calibre {
  
       protected JGuiExtensible createDialog() {
         
-        JGuiExtensible dialog = factory.createDialog(JTipoGui.SIMPLE, false);
-        JGuiExtensible especif = new EspecificacionesGUI();
+        ArticuloGUI articulo = new ArticuloGUI();
+        DimensionesGUI dimensiones = new DimensionesGUI();
         
-        dialog.addExtensibleChild(especif);
-        dialog.setName("Calibre");
-                      
-        return dialog;
+        articulo.addExtensibleChild(dimensiones);
+        articulo.setName("Calibre");
+                               
+        return articulo;
     }
 
   

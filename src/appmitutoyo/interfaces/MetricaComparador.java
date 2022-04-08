@@ -2,10 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package appmitutoyo;
+package appmitutoyo.interfaces;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import jguiextensible.JGuiExtensible;
+import jguiextensible.JGuiSimple;
 
 /**
  *
@@ -14,6 +16,7 @@ import java.beans.PropertyChangeSupport;
 public class MetricaComparador {
 
     public MetricaComparador() {
+       
     }
     
     private int rangoMedida;
@@ -110,6 +113,7 @@ public class MetricaComparador {
         int oldRangoMedida = this.rangoMedida;
         this.rangoMedida = rangoMedida;
         propertyChangeSupport.firePropertyChange(PROP_RANGOMEDIDA, oldRangoMedida, rangoMedida);
+        
     }
 
     private transient final PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);

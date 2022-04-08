@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
  */
-package appmitutoyo;
+package appmitutoyo.interfaces;
 
 import jguiextensible.JGuiSimple;
 
@@ -10,12 +10,12 @@ import jguiextensible.JGuiSimple;
  *
  * @author a31r1z
  */
-public class Accesorios extends JGuiSimple {
+public class AccesoriosGUI extends JGuiSimple {
 
     /**
      * Creates new form Accesorios
      */
-    public Accesorios() {
+    public AccesoriosGUI() {
         initComponents();
     }
 
@@ -71,4 +71,6 @@ public class Accesorios extends JGuiSimple {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaAccesorios;
     // End of variables declaration//GEN-END:variables
+@Override
+    protected void actualizarCambio(String id, Object obj) {}
 }
