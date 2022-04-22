@@ -16,7 +16,9 @@ import jguiextensible.JGuiSimple;
  */
 public class MetricaComparadorGUI extends JGuiSimple {
 
-    private MetricaComparador mtComp = new MetricaComparador();
+    private static final long serialVersionUID = 1L;
+
+    
    
     /**
      * Creates new form MetricaComparador
@@ -36,29 +38,29 @@ public class MetricaComparadorGUI extends JGuiSimple {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
         jguiMetricaComp = new jguiextensible.JGuiSimple();
-        jfxtErrorMax = new javax.swing.JFormattedTextField();
+        jftxErrorMax = new javax.swing.JFormattedTextField();
         jsldRangoMedida = new javax.swing.JSlider();
         lblErrorMaximo = new javax.swing.JLabel();
         lblRangoMedida = new javax.swing.JLabel();
         lblHyteresis = new javax.swing.JLabel();
-        jfxtHyteresis = new javax.swing.JFormattedTextField();
-        jftxtEscala = new javax.swing.JFormattedTextField();
+        jftxHyteresis = new javax.swing.JFormattedTextField();
+        jftxEscala = new javax.swing.JFormattedTextField();
         lblEscala = new javax.swing.JLabel();
-
-        jFormattedTextField2.setText("jFormattedTextField2");
 
         setName("Metrica Comparador"); // NOI18N
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
         jguiMetricaComp.setBorder(javax.swing.BorderFactory.createTitledBorder("Metrica comparativa"));
 
-        jfxtErrorMax.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
-        jfxtErrorMax.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
-        jfxtErrorMax.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        jftxErrorMax.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxErrorMax.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxErrorMax.setText(" ");
+        jftxErrorMax.setFocusLostBehavior(javax.swing.JFormattedTextField.REVERT);
+        jftxErrorMax.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+        jftxErrorMax.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jfxtErrorMaxPropertyChange(evt);
+                jftxErrorMaxPropertyChange(evt);
             }
         });
 
@@ -85,10 +87,10 @@ public class MetricaComparadorGUI extends JGuiSimple {
         lblHyteresis.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblHyteresis.setText("Hyteresis (mm)");
 
-        jfxtHyteresis.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
-        jfxtHyteresis.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+        jftxHyteresis.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxHyteresis.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
-        jftxtEscala.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxEscala.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
 
         lblEscala.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblEscala.setText("Escala");
@@ -98,86 +100,71 @@ public class MetricaComparadorGUI extends JGuiSimple {
         jguiMetricaCompLayout.setHorizontalGroup(
             jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jguiMetricaCompLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jguiMetricaCompLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblErrorMaximo))
-                    .addGroup(jguiMetricaCompLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(lblRangoMedida))
-                    .addGroup(jguiMetricaCompLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblHyteresis))
-                    .addGroup(jguiMetricaCompLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblEscala)))
-                .addGap(18, 18, Short.MAX_VALUE)
+                    .addComponent(lblHyteresis)
+                    .addComponent(lblEscala)
+                    .addComponent(lblRangoMedida)
+                    .addComponent(lblErrorMaximo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jguiMetricaCompLayout.createSequentialGroup()
-                        .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jsldRangoMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jftxtEscala, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jguiMetricaCompLayout.createSequentialGroup()
-                        .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jfxtErrorMax, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jfxtHyteresis, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(jsldRangoMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jftxErrorMax, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jftxHyteresis, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jftxEscala, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
-        jguiMetricaCompLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jftxtEscala, jfxtErrorMax, jfxtHyteresis});
+        jguiMetricaCompLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jftxErrorMax, jftxEscala, jftxHyteresis});
 
         jguiMetricaCompLayout.setVerticalGroup(
             jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jguiMetricaCompLayout.createSequentialGroup()
-                .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jguiMetricaCompLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(lblRangoMedida))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblRangoMedida)
                     .addComponent(jsldRangoMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblErrorMaximo, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jftxtEscala, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblHyteresis, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jfxtErrorMax, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblEscala, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jfxtHyteresis, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblErrorMaximo)
+                    .addComponent(jftxErrorMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblHyteresis)
+                    .addComponent(jftxHyteresis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblEscala)
+                    .addComponent(jftxEscala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jguiMetricaCompLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jftxtEscala, jfxtErrorMax, jfxtHyteresis});
+        jguiMetricaCompLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jftxErrorMax, jftxEscala, jftxHyteresis});
 
         add(jguiMetricaComp);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jsldRangoMedidaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jsldRangoMedidaStateChanged
        
-        
-        //mtComp.setRangoMedida(jsldRangoMedida.getValue());
-       this.notificarCambio("rangoMedida", jsldRangoMedida.getValue());
+        System.out.println("Notificacion Slide");
+        notificarCambio("rangoMedida", jsldRangoMedida.getValue());
          
     }//GEN-LAST:event_jsldRangoMedidaStateChanged
 
-    private void jfxtErrorMaxPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jfxtErrorMaxPropertyChange
-    
-        if(jfxtErrorMax.getValue() !=null) {
-            
-            Integer value = ((Number)jfxtErrorMax.getValue()).intValue();
-            mtComp.setErrorMax(value);
-            notificarCambio(MetricaComparador.PROP_ERRORMAX, mtComp.getErrorMax());
-        }
-    }//GEN-LAST:event_jfxtErrorMaxPropertyChange
+    private void jftxErrorMaxPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jftxErrorMaxPropertyChange
+           
+           if(jftxErrorMax.getValue() != null) {
+               System.out.println("Notificacion ErrorMax");
+               notificarCambio("errorMax", jftxErrorMax.getValue());
+               
+           } 
+       
+    }//GEN-LAST:event_jftxErrorMaxPropertyChange
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    javax.swing.JFormattedTextField jFormattedTextField2;
-    javax.swing.JFormattedTextField jftxtEscala;
-    javax.swing.JFormattedTextField jfxtErrorMax;
-    javax.swing.JFormattedTextField jfxtHyteresis;
+    javax.swing.JFormattedTextField jftxErrorMax;
+    javax.swing.JFormattedTextField jftxEscala;
+    javax.swing.JFormattedTextField jftxHyteresis;
     jguiextensible.JGuiSimple jguiMetricaComp;
     javax.swing.JSlider jsldRangoMedida;
     javax.swing.JLabel lblErrorMaximo;
@@ -186,6 +173,39 @@ public class MetricaComparadorGUI extends JGuiSimple {
     javax.swing.JLabel lblRangoMedida;
     // End of variables declaration//GEN-END:variables
 
+
     @Override
-    protected void actualizarCambio(String id, Object obj) {}
+    protected boolean validacion() {
+        
+      if (jftxErrorMax.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Error maximo");
+            jftxErrorMax.requestFocusInWindow();
+        
+            return false;
+        } 
+      
+      if (jftxEscala.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Escala");
+            jftxEscala.requestFocusInWindow();
+        
+            return false;
+        }   
+      
+      if (jftxHyteresis.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Hyteresis");
+            jftxHyteresis.requestFocusInWindow();
+        
+            return false;
+        }   
+      
+        return true;   
+    }
+    @Override
+   protected void actualizarCambio(String id, Object value) {}
 }

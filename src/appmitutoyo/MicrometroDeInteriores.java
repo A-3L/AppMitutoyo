@@ -29,14 +29,16 @@ public class MicrometroDeInteriores extends Micrometro {
         JGuiExtensible micDeInt = new MetricaDeInterioresGUI();
         Comparador comp = new Comparador();
         JGuiExtensible compGui = comp.createDialog();
+        Calibre cal = new Calibre();
         CalibreDeAlturas calAlt = new CalibreDeAlturas();
-        //CalibreDigimatic calDig = new CalibreDigimatic();
+        CalibreDigimatic calDig = new CalibreDigimatic();
            
         dialog.addExtensibleChild(mic);
         dialog.addExtensibleChild(micDeInt);
         dialog.addExtensibleChild(compGui);
         dialog.addExtensibleChild(calAlt.createDialog());
-       // dialog.addExtensibleChild(calDig.createDialog());
+        dialog.addExtensibleChild(calDig.createDialog());
+        dialog.addExtensibleChild(cal.createDialog());
         dialog.setName("Micrometro de interiores");
                       
         return dialog;

@@ -72,52 +72,50 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
         lblPuntosMediciion.setText("Puntos de medicion");
 
         jftxRangoInterior.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
-        jftxRangoInterior.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jftxRangoInteriorPropertyChange(evt);
-            }
-        });
+        jftxRangoInterior.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxRangoInterior.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         jftxMetrica_f.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxMetrica_f.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxMetrica_f.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         jftxMedida_g.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxMedida_g.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxMedida_g.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         jftxMedida_R.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxMedida_R.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxMedida_R.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         jftxMetricaInterior.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxMetricaInterior.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxMetricaInterior.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
-        jcboxPuntosMedicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        jcboxPuntosMedicion.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+        jcboxPuntosMedicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccione-", "1", "2", "3" }));
 
         javax.swing.GroupLayout jguiMetricaDeInterioresLayout = new javax.swing.GroupLayout(jguiMetricaDeInteriores);
         jguiMetricaDeInteriores.setLayout(jguiMetricaDeInterioresLayout);
         jguiMetricaDeInterioresLayout.setHorizontalGroup(
             jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jguiMetricaDeInterioresLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jguiMetricaDeInterioresLayout.createSequentialGroup()
-                        .addContainerGap(37, Short.MAX_VALUE)
-                        .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jguiMetricaDeInterioresLayout.createSequentialGroup()
-                                .addComponent(lblRangoInterior)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jftxRangoInterior, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jguiMetricaDeInterioresLayout.createSequentialGroup()
-                                .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblMetricaInterior)
-                                    .addComponent(lblPuntosMediciion))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jcboxPuntosMedicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jftxMetricaInterior, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)))
-                        .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblMedida_R, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblMedida_f, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jguiMetricaDeInterioresLayout.createSequentialGroup()
-                        .addContainerGap(263, Short.MAX_VALUE)
-                        .addComponent(lblMedida_g)))
-                .addGap(18, 18, 18)
+                    .addComponent(lblMetricaInterior)
+                    .addComponent(lblRangoInterior)
+                    .addComponent(lblPuntosMediciion))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jftxMetricaInterior, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jftxRangoInterior, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jcboxPuntosMedicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMedida_R)
+                    .addComponent(lblMedida_f)
+                    .addComponent(lblMedida_g))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jftxMedida_R, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jftxMetrica_f, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -131,35 +129,28 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
             jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jguiMetricaDeInterioresLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(lblRangoInterior)
-                    .addComponent(jftxRangoInterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMedida_R)
-                    .addComponent(jftxMedida_R, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblRangoInterior, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jftxRangoInterior, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMedida_R, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jftxMedida_R, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(lblMetricaInterior)
-                    .addComponent(jftxMetricaInterior, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMedida_f)
-                    .addComponent(jftxMetrica_f, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMetricaInterior, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jftxMetricaInterior, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMedida_f, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jftxMetrica_f, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(lblPuntosMediciion)
-                    .addComponent(jcboxPuntosMedicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMedida_g)
-                    .addComponent(jftxMedida_g, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPuntosMediciion, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jcboxPuntosMedicion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMedida_g, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jftxMedida_g, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         add(jguiMetricaDeInteriores);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jftxRangoInteriorPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jftxRangoInteriorPropertyChange
-       
-        existRangoInt = jftxRangoInterior.getValue() != null;
-     
-        System.out.println(existRangoInt);
-    }//GEN-LAST:event_jftxRangoInteriorPropertyChange
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -178,34 +169,78 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
     private javax.swing.JLabel lblRangoInterior;
     // End of variables declaration//GEN-END:variables
     
-    @Override
-    protected void actualizarCambio(String id, Object obj) { }
     
     @Override
     protected boolean validacion( ) {
         
-        /*  if(!validateThis(jftxRangoInterior.getText())) {
-        jftxRangoInterior.requestFocusInWindow();
-        }
-        return false;*/
-        
-        if (!validateThis(existRangoInt)){
+        if (jftxRangoInterior.getValue() == null){
             
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Rango interior");
             jftxRangoInterior.requestFocusInWindow();
         
             return false;
         }   
         
+        if (jftxMedida_R.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Medida_R");
+            jftxMedida_R.requestFocusInWindow();
+        
+            return false;
+        } 
+        
+              
+        if (jftxMetricaInterior.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Metrica interior desde");
+            jftxMetricaInterior.requestFocusInWindow();
+        
+            return false;
+        }
+        
+        if (jftxMetrica_f.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Medida_f");
+            jftxMetrica_f.requestFocusInWindow();
+        
+            return false;
+        } 
+        
+        if (jcboxPuntosMedicion.getSelectedIndex() == 0){
+            
+             Validar.mostrar("ERROR: Falta seleccion en:\n "
+                          + this.getName() +"-> Puntos de medicion");
+            jcboxPuntosMedicion.requestFocusInWindow();
+        
+            return false;
+        } 
+        
+        if (jftxMedida_g.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Medida_g");
+            jftxMedida_g.requestFocusInWindow();
+        
+            return false;
+        } 
+        
         return true;
     } 
     
-    protected boolean validateThis(boolean arg) {
-        
-           if (!arg) {
-               Validar.mostrar("ERROR: Faltan introducir datos.");
-               return false;
-           }
-     
-        return true;     
+    /*   protected boolean validateThis(boolean arg) {
+    
+    if (!arg) {
+    Validar.mostrar("ERROR: Faltan introducir datos.");
+    return false;
     }
+    
+    return true;
+    }*/
+    
+    @Override
+      protected void actualizarCambio(String id, Object value) {}
 }

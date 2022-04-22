@@ -35,7 +35,7 @@ public class VisualizadorGUI extends JGuiSimple {
         jcbVisualizador = new javax.swing.JComboBox<>();
         lblResolucion = new javax.swing.JLabel();
         jchkFuncionTolerancia = new javax.swing.JCheckBox();
-        ftxtResolucion = new javax.swing.JFormattedTextField();
+        jftxResolucion = new javax.swing.JFormattedTextField();
 
         setName("Visualizador"); // NOI18N
 
@@ -58,9 +58,9 @@ public class VisualizadorGUI extends JGuiSimple {
         jchkFuncionTolerancia.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jchkFuncionTolerancia.setText("Funcion de Tolerancia");
 
-        ftxtResolucion.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        jftxResolucion.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                ftxtResolucionPropertyChange(evt);
+                jftxResolucionPropertyChange(evt);
             }
         });
 
@@ -79,7 +79,7 @@ public class VisualizadorGUI extends JGuiSimple {
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jcbVisualizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ftxtResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jftxResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -92,7 +92,7 @@ public class VisualizadorGUI extends JGuiSimple {
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(lblResolucion)
-                    .addComponent(ftxtResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jftxResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jchkFuncionTolerancia)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -110,9 +110,9 @@ public class VisualizadorGUI extends JGuiSimple {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ftxtResolucionPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_ftxtResolucionPropertyChange
+    private void jftxResolucionPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jftxResolucionPropertyChange
 
-    }//GEN-LAST:event_ftxtResolucionPropertyChange
+    }//GEN-LAST:event_jftxResolucionPropertyChange
 
     private void jcbVisualizadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbVisualizadorActionPerformed
         jcbVisualizador.getSelectedItem().toString();
@@ -121,13 +121,40 @@ public class VisualizadorGUI extends JGuiSimple {
        
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField ftxtResolucion;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> jcbVisualizador;
     private javax.swing.JCheckBox jchkFuncionTolerancia;
+    private javax.swing.JFormattedTextField jftxResolucion;
     private javax.swing.JLabel lblResolucion;
     private javax.swing.JLabel lblVisualizador;
     // End of variables declaration//GEN-END:variables
-@Override
-    protected void actualizarCambio(String id, Object obj) {}
+
+    /**
+     *
+     * @return
+     */
+    @Override  
+    protected boolean validacion( ) {  
+    
+    if (jftxResolucion.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Resolucion");
+            jftxResolucion.requestFocusInWindow();
+        
+            return false;
+        }
+    
+     if (jcbVisualizador.getSelectedIndex() == 0){
+            
+             Validar.mostrar("ERROR: Falta seleccion en:\n "
+                          + this.getName() +"-> Visualizador");
+            jcbVisualizador.requestFocusInWindow();
+        
+            return false;
+        } 
+    return true;
+}
+    @Override
+     protected void actualizarCambio(String id, Object value) {}
 }

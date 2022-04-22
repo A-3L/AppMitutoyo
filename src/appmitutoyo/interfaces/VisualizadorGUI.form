@@ -54,7 +54,7 @@
                           <EmptySpace type="separate" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jcbVisualizador" min="-2" max="-2" attributes="0"/>
-                              <Component id="ftxtResolucion" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="jftxResolucion" min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -73,7 +73,7 @@
                   <EmptySpace type="separate" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
                       <Component id="lblResolucion" alignment="2" min="-2" max="-2" attributes="0"/>
-                      <Component id="ftxtResolucion" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jftxResolucion" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="32767" attributes="0"/>
                   <Component id="jchkFuncionTolerancia" min="-2" max="-2" attributes="0"/>
@@ -128,9 +128,9 @@
             <Property name="text" type="java.lang.String" value="Funcion de Tolerancia"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="ftxtResolucion">
+        <Component class="javax.swing.JFormattedTextField" name="jftxResolucion">
           <Events>
-            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="ftxtResolucionPropertyChange"/>
+            <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="jftxResolucionPropertyChange"/>
           </Events>
         </Component>
       </SubComponents>

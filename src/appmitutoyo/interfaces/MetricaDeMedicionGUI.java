@@ -19,7 +19,9 @@ import jguiextensible.JGuiTabbed;
  *
  * @author a31r1z
  */
-public class MetricaDeMedicionGUI extends JGuiSimple {
+public class MetricaDeMedicionGUI extends JGuiTabbed {
+
+    private static final long serialVersionUID = 1L;
   
     /**
      * Creates new form CalibrePieDeReyGui
@@ -42,14 +44,14 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
         panelMetrMedicion = new javax.swing.JPanel();
         lblRango = new javax.swing.JLabel();
         lblPrecision = new javax.swing.JLabel();
-        jtxtPrecision = new javax.swing.JTextField();
         lblGraduacion = new javax.swing.JLabel();
-        jtxtGraduacion = new javax.swing.JTextField();
         lblResolucion = new javax.swing.JLabel();
-        jtxtResolucion = new javax.swing.JTextField();
         lblPresionMedida = new javax.swing.JLabel();
-        jtxtPresionMedida = new javax.swing.JTextField();
         jftxRango = new javax.swing.JFormattedTextField();
+        jftxPrecision = new javax.swing.JFormattedTextField();
+        jftxResolucion = new javax.swing.JFormattedTextField();
+        jftxGraduacion = new javax.swing.JFormattedTextField();
+        jftxPresionDeMedida = new javax.swing.JFormattedTextField();
 
         setName(" Metrica de medicion"); // NOI18N
 
@@ -72,6 +74,7 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
         lblPresionMedida.setText("Presion de medida [N]");
 
         jftxRango.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxRango.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout panelMetrMedicionLayout = new javax.swing.GroupLayout(panelMetrMedicion);
         panelMetrMedicion.setLayout(panelMetrMedicionLayout);
@@ -85,48 +88,44 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
                     .addComponent(lblResolucion)
                     .addComponent(lblPrecision)
                     .addComponent(lblRango))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtxtPresionMedida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxtGraduacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxtResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxtPrecision)
-                    .addComponent(jftxRango, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                    .addComponent(jftxRango, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jftxPrecision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jftxResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jftxGraduacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jftxPresionDeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelMetrMedicionLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jftxRango, jtxtGraduacion, jtxtPrecision, jtxtPresionMedida, jtxtResolucion});
-
         panelMetrMedicionLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblGraduacion, lblRango});
+
+        panelMetrMedicionLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jftxGraduacion, jftxPrecision, jftxPresionDeMedida, jftxRango, jftxResolucion});
 
         panelMetrMedicionLayout.setVerticalGroup(
             panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMetrMedicionLayout.createSequentialGroup()
-                .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelMetrMedicionLayout.createSequentialGroup()
-                        .addContainerGap(21, Short.MAX_VALUE)
-                        .addComponent(lblRango)
-                        .addGap(18, 18, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMetrMedicionLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jftxRango, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPrecision, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxtPrecision, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblResolucion, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxtResolucion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblGraduacion, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxtGraduacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPresionMedida, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxtPresionMedida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblRango)
+                    .addComponent(jftxRango, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 19, Short.MAX_VALUE)
+                .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPrecision)
+                    .addComponent(jftxPrecision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 20, Short.MAX_VALUE)
+                .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblResolucion)
+                    .addComponent(jftxResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 20, Short.MAX_VALUE)
+                .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGraduacion)
+                    .addComponent(jftxGraduacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 20, Short.MAX_VALUE)
+                .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPresionMedida)
+                    .addComponent(jftxPresionDeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         add(panelMetrMedicion);
@@ -134,11 +133,11 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
   
          
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFormattedTextField jftxGraduacion;
+    private javax.swing.JFormattedTextField jftxPrecision;
+    private javax.swing.JFormattedTextField jftxPresionDeMedida;
     private javax.swing.JFormattedTextField jftxRango;
-    private javax.swing.JTextField jtxtGraduacion;
-    private javax.swing.JTextField jtxtPrecision;
-    private javax.swing.JTextField jtxtPresionMedida;
-    private javax.swing.JTextField jtxtResolucion;
+    private javax.swing.JFormattedTextField jftxResolucion;
     private javax.swing.JLabel lblGraduacion;
     private javax.swing.JLabel lblPrecision;
     private javax.swing.JLabel lblPresionMedida;
@@ -148,41 +147,82 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
     // End of variables declaration//GEN-END:variables
 
     @Override
-    protected void actualizarCambio(String id, Object obj) {
+    protected void actualizarCambio(String id, Object value) {
     
      if (id.equals("rangoMedida")) {  
           
-       jftxRango.setText(String.valueOf(obj));
-       
+       jftxRango.setText(String.valueOf(value));  
      }
      
-     if(id.equals("errorMax"))
-          System.out.println("YEPIYEI");
-  
+     if(id.equals("errorMax")) {
+         
+        System.out.println("YEPIYEI" +String.valueOf(value));               
+     }
+   
     }
 
        @Override
     protected boolean validacion( ) {
         
-        /*   return validateThis(jtxtGraduacion, jftxRango, jtxtPrecision, jtxtPresionMedida,
-        jtxtPresionMedida);  */
+       if (jftxRango.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Rango");
+            jftxRango.requestFocusInWindow();
+        
+            return false;
+        } 
+       
+       if (jftxPrecision.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Precision");
+            jftxPrecision.requestFocusInWindow();
+        
+            return false;
+        } 
+       
+       if (jftxResolucion.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Resolucion");
+            jftxResolucion.requestFocusInWindow();
+        
+            return false;
+        } 
+       
+       if (jftxGraduacion.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Graduacion");
+            jftxGraduacion.requestFocusInWindow();
+        
+            return false;
+        } 
+       
+       if (jftxPresionDeMedida.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Presion de medida");
+            jftxPresionDeMedida.requestFocusInWindow();
+        
+            return false;
+        } 
         return true;
     } 
     
     protected boolean validateThis(Component ... args) {
         
         for(Component arg : args) {
-            var comp = (Component)arg;
-            
-           
-              
-          
-        }
-        
-        
-        
+            var comp = arg; 
+        }    
         return true;     
     }
     
+    protected boolean updateThis(String id, Object obj) {
+        
+        return false;
+        
+    }
   
 }

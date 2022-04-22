@@ -71,6 +71,6 @@ public class AccesoriosGUI extends JGuiSimple {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaAccesorios;
     // End of variables declaration//GEN-END:variables
-@Override
-    protected void actualizarCambio(String id, Object obj) {}
+    @Override
+    protected void actualizarCambio(String id, Object value) {}
 }

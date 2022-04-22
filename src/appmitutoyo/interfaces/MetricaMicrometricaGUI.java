@@ -35,11 +35,11 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
         lblParalelismo = new javax.swing.JLabel();
         lblPerpendicularidad = new javax.swing.JLabel();
         lblRectitud = new javax.swing.JLabel();
-        jtxtAvance = new javax.swing.JTextField();
-        jtxtPlanitud = new javax.swing.JTextField();
-        jtxtParalelismo = new javax.swing.JTextField();
-        jtxtPerpendicularidad = new javax.swing.JTextField();
-        jtxtRectitud = new javax.swing.JTextField();
+        jftxAvance = new javax.swing.JFormattedTextField();
+        jftxPlanitud = new javax.swing.JFormattedTextField();
+        jftxParalelismo = new javax.swing.JFormattedTextField();
+        jftxPerpendicularidad = new javax.swing.JFormattedTextField();
+        jftxRectitud = new javax.swing.JFormattedTextField();
 
         setName("Metrica micrometrica"); // NOI18N
 
@@ -68,26 +68,22 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
             .addGroup(panelMetrMicrometricaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelMetrMicrometricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelMetrMicrometricaLayout.createSequentialGroup()
-                        .addGroup(panelMetrMicrometricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblParalelismo)
-                            .addComponent(lblPerpendicularidad)
-                            .addComponent(lblRectitud)
-                            .addComponent(lblPlanitud))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                        .addGroup(panelMetrMicrometricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtxtParalelismo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxtPlanitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxtPerpendicularidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxtRectitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panelMetrMicrometricaLayout.createSequentialGroup()
-                        .addComponent(lblAvance)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jtxtAvance, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblParalelismo)
+                    .addComponent(lblPlanitud)
+                    .addComponent(lblRectitud)
+                    .addComponent(lblPerpendicularidad)
+                    .addComponent(lblAvance))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelMetrMicrometricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jftxAvance, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jftxPlanitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jftxParalelismo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jftxPerpendicularidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jftxRectitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panelMetrMicrometricaLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jtxtAvance, jtxtParalelismo, jtxtPerpendicularidad, jtxtPlanitud, jtxtRectitud});
+        panelMetrMicrometricaLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jftxAvance, jftxParalelismo, jftxPerpendicularidad, jftxPlanitud, jftxRectitud});
 
         panelMetrMicrometricaLayout.setVerticalGroup(
             panelMetrMicrometricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,23 +91,23 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelMetrMicrometricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAvance)
-                    .addComponent(jtxtAvance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jftxAvance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(panelMetrMicrometricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPlanitud)
-                    .addComponent(jtxtPlanitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jftxPlanitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(panelMetrMicrometricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblParalelismo)
-                    .addComponent(jtxtParalelismo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jftxParalelismo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(panelMetrMicrometricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPerpendicularidad)
-                    .addComponent(jtxtPerpendicularidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jftxPerpendicularidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(panelMetrMicrometricaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblRectitud)
-                    .addComponent(jtxtRectitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jftxRectitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -120,11 +116,11 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField jtxtAvance;
-    private javax.swing.JTextField jtxtParalelismo;
-    private javax.swing.JTextField jtxtPerpendicularidad;
-    private javax.swing.JTextField jtxtPlanitud;
-    private javax.swing.JTextField jtxtRectitud;
+    private javax.swing.JFormattedTextField jftxAvance;
+    private javax.swing.JFormattedTextField jftxParalelismo;
+    private javax.swing.JFormattedTextField jftxPerpendicularidad;
+    private javax.swing.JFormattedTextField jftxPlanitud;
+    private javax.swing.JFormattedTextField jftxRectitud;
     private javax.swing.JLabel lblAvance;
     private javax.swing.JLabel lblParalelismo;
     private javax.swing.JLabel lblPerpendicularidad;
@@ -132,6 +128,57 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
     private javax.swing.JLabel lblRectitud;
     private javax.swing.JPanel panelMetrMicrometrica;
     // End of variables declaration//GEN-END:variables
-@Override
-    protected void actualizarCambio(String id, Object obj) {}
+
+    @Override
+ protected boolean validacion( ) {
+        
+        if (jftxAvance.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Avance");
+            jftxAvance.requestFocusInWindow();
+        
+            return false;
+        }
+        
+        if (jftxParalelismo.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Paralelismo");
+            jftxParalelismo.requestFocusInWindow();
+        
+            return false;
+        }
+        
+        if (jftxPerpendicularidad.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Perpendicularidad");
+            jftxPerpendicularidad.requestFocusInWindow();
+        
+            return false;
+        }
+        
+        if (jftxPlanitud.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Planitud");
+            jftxPlanitud.requestFocusInWindow();
+        
+            return false;
+        }
+        
+        if (jftxRectitud.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Rectitud");
+            jftxRectitud.requestFocusInWindow();
+        
+            return false;
+        }
+             
+    return true;    
+ }
+    @Override
+    protected void actualizarCambio(String id, Object value) {}
 }

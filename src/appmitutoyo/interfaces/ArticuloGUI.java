@@ -12,7 +12,7 @@ import jguiextensible.JGuiSimple;
  */
 public class ArticuloGUI extends JGuiSimple {
     
-    Especificaciones especif;
+   
 
     /**
      * Creates new form Articulo
@@ -20,7 +20,6 @@ public class ArticuloGUI extends JGuiSimple {
     public ArticuloGUI() {
         
         initComponents();
-        especif = new Especificaciones();
     }
 
     /**
@@ -44,6 +43,12 @@ public class ArticuloGUI extends JGuiSimple {
 
         lblRefArticulo.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblRefArticulo.setText("Ref.Articulo");
+
+        jtxtRefArticulo.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jtxtRefArticuloPropertyChange(evt);
+            }
+        });
 
         lblSerie.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblSerie.setText("Serie");
@@ -78,6 +83,10 @@ public class ArticuloGUI extends JGuiSimple {
         add(jGuiSimple1);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jtxtRefArticuloPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jtxtRefArticuloPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtRefArticuloPropertyChange
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private jguiextensible.JGuiSimple jGuiSimple1;
@@ -86,6 +95,40 @@ public class ArticuloGUI extends JGuiSimple {
     private javax.swing.JLabel lblRefArticulo;
     private javax.swing.JLabel lblSerie;
     // End of variables declaration//GEN-END:variables
-@Override
-    protected void actualizarCambio(String id, Object obj) {}
+    @Override
+  
+    protected boolean validacion( ) {
+        
+        if (!Validar.campoVacio(jtxtRefArticulo.getText())) {
+                   
+              Validar.mostrar("ERROR: Falta introducir datos:\n "
+                          + this.getName() +"-> Referencia articulo");
+             jtxtRefArticulo.requestFocusInWindow();
+              
+            return false;
+        } 
+        
+        if (!Validar.campoVacio(jtxtSerie.getText())) {
+                      
+            Validar.mostrar("ERROR: Falta introducir datos:\n "
+                          + this.getName() +"-> Serie");
+            jtxtSerie.requestFocusInWindow();
+           
+            return false;
+        } 
+        
+        return true;
+    } 
+ 
+    
+    protected void actualizarCambio(String id, Object value) {
+      
+       if (id.equals("rangoMedida")) {  
+          
+       jtxtRefArticulo.setText(String.valueOf(value));
+       jtxtSerie.setText(String.valueOf(value));
+       
+       }
+       
+    }
 }

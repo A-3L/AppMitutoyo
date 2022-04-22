@@ -4,7 +4,6 @@
  */
 package appmitutoyo;
 
-import appmitutoyo.interfaces.Especificaciones;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import javax.swing.JFrame;
@@ -47,7 +46,6 @@ public class AppMitutoyo {
     }
      
     private static void init() {
-      Especificaciones esp = new Especificaciones(); 
         
       Calibre cal = new Calibre();
       Calibre calAbsDig = new CalibreDigimatic();
@@ -57,13 +55,13 @@ public class AppMitutoyo {
       
     // JGuiExtensible gui1 = cal.createDialog();
      //JGuiExtensible gui2 = calAbsDig.createDialog();
-    // JGuiExtensible gui3 = calAlt.createDialog();
+     //JGuiExtensible gui3 = calAlt.createDialog();
      // JGuiExtensible gui4 = micro.createDialog();
       JGuiExtensible gui5 = microInt.createDialog();
       
      // crearFrame(gui1);
      // crearFrame(gui2);
-     // crearFrame(gui3);
+      //crearFrame(gui3);
       // crearFrame(gui4);
       crearFrame(gui5);
        

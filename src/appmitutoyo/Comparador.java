@@ -25,11 +25,11 @@ public class Comparador {
     
       protected JGuiExtensible createDialog() {
        
-        JGuiExtensible dialog =  factory.createDialog(JTipoGui.SIMPLE,false);
-        JGuiExtensible metComp = new MetricaComparadorGUI(); 
+        //JGuiExtensible dialog =  factory.createDialog(JTipoGui.SIMPLE,false);
+        JGuiExtensible dialog = new MetricaComparadorGUI(); 
         JGuiExtensible metMicr = new MetricaMicrometricaGUI();
         
-        dialog.addExtensibleChild(metComp);
+       // dialog.addExtensibleChild(metComp);
         dialog.addExtensibleChild(metMicr);
         dialog.setName("Comparador");
        

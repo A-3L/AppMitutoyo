@@ -5,8 +5,6 @@
 package appmitutoyo;
 
 import appmitutoyo.interfaces.VisualizadorGUI;
-import appmitutoyo.interfaces.Especificaciones;
-import java.util.Arrays;
 import jguiextensible.JGuiExtensible;
 
 /**
@@ -15,11 +13,10 @@ import jguiextensible.JGuiExtensible;
  */
 public class CalibreDigimatic extends Calibre {
 
-    private Especificaciones especif;
+   
     
     public CalibreDigimatic() {
-        
-        especif= new Especificaciones();
+       
     }
     
     @Override

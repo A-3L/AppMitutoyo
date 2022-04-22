@@ -109,6 +109,6 @@ public class FuncionesGUI extends JGuiSimple {
     private javax.swing.JCheckBox jchkValoracionGoNg;
     private jguiextensible.JGuiSimple jguiFunciones;
     // End of variables declaration//GEN-END:variables
-@Override
-    protected void actualizarCambio(String id, Object obj) {}
+    @Override
+     protected void actualizarCambio(String id, Object value) {}
 }

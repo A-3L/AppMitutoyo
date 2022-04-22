@@ -4,9 +4,6 @@
  */
 package appmitutoyo.interfaces;
 
-import appmitutoyo.interfaces.Especificaciones;
-import java.awt.LayoutManager;
-import javax.swing.GroupLayout;
 import jguiextensible.JGuiSimple;
 
 /**
@@ -17,14 +14,14 @@ public class DimensionesGUI extends JGuiSimple {
 
     private static final long serialVersionUID = 1L;
   
-    Especificaciones especif;
+   
     /**
      * Creates new form CalibreGui
      */
     public DimensionesGUI() {
         
         initComponents();
-        especif = new Especificaciones();      
+        
     }
 
     /**
@@ -41,16 +38,16 @@ public class DimensionesGUI extends JGuiSimple {
         lblPeso = new javax.swing.JLabel();
         lblMedida_b = new javax.swing.JLabel();
         lblMedida_d = new javax.swing.JLabel();
-        jtxtLongitud = new javax.swing.JTextField();
-        jtxtPeso = new javax.swing.JTextField();
-        jtxtMedida_b = new javax.swing.JTextField();
-        jtxtMedida_d = new javax.swing.JTextField();
         lblMedida_a = new javax.swing.JLabel();
         lblMedida_c = new javax.swing.JLabel();
         lblMedida_e = new javax.swing.JLabel();
-        jtxtMedida_a = new javax.swing.JTextField();
-        jtxtMedida_c = new javax.swing.JTextField();
-        jtxtMedida_e = new javax.swing.JTextField();
+        jftxLongitud = new javax.swing.JFormattedTextField();
+        jftxPeso = new javax.swing.JFormattedTextField();
+        jftxMedida_b = new javax.swing.JFormattedTextField();
+        jftxMedida_d = new javax.swing.JFormattedTextField();
+        jftxMedida_a = new javax.swing.JFormattedTextField();
+        jftxMedida_c = new javax.swing.JFormattedTextField();
+        jftxMedida_e = new javax.swing.JFormattedTextField();
 
         setName("Dimensiones"); // NOI18N
 
@@ -78,6 +75,27 @@ public class DimensionesGUI extends JGuiSimple {
         lblMedida_e.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblMedida_e.setText("e [mm]");
 
+        jftxLongitud.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxLongitud.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
+        jftxPeso.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxPeso.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
+        jftxMedida_b.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxMedida_b.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
+        jftxMedida_d.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxMedida_d.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
+        jftxMedida_a.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxMedida_a.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
+        jftxMedida_c.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxMedida_c.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
+        jftxMedida_e.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxMedida_e.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
         javax.swing.GroupLayout panelDimensionesLayout = new javax.swing.GroupLayout(panelDimensiones);
         panelDimensiones.setLayout(panelDimensionesLayout);
         panelDimensionesLayout.setHorizontalGroup(
@@ -85,81 +103,85 @@ public class DimensionesGUI extends JGuiSimple {
             .addGroup(panelDimensionesLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLongitud)
-                    .addComponent(lblPeso)
-                    .addComponent(lblMedida_b)
-                    .addComponent(lblMedida_d))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtxtLongitud, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxtPeso, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-                    .addComponent(jtxtMedida_b, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtxtMedida_d))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDimensionesLayout.createSequentialGroup()
-                        .addComponent(lblMedida_a, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 43, Short.MAX_VALUE)
-                        .addComponent(jtxtMedida_a, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelDimensionesLayout.createSequentialGroup()
-                        .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblMedida_e)
-                            .addComponent(lblMedida_c, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblMedida_b)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jftxMedida_b, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(lblMedida_c, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtxtMedida_e, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxtMedida_c, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jftxMedida_c, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelDimensionesLayout.createSequentialGroup()
+                        .addComponent(lblMedida_d)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jftxMedida_d, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(lblMedida_e)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jftxMedida_e, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelDimensionesLayout.createSequentialGroup()
+                        .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelDimensionesLayout.createSequentialGroup()
+                                .addComponent(lblLongitud)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jftxLongitud, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelDimensionesLayout.createSequentialGroup()
+                                .addComponent(lblPeso)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jftxPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(lblMedida_a, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jftxMedida_a, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        panelDimensionesLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jtxtLongitud, jtxtMedida_a, jtxtMedida_b, jtxtMedida_c, jtxtMedida_d, jtxtMedida_e, jtxtPeso});
 
         panelDimensionesLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblMedida_a, lblMedida_c, lblMedida_e});
 
         panelDimensionesLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblLongitud, lblMedida_b, lblMedida_d, lblPeso});
 
+        panelDimensionesLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jftxLongitud, jftxMedida_a, jftxMedida_b, jftxMedida_c, jftxMedida_d, jftxMedida_e, jftxPeso});
+
         panelDimensionesLayout.setVerticalGroup(
             panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelDimensionesLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLongitud, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxtLongitud, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPeso, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxtPeso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMedida_a, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxtMedida_a, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblMedida_b, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxtMedida_b, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMedida_c, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxtMedida_c, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblMedida_d, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxtMedida_d, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMedida_e, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jtxtMedida_e, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblLongitud)
+                    .addComponent(jftxLongitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblPeso)
+                    .addComponent(jftxPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMedida_a)
+                    .addComponent(jftxMedida_a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblMedida_b)
+                    .addComponent(jftxMedida_b, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMedida_c)
+                    .addComponent(jftxMedida_c, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblMedida_d)
+                    .addComponent(jftxMedida_d, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMedida_e)
+                    .addComponent(jftxMedida_e, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        panelDimensionesLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jtxtLongitud, jtxtMedida_a, jtxtMedida_b, jtxtMedida_c, jtxtMedida_d, jtxtMedida_e, jtxtPeso});
 
         add(panelDimensiones);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField jtxtLongitud;
-    private javax.swing.JTextField jtxtMedida_a;
-    private javax.swing.JTextField jtxtMedida_b;
-    private javax.swing.JTextField jtxtMedida_c;
-    private javax.swing.JTextField jtxtMedida_d;
-    private javax.swing.JTextField jtxtMedida_e;
-    private javax.swing.JTextField jtxtPeso;
+    private javax.swing.JFormattedTextField jftxLongitud;
+    private javax.swing.JFormattedTextField jftxMedida_a;
+    private javax.swing.JFormattedTextField jftxMedida_b;
+    private javax.swing.JFormattedTextField jftxMedida_c;
+    private javax.swing.JFormattedTextField jftxMedida_d;
+    private javax.swing.JFormattedTextField jftxMedida_e;
+    private javax.swing.JFormattedTextField jftxPeso;
     private javax.swing.JLabel lblLongitud;
     private javax.swing.JLabel lblMedida_a;
     private javax.swing.JLabel lblMedida_b;
@@ -170,6 +192,76 @@ public class DimensionesGUI extends JGuiSimple {
     private javax.swing.JPanel panelDimensiones;
     // End of variables declaration//GEN-END:variables
 
-@Override
-    protected void actualizarCambio(String id, Object obj) {}
+    @Override
+   protected boolean validacion() {
+     
+       if (jftxLongitud.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Longitud");
+            jftxLongitud.requestFocusInWindow();
+        
+            return false;
+        }   
+       
+        if (jftxMedida_a.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Medida_a");
+            jftxMedida_a.requestFocusInWindow();
+        
+            return false;
+        }   
+        
+        if (jftxMedida_b.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Medida_b");
+            jftxMedida_b.requestFocusInWindow();
+        
+            return false;
+        }   
+        
+        if (jftxMedida_c.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Medida_c");
+            jftxMedida_c.requestFocusInWindow();
+        
+            return false;
+        }   
+        
+        if (jftxMedida_d.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Medida_d");
+            jftxMedida_d.requestFocusInWindow();
+        
+            return false;
+        }   
+        
+        if (jftxMedida_e.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Medida_e");
+            jftxMedida_e.requestFocusInWindow();
+        
+            return false;
+        }   
+        
+        if (jftxPeso.getValue() == null){
+            
+             Validar.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Peso");
+            jftxPeso.requestFocusInWindow();
+        
+            return false;
+        }   
+       
+        
+    return true;    
+   }
+
+    @Override
+   protected void actualizarCambio(String id, Object value) {}
 }
