@@ -4,9 +4,8 @@
  */
 package appmitutoyo;
 
-import appmitutoyo.interfaces.ArticuloGUI;
-import appmitutoyo.interfaces.DimensionesGUI;
-import jguiextensible.JFactory;
+import appmitutoyo.interfaces.Articulo;
+import appmitutoyo.interfaces.Dimensiones;
 import jguiextensible.JGuiExtensible;
 
 /**
@@ -14,26 +13,24 @@ import jguiextensible.JGuiExtensible;
  * @author a31r1z
  */
 public class Calibre {
-        
-     public Calibre() {
-           
+    
+    private Articulo articulo = new Articulo();
+    private Dimensiones dimensiones = new Dimensiones();
+    
+    
+    public Calibre() {
+         
     }
  
-      protected JGuiExtensible createDialog() {
+    protected JGuiExtensible createDialog() {
+                
+        JGuiExtensible articuloGui = articulo.createDialog();
+        JGuiExtensible dimensionesGui = dimensiones.createDialog();
         
-        ArticuloGUI articulo = new ArticuloGUI();
-        DimensionesGUI dimensiones = new DimensionesGUI();
-        
-        articulo.addExtensibleChild(dimensiones);
-        articulo.setName("Calibre");
-                               
-        return articulo;
+        articuloGui.addExtensibleChild(dimensionesGui);
+        articuloGui.setName("Calibre");
+                      
+        return articuloGui;
     }
-
   
-   
-    
-  
-    
- 
 }

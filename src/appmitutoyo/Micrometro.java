@@ -6,6 +6,7 @@ package appmitutoyo;
 
 import appmitutoyo.interfaces.MetricaMicrometricaGUI;
 import appmitutoyo.interfaces.FuncionesGUI;
+import appmitutoyo.interfaces.Utilidades;
 import java.util.Arrays;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
@@ -16,12 +17,11 @@ import jguiextensible.JTipoGui;
  * @author a31r1z
  */
 public class Micrometro {
-    
-    private JFactory factory;
+   
 
     public Micrometro() {
         
-        factory = new JFactory();
+       
     }
     
      protected JGuiExtensible createDialog() {
@@ -33,7 +33,7 @@ public class Micrometro {
          //funciones.setName("Funciones");
          
          dialog.addExtensibleChild(funciones);
-         dialog.setName("Micrometro");
+         //dialog.setName("Micrometro");
                
         return dialog;       
     }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="17.0.3" class="java.beans.XMLDecoder">
+ <object class="appmitutoyo.CalibreDeAlturas">
+  <void property="graduacion">
+   <int>9</int>
+  </void>
+  <void property="precision">
+   <int>9</int>
+  </void>
+  <void property="presionDeMedida">
+   <int>9</int>
+  </void>
+  <void property="rango">
+   <int>9</int>
+  </void>
+  <void property="resolucion">
+   <int>9</int>
+  </void>
+ </object>
+</java>

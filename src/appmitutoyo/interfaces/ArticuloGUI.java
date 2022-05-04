@@ -4,6 +4,10 @@
  */
 package appmitutoyo.interfaces;
 
+import appmitutoyo.Calibre;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import jguiextensible.JGuiExtensible;
 import jguiextensible.JGuiSimple;
 
 /**
@@ -12,8 +16,9 @@ import jguiextensible.JGuiSimple;
  */
 public class ArticuloGUI extends JGuiSimple {
     
+    private Calibre cal = new Calibre();
+    private Articulo articulo= new Articulo();
    
-
     /**
      * Creates new form Articulo
      */
@@ -37,21 +42,21 @@ public class ArticuloGUI extends JGuiSimple {
         lblSerie = new javax.swing.JLabel();
         jtxtSerie = new javax.swing.JTextField();
 
+        setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         setName("Articulo"); // NOI18N
 
         jGuiSimple1.setBorder(javax.swing.BorderFactory.createTitledBorder("Articulo"));
+        jGuiSimple1.setName("Articulo"); // NOI18N
 
         lblRefArticulo.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblRefArticulo.setText("Ref.Articulo");
 
-        jtxtRefArticulo.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jtxtRefArticuloPropertyChange(evt);
-            }
-        });
+        jtxtRefArticulo.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         lblSerie.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblSerie.setText("Serie");
+
+        jtxtSerie.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         javax.swing.GroupLayout jGuiSimple1Layout = new javax.swing.GroupLayout(jGuiSimple1);
         jGuiSimple1.setLayout(jGuiSimple1Layout);
@@ -60,9 +65,9 @@ public class ArticuloGUI extends JGuiSimple {
             .addGroup(jGuiSimple1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblRefArticulo)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jtxtRefArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(lblSerie)
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jtxtSerie, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -71,21 +76,19 @@ public class ArticuloGUI extends JGuiSimple {
         jGuiSimple1Layout.setVerticalGroup(
             jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jGuiSimple1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(lblRefArticulo)
                     .addComponent(jtxtRefArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSerie)
                     .addComponent(jtxtSerie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         add(jGuiSimple1);
-    }// </editor-fold>//GEN-END:initComponents
 
-    private void jtxtRefArticuloPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jtxtRefArticuloPropertyChange
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxtRefArticuloPropertyChange
+        getAccessibleContext().setAccessibleName("Articulo");
+    }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -97,20 +100,22 @@ public class ArticuloGUI extends JGuiSimple {
     // End of variables declaration//GEN-END:variables
     @Override
   
-    protected boolean validacion( ) {
+    
+    protected boolean validarDatos() {
         
-        if (!Validar.campoVacio(jtxtRefArticulo.getText())) {
+        
+        if (!Utilidades.validarCampoVacio(jtxtRefArticulo.getText())) {
                    
-              Validar.mostrar("ERROR: Falta introducir datos:\n "
+              Utilidades.mostrar("ERROR: Falta introducir datos:\n "
                           + this.getName() +"-> Referencia articulo");
              jtxtRefArticulo.requestFocusInWindow();
               
             return false;
         } 
         
-        if (!Validar.campoVacio(jtxtSerie.getText())) {
+        if (!Utilidades.validarCampoVacio(jtxtSerie.getText())) {
                       
-            Validar.mostrar("ERROR: Falta introducir datos:\n "
+            Utilidades.mostrar("ERROR: Falta introducir datos:\n "
                           + this.getName() +"-> Serie");
             jtxtSerie.requestFocusInWindow();
            
@@ -118,11 +123,26 @@ public class ArticuloGUI extends JGuiSimple {
         } 
         
         return true;
-    } 
+    }
  
+    @Override
+    protected void guardarDatos() {
+        
+        articulo.setRefArticulo(jtxtRefArticulo.getText());
+        articulo.setSerie(jtxtSerie.getText());
+    }
     
+    @Override
+    protected void limpiarDatos() {
+        
+        jtxtRefArticulo.setText(null);
+        jtxtSerie.setText(null);
+    }
+    
+    @Override
     protected void actualizarCambio(String id, Object value) {
       
+        System.out.println("Actualizando Articulo");
        if (id.equals("rangoMedida")) {  
           
        jtxtRefArticulo.setText(String.valueOf(value));
@@ -130,5 +150,7 @@ public class ArticuloGUI extends JGuiSimple {
        
        }
        
-    }
+    } 
+    
+    
 }

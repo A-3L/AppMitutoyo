@@ -13,6 +13,8 @@ import jguiextensible.JGuiSimple;
 public class FuncionesGUI extends JGuiSimple {
 
     private static final long serialVersionUID = 1L;
+    
+    private Funciones funciones = new Funciones();
 
     /**
      * Creates new form NewBeanForm
@@ -110,5 +112,32 @@ public class FuncionesGUI extends JGuiSimple {
     private jguiextensible.JGuiSimple jguiFunciones;
     // End of variables declaration//GEN-END:variables
     @Override
-     protected void actualizarCambio(String id, Object value) {}
+    protected void guardarDatos() {
+        
+        funciones.setAjusteFino(jchkAjusteFino.isSelected());
+        funciones.setBloqueo(jchkBloqueo.isSelected());
+        funciones.setCambioSentidoContaje(jchkCambioSentidoContaje.isSelected());
+        funciones.setSalidaDeDatos(jchkSalidaDeDatos.isSelected());
+        funciones.setSelectorZeroAbs(jchkSelectorZeroAbs.isSelected());
+        funciones.setValoracionGoNg(jchkValoracionGoNg.isSelected());
+        
+    }
+    
+    @Override
+    protected void limpiarDatos() {
+        
+       jchkAjusteFino.setSelected(false);
+       jchkBloqueo.setSelected(false);
+       jchkCambioSentidoContaje.setSelected(false);
+       jchkSalidaDeDatos.setSelected(false);
+       jchkSelectorZeroAbs.setSelected(false);
+       jchkValoracionGoNg.setSelected(false);
+       
+    }
+    
+    
+    @Override
+     protected void actualizarCambio(String id, Object value) { }
+     
+  
 }

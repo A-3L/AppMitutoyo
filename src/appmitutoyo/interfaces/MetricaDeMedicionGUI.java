@@ -4,14 +4,22 @@
  */
 package appmitutoyo.interfaces;
 
+import appmitutoyo.CalibreDeAlturas;
 import java.awt.Component;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.beans.XMLEncoder;
+import java.io.BufferedOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.EventObject;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComponent;
 import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import jguiextensible.JGuiExtensible;
 import jguiextensible.JGuiSimple;
 import jguiextensible.JGuiTabbed;
 
@@ -22,6 +30,8 @@ import jguiextensible.JGuiTabbed;
 public class MetricaDeMedicionGUI extends JGuiTabbed {
 
     private static final long serialVersionUID = 1L;
+    
+    private MetricaDeMedicion metDeMed = new MetricaDeMedicion();
   
     /**
      * Creates new form CalibrePieDeReyGui
@@ -75,6 +85,23 @@ public class MetricaDeMedicionGUI extends JGuiTabbed {
 
         jftxRango.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxRango.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxRango.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
+        jftxPrecision.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxPrecision.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxPrecision.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
+        jftxResolucion.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxResolucion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxResolucion.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
+        jftxGraduacion.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxGraduacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxGraduacion.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
+        jftxPresionDeMedida.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxPresionDeMedida.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxPresionDeMedida.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         javax.swing.GroupLayout panelMetrMedicionLayout = new javax.swing.GroupLayout(panelMetrMedicion);
         panelMetrMedicion.setLayout(panelMetrMedicionLayout);
@@ -109,19 +136,19 @@ public class MetricaDeMedicionGUI extends JGuiTabbed {
                 .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(lblRango)
                     .addComponent(jftxRango, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 19, Short.MAX_VALUE)
+                .addGap(18, 22, Short.MAX_VALUE)
                 .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPrecision)
                     .addComponent(jftxPrecision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 20, Short.MAX_VALUE)
+                .addGap(18, 23, Short.MAX_VALUE)
                 .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblResolucion)
                     .addComponent(jftxResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 20, Short.MAX_VALUE)
+                .addGap(18, 23, Short.MAX_VALUE)
                 .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblGraduacion)
                     .addComponent(jftxGraduacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 20, Short.MAX_VALUE)
+                .addGap(18, 23, Short.MAX_VALUE)
                 .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPresionMedida)
                     .addComponent(jftxPresionDeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -129,6 +156,8 @@ public class MetricaDeMedicionGUI extends JGuiTabbed {
         );
 
         add(panelMetrMedicion);
+
+        getAccessibleContext().setAccessibleName("Metrica de medicion");
     }// </editor-fold>//GEN-END:initComponents
   
          
@@ -148,25 +177,26 @@ public class MetricaDeMedicionGUI extends JGuiTabbed {
 
     @Override
     protected void actualizarCambio(String id, Object value) {
-    
+        System.out.println("Actualizando Metrica De Medicion");
      if (id.equals("rangoMedida")) {  
           
-       jftxRango.setText(String.valueOf(value));  
+       jftxRango.setValue(value); 
+       
      }
      
      if(id.equals("errorMax")) {
          
-        System.out.println("YEPIYEI" +String.valueOf(value));               
+        System.out.println("YEPIYEI " +String.valueOf(value));               
      }
    
     }
-
-       @Override
-    protected boolean validacion( ) {
+    
+    @Override
+   protected boolean validarDatos() {
         
        if (jftxRango.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Rango");
             jftxRango.requestFocusInWindow();
         
@@ -175,7 +205,7 @@ public class MetricaDeMedicionGUI extends JGuiTabbed {
        
        if (jftxPrecision.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Precision");
             jftxPrecision.requestFocusInWindow();
         
@@ -184,7 +214,7 @@ public class MetricaDeMedicionGUI extends JGuiTabbed {
        
        if (jftxResolucion.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Resolucion");
             jftxResolucion.requestFocusInWindow();
         
@@ -193,7 +223,7 @@ public class MetricaDeMedicionGUI extends JGuiTabbed {
        
        if (jftxGraduacion.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Graduacion");
             jftxGraduacion.requestFocusInWindow();
         
@@ -202,27 +232,28 @@ public class MetricaDeMedicionGUI extends JGuiTabbed {
        
        if (jftxPresionDeMedida.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Presion de medida");
             jftxPresionDeMedida.requestFocusInWindow();
         
             return false;
         } 
+       
+       guardarDatos();
         return true;
     } 
-    
-    protected boolean validateThis(Component ... args) {
-        
-        for(Component arg : args) {
-            var comp = arg; 
-        }    
-        return true;     
-    }
-    
-    protected boolean updateThis(String id, Object obj) {
-        
-        return false;
-        
-    }
   
+    @Override
+      protected void guardarDatos() {
+  
+     metDeMed.setGraduacion(Integer.valueOf(String.valueOf(jftxGraduacion.getValue())));
+     metDeMed.setRango(Integer.valueOf(String.valueOf(jftxRango.getValue())));
+     metDeMed.setPrecision(Integer.valueOf(String.valueOf(jftxPrecision.getValue())));
+     metDeMed.setResolucion(Integer.valueOf(String.valueOf(jftxResolucion.getValue())));
+     metDeMed.setPresionDeMedida(Integer.valueOf(String.valueOf(jftxPresionDeMedida.getValue())));
+     
+     Utilidades.saveInXml("Test MetDeMed", metDeMed);
+
+     
+    }
 }

@@ -15,31 +15,43 @@ import jguiextensible.JTipoGui;
  */
 public class MicrometroDeInteriores extends Micrometro {
     
-    private final JFactory factory;
+    private JFactory factory;
 
     public MicrometroDeInteriores() {
         
-        factory = new JFactory();
+       
     }
     
+    @Override
        protected JGuiExtensible createDialog() {
-        
+           
+        factory = new JFactory();  
         JGuiExtensible dialog = factory.createDialog(JTipoGui.TREE, true);
-        JGuiExtensible mic =super.createDialog();
-        JGuiExtensible micDeInt = new MetricaDeInterioresGUI();
+       
+        
+        CalibreDeAlturas calAlt = new CalibreDeAlturas();
+        JGuiExtensible calAltGui = calAlt.createDialog();
+       // JGuiExtensible metrDeInt = new MetricaDeInterioresGUI();
         Comparador comp = new Comparador();
         JGuiExtensible compGui = comp.createDialog();
-        Calibre cal = new Calibre();
-        CalibreDeAlturas calAlt = new CalibreDeAlturas();
-        CalibreDigimatic calDig = new CalibreDigimatic();
-           
+        //Calibre cal = new Calibre();
+        
+        //CalibreDigimatic calDig = new CalibreDigimatic();
+         JGuiExtensible mic =super.createDialog();
+       
+        dialog.addExtensibleChild(calAltGui);
         dialog.addExtensibleChild(mic);
-        dialog.addExtensibleChild(micDeInt);
+       // dialog.addExtensibleChild(metrDeInt);
         dialog.addExtensibleChild(compGui);
-        dialog.addExtensibleChild(calAlt.createDialog());
-        dialog.addExtensibleChild(calDig.createDialog());
-        dialog.addExtensibleChild(cal.createDialog());
+       // dialog.addExtensibleChild(calAlt.createDialog());
+       // dialog.addExtensibleChild(calDig.createDialog());
+        
+        calAltGui.setName("Especificaciones");
         dialog.setName("Micrometro de interiores");
+        
+       // Calibre cal = new Calibre();
+       // dialog.addExtensibleChild(cal.createDialog());
+         
                       
         return dialog;
     }

@@ -58,6 +58,9 @@ public class VisualizadorGUI extends JGuiSimple {
         jchkFuncionTolerancia.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jchkFuncionTolerancia.setText("Funcion de Tolerancia");
 
+        jftxResolucion.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxResolucion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxResolucion.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jftxResolucion.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 jftxResolucionPropertyChange(evt);
@@ -134,11 +137,11 @@ public class VisualizadorGUI extends JGuiSimple {
      * @return
      */
     @Override  
-    protected boolean validacion( ) {  
+    protected boolean validarDatos( ) {  
     
     if (jftxResolucion.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Resolucion");
             jftxResolucion.requestFocusInWindow();
         
@@ -147,7 +150,7 @@ public class VisualizadorGUI extends JGuiSimple {
     
      if (jcbVisualizador.getSelectedIndex() == 0){
             
-             Validar.mostrar("ERROR: Falta seleccion en:\n "
+             Utilidades.mostrar("ERROR: Falta seleccion en:\n "
                           + this.getName() +"-> Visualizador");
             jcbVisualizador.requestFocusInWindow();
         

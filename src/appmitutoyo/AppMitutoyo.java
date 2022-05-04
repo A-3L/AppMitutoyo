@@ -4,8 +4,16 @@
  */
 package appmitutoyo;
 
+import appmitutoyo.interfaces.Utilidades;
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
@@ -15,8 +23,9 @@ import jguiextensible.JTipoGui;
  *
  * @author a31r1z
  */
-public class AppMitutoyo {
-
+public class AppMitutoyo extends WindowAdapter{
+    
+private static final List<JGuiExtensible> lista = new ArrayList<>();
     /**
      * @param args the command line arguments
      */
@@ -26,45 +35,40 @@ public class AppMitutoyo {
          init();
      });
     }
-    
-     private static JFrame crearFrame(Container gui) {
-       
-    JFrame frame;
-    frame= new JFrame(gui.getName());
-     
-    frame.add(gui, BorderLayout.CENTER);
-    frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    frame.setTitle(gui.getName());
-    
-    frame.pack();
-    frame.setLocationRelativeTo(null);
-    frame.setVisible(true);
-    frame.setMinimumSize(frame.getMinimumSize());
-   
-    return frame;
-    
-    }
      
     private static void init() {
         
-      Calibre cal = new Calibre();
-      Calibre calAbsDig = new CalibreDigimatic();
-      Calibre calAlt = new CalibreDeAlturas();
-      Micrometro micro = new Micrometro();
-      MicrometroDeInteriores microInt = new MicrometroDeInteriores();
-      
-    // JGuiExtensible gui1 = cal.createDialog();
-     //JGuiExtensible gui2 = calAbsDig.createDialog();
-     //JGuiExtensible gui3 = calAlt.createDialog();
-     // JGuiExtensible gui4 = micro.createDialog();
-      JGuiExtensible gui5 = microInt.createDialog();
-      
-     // crearFrame(gui1);
-     // crearFrame(gui2);
-      //crearFrame(gui3);
-      // crearFrame(gui4);
-      crearFrame(gui5);
-       
-     
+       Calibre cal = new Calibre();
+     //Calibre calAbsDig = new CalibreDigimatic();
+       Calibre calAlt = new CalibreDeAlturas();
+     //Micrometro micro = new Micrometro();
+       Comparador comp = new Comparador();
+       MicrometroDeInteriores microInt = new MicrometroDeInteriores();      
+    
+      JFrame frame1= Utilidades.crearFrame(cal.createDialog());
+      frame1.addWindowListener(new WindowAdapter() {
+         
+         @Override
+          public void windowClosed(WindowEvent evt) {
+              
+             JFrame frame2=Utilidades.crearFrame(comp.createDialog());
+             frame2.addWindowListener(new WindowAdapter() {
+                
+                 @Override
+                 public void windowClosed(WindowEvent evt) {
+                     
+                 JFrame frame3=Utilidades.crearFrame(microInt.createDialog());
+                }
+            });
+        }
+    }); 
+    
     }
-}
+    
+
+   
+} 
+        
+    
+  
+

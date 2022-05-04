@@ -14,19 +14,18 @@ import jguiextensible.JGuiSimple;
  *
  * @author a31r1z
  */
-public class MetricaComparadorGUI extends JGuiSimple {
+public class MetricaDeComparacionGUI extends JGuiSimple {
 
     private static final long serialVersionUID = 1L;
-
-    
+   
+    private MetricaDeComparacion metDeComp = new MetricaDeComparacion();
    
     /**
      * Creates new form MetricaComparador
      */
-    public MetricaComparadorGUI() {
+    public MetricaDeComparacionGUI() {
         initComponents();
-      
-        
+           
     }
 
     /**
@@ -55,8 +54,6 @@ public class MetricaComparadorGUI extends JGuiSimple {
 
         jftxErrorMax.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxErrorMax.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jftxErrorMax.setText(" ");
-        jftxErrorMax.setFocusLostBehavior(javax.swing.JFormattedTextField.REVERT);
         jftxErrorMax.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jftxErrorMax.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
@@ -88,9 +85,11 @@ public class MetricaComparadorGUI extends JGuiSimple {
         lblHyteresis.setText("Hyteresis (mm)");
 
         jftxHyteresis.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxHyteresis.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jftxHyteresis.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         jftxEscala.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxEscala.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         lblEscala.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblEscala.setText("Escala");
@@ -144,22 +143,26 @@ public class MetricaComparadorGUI extends JGuiSimple {
         add(jguiMetricaComp);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jsldRangoMedidaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jsldRangoMedidaStateChanged
-       
-        System.out.println("Notificacion Slide");
-        notificarCambio("rangoMedida", jsldRangoMedida.getValue());
-         
-    }//GEN-LAST:event_jsldRangoMedidaStateChanged
-
     private void jftxErrorMaxPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jftxErrorMaxPropertyChange
            
            if(jftxErrorMax.getValue() != null) {
-               System.out.println("Notificacion ErrorMax");
-               notificarCambio("errorMax", jftxErrorMax.getValue());
                
-           } 
-       
+               System.out.println("Notificacion ErrorMax");
+               
+               notificarCambio("errorMax", jftxErrorMax.getValue());              
+           }     
     }//GEN-LAST:event_jftxErrorMaxPropertyChange
+
+    private void jsldRangoMedidaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jsldRangoMedidaStateChanged
+       
+             System.out.println("Notificacion Slide");
+        
+        metDeComp.setRangoDeMedida(jsldRangoMedida.getValue());
+        
+             System.out.println(metDeComp.getRangoDeMedida());
+        
+        notificarCambio("rangoMedida", metDeComp.getRangoDeMedida());
+    }//GEN-LAST:event_jsldRangoMedidaStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JFormattedTextField jftxErrorMax;
@@ -175,37 +178,38 @@ public class MetricaComparadorGUI extends JGuiSimple {
 
 
     @Override
-    protected boolean validacion() {
+    protected boolean validarDatos() {
         
       if (jftxErrorMax.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Error maximo");
             jftxErrorMax.requestFocusInWindow();
         
             return false;
         } 
       
-      if (jftxEscala.getValue() == null){
+      if (jftxHyteresis.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Hyteresis");
+            jftxHyteresis.requestFocusInWindow();
+        
+            return false;
+        }
+      
+       if (jftxEscala.getValue() == null){
+            
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Escala");
             jftxEscala.requestFocusInWindow();
         
             return false;
         }   
       
-      if (jftxHyteresis.getValue() == null){
-            
-             Validar.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Hyteresis");
-            jftxHyteresis.requestFocusInWindow();
-        
-            return false;
-        }   
-      
         return true;   
     }
-    @Override
+   
+      @Override
    protected void actualizarCambio(String id, Object value) {}
 }

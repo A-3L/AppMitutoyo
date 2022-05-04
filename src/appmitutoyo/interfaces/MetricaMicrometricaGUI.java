@@ -4,6 +4,7 @@
  */
 package appmitutoyo.interfaces;
 
+import javax.swing.JTextField;
 import jguiextensible.JGuiSimple;
 import jguiextensible.JGuiTabbed;
 
@@ -60,6 +61,26 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
 
         lblRectitud.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblRectitud.setText("Rectitud (µm)");
+
+        jftxAvance.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxAvance.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxAvance.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
+        jftxPlanitud.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxPlanitud.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxPlanitud.setFocusLostBehavior(javax.swing.JFormattedTextField.COMMIT);
+        jftxPlanitud.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
+        jftxParalelismo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxParalelismo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxParalelismo.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
+        jftxPerpendicularidad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxPerpendicularidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jftxRectitud.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxRectitud.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxRectitud.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         javax.swing.GroupLayout panelMetrMicrometricaLayout = new javax.swing.GroupLayout(panelMetrMicrometrica);
         panelMetrMicrometrica.setLayout(panelMetrMicrometricaLayout);
@@ -130,20 +151,29 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
     // End of variables declaration//GEN-END:variables
 
     @Override
- protected boolean validacion( ) {
-        
+ protected boolean validarDatos( ) {
+       
         if (jftxAvance.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Avance");
             jftxAvance.requestFocusInWindow();
+        
+            return false;
+        }
+       
+        if (jftxPlanitud.getValue() == null){
+            
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Planitud");
+            jftxPlanitud.requestFocusInWindow();
         
             return false;
         }
         
         if (jftxParalelismo.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Paralelismo");
             jftxParalelismo.requestFocusInWindow();
         
@@ -152,25 +182,18 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
         
         if (jftxPerpendicularidad.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Perpendicularidad");
             jftxPerpendicularidad.requestFocusInWindow();
         
             return false;
         }
         
-        if (jftxPlanitud.getValue() == null){
-            
-             Validar.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Planitud");
-            jftxPlanitud.requestFocusInWindow();
         
-            return false;
-        }
         
         if (jftxRectitud.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Rectitud");
             jftxRectitud.requestFocusInWindow();
         
@@ -179,6 +202,7 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
              
     return true;    
  }
+ 
     @Override
     protected void actualizarCambio(String id, Object value) {}
 }

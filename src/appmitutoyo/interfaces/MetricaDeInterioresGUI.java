@@ -171,11 +171,11 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
     
     
     @Override
-    protected boolean validacion( ) {
+    protected boolean validarDatos( ) {
         
         if (jftxRangoInterior.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Rango interior");
             jftxRangoInterior.requestFocusInWindow();
         
@@ -184,7 +184,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
         
         if (jftxMedida_R.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Medida_R");
             jftxMedida_R.requestFocusInWindow();
         
@@ -194,7 +194,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
               
         if (jftxMetricaInterior.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Metrica interior desde");
             jftxMetricaInterior.requestFocusInWindow();
         
@@ -203,7 +203,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
         
         if (jftxMetrica_f.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Medida_f");
             jftxMetrica_f.requestFocusInWindow();
         
@@ -212,7 +212,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
         
         if (jcboxPuntosMedicion.getSelectedIndex() == 0){
             
-             Validar.mostrar("ERROR: Falta seleccion en:\n "
+             Utilidades.mostrar("ERROR: Falta seleccion en:\n "
                           + this.getName() +"-> Puntos de medicion");
             jcboxPuntosMedicion.requestFocusInWindow();
         
@@ -221,7 +221,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
         
         if (jftxMedida_g.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Medida_g");
             jftxMedida_g.requestFocusInWindow();
         
@@ -234,7 +234,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
     /*   protected boolean validateThis(boolean arg) {
     
     if (!arg) {
-    Validar.mostrar("ERROR: Faltan introducir datos.");
+    Utilidades.mostrar("ERROR: Faltan introducir datos.");
     return false;
     }
     

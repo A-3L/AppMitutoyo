@@ -4,6 +4,13 @@
  */
 package appmitutoyo.interfaces;
 
+import appmitutoyo.Calibre;
+import java.beans.XMLEncoder;
+import java.io.BufferedOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import jguiextensible.JGuiSimple;
 
 /**
@@ -13,6 +20,8 @@ import jguiextensible.JGuiSimple;
 public class DimensionesGUI extends JGuiSimple {
 
     private static final long serialVersionUID = 1L;
+   
+    private Dimensiones dimensiones= new Dimensiones();
   
    
     /**
@@ -75,24 +84,31 @@ public class DimensionesGUI extends JGuiSimple {
         lblMedida_e.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblMedida_e.setText("e [mm]");
 
+        jftxLongitud.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxLongitud.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jftxLongitud.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
+        jftxPeso.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxPeso.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jftxPeso.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
+        jftxMedida_b.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxMedida_b.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jftxMedida_b.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
+        jftxMedida_d.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxMedida_d.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jftxMedida_d.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
+        jftxMedida_a.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxMedida_a.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jftxMedida_a.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
+        jftxMedida_c.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxMedida_c.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jftxMedida_c.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
+        jftxMedida_e.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxMedida_e.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jftxMedida_e.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
@@ -105,7 +121,7 @@ public class DimensionesGUI extends JGuiSimple {
                 .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelDimensionesLayout.createSequentialGroup()
                         .addComponent(lblMedida_b)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jftxMedida_b, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(lblMedida_c, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -113,7 +129,7 @@ public class DimensionesGUI extends JGuiSimple {
                         .addComponent(jftxMedida_c, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelDimensionesLayout.createSequentialGroup()
                         .addComponent(lblMedida_d)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jftxMedida_d, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(lblMedida_e)
@@ -123,15 +139,15 @@ public class DimensionesGUI extends JGuiSimple {
                         .addGroup(panelDimensionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelDimensionesLayout.createSequentialGroup()
                                 .addComponent(lblLongitud)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jftxLongitud, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelDimensionesLayout.createSequentialGroup()
                                 .addComponent(lblPeso)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jftxPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addComponent(lblMedida_a, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jftxMedida_a, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -171,6 +187,8 @@ public class DimensionesGUI extends JGuiSimple {
         );
 
         add(panelDimensiones);
+
+        getAccessibleContext().setAccessibleName("Dimensiones");
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -193,20 +211,31 @@ public class DimensionesGUI extends JGuiSimple {
     // End of variables declaration//GEN-END:variables
 
     @Override
-   protected boolean validacion() {
+    protected boolean validarDatos() {
+        
      
        if (jftxLongitud.getValue() == null){
-            
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Longitud");
             jftxLongitud.requestFocusInWindow();
+        
+            return false;
+        }
+     
+       
+        if (jftxPeso.getValue() == null){
+            
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> Peso");
+            jftxPeso.requestFocusInWindow();
         
             return false;
         }   
        
         if (jftxMedida_a.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Medida_a");
             jftxMedida_a.requestFocusInWindow();
         
@@ -215,7 +244,7 @@ public class DimensionesGUI extends JGuiSimple {
         
         if (jftxMedida_b.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Medida_b");
             jftxMedida_b.requestFocusInWindow();
         
@@ -224,7 +253,7 @@ public class DimensionesGUI extends JGuiSimple {
         
         if (jftxMedida_c.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Medida_c");
             jftxMedida_c.requestFocusInWindow();
         
@@ -233,7 +262,7 @@ public class DimensionesGUI extends JGuiSimple {
         
         if (jftxMedida_d.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Medida_d");
             jftxMedida_d.requestFocusInWindow();
         
@@ -242,26 +271,60 @@ public class DimensionesGUI extends JGuiSimple {
         
         if (jftxMedida_e.getValue() == null){
             
-             Validar.mostrar("ERROR: Faltan datos en:\n "
+             Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Medida_e");
             jftxMedida_e.requestFocusInWindow();
         
             return false;
-        }   
+        }        
         
-        if (jftxPeso.getValue() == null){
-            
-             Validar.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Peso");
-            jftxPeso.requestFocusInWindow();
-        
-            return false;
-        }   
        
-        
     return true;    
    }
 
+    @Override
+    protected void guardarDatos() {
+  
+       dimensiones.setLongitud(Integer.valueOf(String.valueOf(jftxLongitud.getValue())));
+       dimensiones.setMedida_a(Integer.valueOf(String.valueOf(jftxMedida_a.getValue())));
+       dimensiones.setMedida_b(Integer.valueOf(String.valueOf(jftxMedida_b.getValue())));
+       dimensiones.setMedida_c(Integer.valueOf(String.valueOf(jftxMedida_c.getValue())));
+       dimensiones.setMedida_d(Integer.valueOf(String.valueOf(jftxMedida_d.getValue())));
+       dimensiones.setMedida_e(Integer.valueOf(String.valueOf(jftxMedida_e.getValue())));
+       dimensiones.setPeso(Integer.valueOf(String.valueOf(jftxPeso.getValue())));
+  
+       Utilidades.saveInXml("Test guardarDatos",dimensiones);
+        System.out.println("GUARDANDO DATOS DimensionGui");    
+  }
+  
+    @Override
+  protected void limpiarDatos() {
+  
+       jftxLongitud.setValue(null); 
+       jftxLongitud.setText(null);
+       
+       jftxPeso.setValue(null);
+       jftxPeso.setText(null);
+       
+       jftxMedida_a.setValue(null);
+       jftxMedida_a.setText(null);
+       
+       jftxMedida_b.setValue(null);
+       jftxMedida_b.setText(null);
+       
+       jftxMedida_c.setValue(null);
+       jftxMedida_c.setText(null);
+   
+       jftxMedida_d.setValue(null);
+       jftxMedida_d.setText(null);
+  
+       jftxMedida_e.setValue(null);
+       jftxMedida_e.setText(null);
+       
+  Utilidades.saveInXml("Test limpiarDatos dimensiones", dimensiones);
+        System.out.println("BORRANDO DATOS DimensionGui");
+  }
+  
     @Override
    protected void actualizarCambio(String id, Object value) {}
 }
