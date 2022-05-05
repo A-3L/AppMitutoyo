@@ -4,10 +4,6 @@
  */
 package appmitutoyo.interfaces;
 
-import appmitutoyo.Calibre;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
-import jguiextensible.JGuiExtensible;
 import jguiextensible.JGuiSimple;
 
 /**
@@ -15,8 +11,9 @@ import jguiextensible.JGuiSimple;
  * @author a31r1z
  */
 public class ArticuloGUI extends JGuiSimple {
+
+    private static final long serialVersionUID = 1L;
     
-    private Calibre cal = new Calibre();
     private Articulo articulo= new Articulo();
    
     /**
@@ -130,6 +127,9 @@ public class ArticuloGUI extends JGuiSimple {
         
         articulo.setRefArticulo(jtxtRefArticulo.getText());
         articulo.setSerie(jtxtSerie.getText());
+        
+        articulo.guardarDatos();
+   
     }
     
     @Override

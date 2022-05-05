@@ -2,25 +2,25 @@
 <java version="17.0.3" class="java.beans.XMLDecoder">
  <object class="appmitutoyo.interfaces.Dimensiones">
   <void property="longitud">
-   <int>0</int>
+   <int>2</int>
   </void>
   <void property="medida_a">
-   <int>0</int>
+   <int>2</int>
   </void>
   <void property="medida_b">
-   <int>0</int>
+   <int>2</int>
   </void>
   <void property="medida_c">
-   <int>0</int>
+   <int>2</int>
   </void>
   <void property="medida_d">
-   <int>0</int>
+   <int>2</int>
   </void>
   <void property="medida_e">
-   <int>1564894162</int>
+   <int>2</int>
   </void>
   <void property="peso">
-   <int>0</int>
+   <int>2</int>
   </void>
  </object>
 </java>

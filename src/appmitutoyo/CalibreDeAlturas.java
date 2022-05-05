@@ -5,16 +5,8 @@
 package appmitutoyo;
 
 import appmitutoyo.interfaces.MetricaDeMedicion;
-import appmitutoyo.interfaces.MetricaDeMedicionGUI;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JSlider;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
-import jguiextensible.JGuiTabbed;
 import jguiextensible.JTipoGui;
 
 /**
@@ -40,7 +32,7 @@ public class CalibreDeAlturas extends Calibre{
         //especif.setName("Especificaciones"); 
         
         JGuiExtensible dialog = metDeMed.createDialog();
-      //  dialogo.setName("Calibre de Alturas");
+        dialogo.setName("Calibre de Alturas");
        
         dialogo.addExtensibleChild(especificaciones);
         dialogo.addExtensibleChild(dialog);

@@ -13,6 +13,11 @@ import java.beans.XMLEncoder;
 import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -93,4 +98,21 @@ public final class Utilidades {
      
   }
 }
+    public static void saveInStream (String name, Object obj) {
+        
+        ObjectOutputStream output;
+        try {
+            output = new ObjectOutputStream(new FileOutputStream(name));
+            output.writeObject(obj);
+            output.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(obj.getClass().getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(obj.getClass().getName()).log(Level.SEVERE, null, ex);
+        }
+       
+        
+        
+    }
+         
 }

@@ -27,6 +27,21 @@ public class MetricaDeComparacion {
                   
     return new MetricaDeComparacionGUI(); 
     }
+    
+    public void borrarDatos() {
+        
+        this.setErrorMaximo(null);
+        this.setHyteresis(null);
+        this.setEscala(null);
+        this.setRangoDeMedida(25);
+        
+    }
+    
+      public void guardarDatos() {
+        
+       Utilidades.saveInXml("Metrica de comparacion.xml", this);
+       
+    }
 
     public static final String PROP_RANGODEMEDIDA = "rangoDeMedida";
 

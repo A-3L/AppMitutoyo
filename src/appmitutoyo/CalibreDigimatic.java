@@ -19,6 +19,7 @@ public class CalibreDigimatic extends Calibre {
        
     }
     
+    @Override
     protected JGuiExtensible createDialog() {
         
         JGuiExtensible dialog = super.createDialog();

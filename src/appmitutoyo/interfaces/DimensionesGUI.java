@@ -293,7 +293,8 @@ public class DimensionesGUI extends JGuiSimple {
        dimensiones.setMedida_e(Integer.valueOf(String.valueOf(jftxMedida_e.getValue())));
        dimensiones.setPeso(Integer.valueOf(String.valueOf(jftxPeso.getValue())));
   
-       Utilidades.saveInXml("Test guardarDatos",dimensiones);
+      
+      
         System.out.println("GUARDANDO DATOS DimensionGui");    
   }
   

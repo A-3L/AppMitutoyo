@@ -13,6 +13,8 @@ import jguiextensible.JGuiTabbed;
  * @author a31r1z
  */
 public class MetricaMicrometricaGUI extends JGuiSimple {
+    
+    private MetricaMicrometrica metMicro = new MetricaMicrometrica();
 
     /**
      * Creates new form MetricaMicrometrica
@@ -188,9 +190,7 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
         
             return false;
         }
-        
-        
-        
+            
         if (jftxRectitud.getValue() == null){
             
              Utilidades.mostrar("ERROR: Faltan datos en:\n "
@@ -202,6 +202,28 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
              
     return true;    
  }
+ 
+    @Override
+    protected void guardarDatos() {
+        
+        metMicro.setAvance(Integer.valueOf(String.valueOf(jftxAvance.getValue())));
+        metMicro.setParalelismo(Integer.valueOf(String.valueOf(jftxParalelismo.getValue())));
+        metMicro.setPerpendicularidad(Integer.valueOf(String.valueOf(jftxPerpendicularidad.getValue())));
+        metMicro.setPlanitud(Integer.valueOf(String.valueOf(jftxPlanitud.getValue())));
+        metMicro.setRectitud(Integer.valueOf(String.valueOf(jftxRectitud.getValue())));
+           
+    }
+    
+    @Override
+    protected void limpiarDatos() {
+        
+        jftxAvance.setValue(null);
+        jftxParalelismo.setValue(null);
+        jftxPerpendicularidad.setValue(null);
+        jftxPlanitud.setValue(null);
+        jftxRectitud.setValue(null);
+        
+    }
  
     @Override
     protected void actualizarCambio(String id, Object value) {}

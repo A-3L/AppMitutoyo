@@ -253,7 +253,17 @@ public class MetricaDeMedicionGUI extends JGuiTabbed {
      metDeMed.setPresionDeMedida(Integer.valueOf(String.valueOf(jftxPresionDeMedida.getValue())));
      
      Utilidades.saveInXml("Test MetDeMed", metDeMed);
-
-     
+   
     }
+      
+    @Override
+      protected void limpiarDatos() {
+          
+          jftxGraduacion.setValue(null);
+          jftxRango.setValue(null);
+          jftxPrecision.setValue(null);
+          jftxResolucion.setValue(null);
+          jftxPresionDeMedida.setValue(null); 
+          
+      }
 }

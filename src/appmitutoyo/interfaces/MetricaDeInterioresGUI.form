@@ -56,7 +56,7 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jftxMedida_R" linkSize="1" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="jftxMetrica_f" linkSize="1" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="jftxMedida_f" linkSize="1" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
                       <Component id="jftxMedida_g" linkSize="1" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -78,7 +78,7 @@
                       <Component id="lblMetricaInterior" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="jftxMetricaInterior" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="lblMedida_f" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jftxMetrica_f" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jftxMedida_f" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -152,7 +152,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jftxMetrica_f">
+        <Component class="javax.swing.JFormattedTextField" name="jftxMedida_f">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
               <Format subtype="1" type="0"/>

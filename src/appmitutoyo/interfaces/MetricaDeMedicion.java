@@ -27,7 +27,22 @@ public class MetricaDeMedicion {
                   
     return new MetricaDeMedicionGUI(); 
     }
+    
+    public void borrarDatos() {
+        
+        this.setRango(null);
+        this.setPrecision(null);
+        this.setGraduacion(null);
+        this.setPresionDeMedida(null);    
+        this.setResolucion(null);
+    }
 
+     public void guardarDatos() {
+        
+       Utilidades.saveInXml("Metrica de medicion.xml", this);
+       
+    }
+     
     public static final String PROP_PRESIONDEMEDIDA = "presionDeMedida";
 
     /**

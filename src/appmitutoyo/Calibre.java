@@ -6,6 +6,7 @@ package appmitutoyo;
 
 import appmitutoyo.interfaces.Articulo;
 import appmitutoyo.interfaces.Dimensiones;
+import appmitutoyo.interfaces.Utilidades;
 import jguiextensible.JGuiExtensible;
 
 /**
@@ -31,6 +32,12 @@ public class Calibre {
         articuloGui.setName("Calibre");
                       
         return articuloGui;
+    }
+    
+    public void guardarDatos(String xmlName) {
+        
+        Utilidades.saveInXml(xmlName, articulo);
+        
     }
   
 }

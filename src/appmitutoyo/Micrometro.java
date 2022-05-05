@@ -33,7 +33,7 @@ public class Micrometro {
          //funciones.setName("Funciones");
          
          dialog.addExtensibleChild(funciones);
-         //dialog.setName("Micrometro");
+         dialog.setName("Micrometro");
                
         return dialog;       
     }

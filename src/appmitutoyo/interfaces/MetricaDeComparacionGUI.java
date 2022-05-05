@@ -161,7 +161,7 @@ public class MetricaDeComparacionGUI extends JGuiSimple {
         
              System.out.println(metDeComp.getRangoDeMedida());
         
-        notificarCambio("rangoMedida", metDeComp.getRangoDeMedida());
+        notificarCambio("rangoMedida", jsldRangoMedida.getValue());
     }//GEN-LAST:event_jsldRangoMedidaStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -210,6 +210,25 @@ public class MetricaDeComparacionGUI extends JGuiSimple {
         return true;   
     }
    
+    @Override
+     protected void guardarDatos() {
+     
+         metDeComp.setErrorMaximo(Integer.valueOf(String.valueOf(jftxErrorMax.getValue())));
+         metDeComp.setHyteresis(Integer.valueOf(String.valueOf(jftxHyteresis.getValue())));
+         metDeComp.setEscala(Integer.valueOf(String.valueOf(jftxEscala.getValue())));
+         metDeComp.setRangoDeMedida(Integer.valueOf(String.valueOf(jsldRangoMedida.getValue())));
+         
+     }
+     
+    @Override
+     protected void limpiarDatos() {
+         
+         jftxErrorMax.setValue(null);
+         jftxHyteresis.setValue(null);
+         jftxEscala.setValue(null);
+         jsldRangoMedida.setValue(25);
+               
+     }
       @Override
    protected void actualizarCambio(String id, Object value) {}
 }

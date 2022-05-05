@@ -39,35 +39,40 @@ private static final List<JGuiExtensible> lista = new ArrayList<>();
     private static void init() {
         
        Calibre cal = new Calibre();
-     //Calibre calAbsDig = new CalibreDigimatic();
+      Calibre calAbsDig = new CalibreDigimatic();
        Calibre calAlt = new CalibreDeAlturas();
-     //Micrometro micro = new Micrometro();
+      Micrometro micro = new Micrometro();
        Comparador comp = new Comparador();
        MicrometroDeInteriores microInt = new MicrometroDeInteriores();      
     
-      JFrame frame1= Utilidades.crearFrame(cal.createDialog());
+      JFrame frame1= Utilidades.crearFrame(microInt.createDialog());
       frame1.addWindowListener(new WindowAdapter() {
          
-         @Override
+          /* @Override
           public void windowClosed(WindowEvent evt) {
-              
-             JFrame frame2=Utilidades.crearFrame(comp.createDialog());
-             frame2.addWindowListener(new WindowAdapter() {
-                
-                 @Override
-                 public void windowClosed(WindowEvent evt) {
-                     
-                 JFrame frame3=Utilidades.crearFrame(microInt.createDialog());
-                }
-            });
-        }
-    }); 
-    
-    }
-    
-
-   
-} 
+          
+          JFrame frame2=Utilidades.crearFrame(comp.createDialog());
+          frame2.addWindowListener(new WindowAdapter() {
+          
+          @Override
+          public void windowClosed(WindowEvent evt) {
+          JFrame frame4=Utilidades.crearFrame(calAbsDig.createDialog());
+          frame4.addWindowListener(new WindowAdapter() {
+          
+          @Override
+          public void windowClosed(WindowEvent evt) {
+          
+          JFrame frame3=Utilidades.crearFrame(microInt.createDialog());
+          }
+          });
+          }
+          });
+          
+          }*/
+          
+          }); 
+    }  
+}
         
     
   

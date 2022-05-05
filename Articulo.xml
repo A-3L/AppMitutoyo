@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="17.0.3" class="java.beans.XMLDecoder">
+ <object class="appmitutoyo.interfaces.Articulo">
+  <void property="refArticulo">
+   <string>2</string>
+  </void>
+  <void property="serie">
+   <string>2</string>
+  </void>
+ </object>
+</java>

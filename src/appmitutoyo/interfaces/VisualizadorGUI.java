@@ -11,6 +11,10 @@ import jguiextensible.JGuiSimple;
  * @author a31r1z
  */
 public class VisualizadorGUI extends JGuiSimple {
+
+    private static final long serialVersionUID = 1L;
+    
+    private Visualizador visualizador = new Visualizador();
     
     /**
      * Creates new form Visualizador
@@ -61,11 +65,6 @@ public class VisualizadorGUI extends JGuiSimple {
         jftxResolucion.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxResolucion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jftxResolucion.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
-        jftxResolucion.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jftxResolucionPropertyChange(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -113,10 +112,6 @@ public class VisualizadorGUI extends JGuiSimple {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jftxResolucionPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jftxResolucionPropertyChange
-
-    }//GEN-LAST:event_jftxResolucionPropertyChange
-
     private void jcbVisualizadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbVisualizadorActionPerformed
         jcbVisualizador.getSelectedItem().toString();
       
@@ -158,6 +153,25 @@ public class VisualizadorGUI extends JGuiSimple {
         } 
     return true;
 }
+    
+    @Override
+    protected void guardarDatos() {
+        
+       visualizador.setFuncionDeTolerancia(jchkFuncionTolerancia.isSelected());
+       visualizador.setResolucion(Integer.valueOf(String.valueOf(jftxResolucion.getValue())));
+       visualizador.setVisualizador(String.valueOf(jcbVisualizador.getSelectedItem()));
+               
+    }
+    
+    protected void limpiarDatos() {
+        
+        jchkFuncionTolerancia.setSelected(false);
+        jftxResolucion.setValue(null);
+        jcbVisualizador.setSelectedIndex(0);
+        
+        visualizador.borrarDatos();
+        
+    }
     @Override
      protected void actualizarCambio(String id, Object value) {}
 }

@@ -42,6 +42,12 @@ public class Dimensiones {
      setMedida_e(null);
      
     }
+    
+      public void guardarDatos() {
+        
+       Utilidades.saveInXml("Dimensiones.xml", this);
+       
+    }
 
     public static final String PROP_MEDIDA_E = "medida_e";
 

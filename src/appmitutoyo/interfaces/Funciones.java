@@ -13,6 +13,8 @@ import jguiextensible.JGuiExtensible;
  * @author a31r1z
  */
 public class Funciones {
+    
+    private static final long serialVersionUID = 1L;
 
     public Funciones() {
     }
@@ -38,6 +40,12 @@ public class Funciones {
         setSelectorZeroAbs(false);
         setValoracionGoNg(false);
      
+    }
+    
+      public void guardarDatos() {
+        
+       Utilidades.saveInXml("Funciones.xml", this);
+       
     }
     
     public static final String PROP_BLOQUEO = "bloqueo";

@@ -14,7 +14,8 @@ import jguiextensible.JGuiTree;
  */
 public class MetricaDeInterioresGUI extends JGuiSimple {
 
-    private boolean existRangoInt = false;
+    private MetricaDeInteriores metDeInt = new MetricaDeInteriores();
+    
     /**
      * Creates new form MetricaInterior
      */
@@ -41,7 +42,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
         lblMetricaInterior = new javax.swing.JLabel();
         lblPuntosMediciion = new javax.swing.JLabel();
         jftxRangoInterior = new javax.swing.JFormattedTextField();
-        jftxMetrica_f = new javax.swing.JFormattedTextField();
+        jftxMedida_f = new javax.swing.JFormattedTextField();
         jftxMedida_g = new javax.swing.JFormattedTextField();
         jftxMedida_R = new javax.swing.JFormattedTextField();
         jftxMetricaInterior = new javax.swing.JFormattedTextField();
@@ -75,9 +76,9 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
         jftxRangoInterior.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jftxRangoInterior.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
-        jftxMetrica_f.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
-        jftxMetrica_f.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jftxMetrica_f.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+        jftxMedida_f.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxMedida_f.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxMedida_f.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         jftxMedida_g.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxMedida_g.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -118,12 +119,12 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jftxMedida_R, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jftxMetrica_f, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jftxMedida_f, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jftxMedida_g, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jguiMetricaDeInterioresLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jftxMedida_R, jftxMedida_g, jftxMetricaInterior, jftxMetrica_f, jftxRangoInterior});
+        jguiMetricaDeInterioresLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jftxMedida_R, jftxMedida_f, jftxMedida_g, jftxMetricaInterior, jftxRangoInterior});
 
         jguiMetricaDeInterioresLayout.setVerticalGroup(
             jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,7 +140,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
                     .addComponent(lblMetricaInterior, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jftxMetricaInterior, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblMedida_f, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jftxMetrica_f, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jftxMedida_f, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jguiMetricaDeInterioresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblPuntosMediciion, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -156,9 +157,9 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jcboxPuntosMedicion;
     private javax.swing.JFormattedTextField jftxMedida_R;
+    private javax.swing.JFormattedTextField jftxMedida_f;
     private javax.swing.JFormattedTextField jftxMedida_g;
     private javax.swing.JFormattedTextField jftxMetricaInterior;
-    private javax.swing.JFormattedTextField jftxMetrica_f;
     private javax.swing.JFormattedTextField jftxRangoInterior;
     private jguiextensible.JGuiSimple jguiMetricaDeInteriores;
     private javax.swing.JLabel lblMedida_R;
@@ -201,11 +202,11 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
             return false;
         }
         
-        if (jftxMetrica_f.getValue() == null){
+        if (jftxMedida_f.getValue() == null){
             
              Utilidades.mostrar("ERROR: Faltan datos en:\n "
                           + this.getName() +"-> Medida_f");
-            jftxMetrica_f.requestFocusInWindow();
+            jftxMedida_f.requestFocusInWindow();
         
             return false;
         } 
@@ -231,15 +232,28 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
         return true;
     } 
     
-    /*   protected boolean validateThis(boolean arg) {
-    
-    if (!arg) {
-    Utilidades.mostrar("ERROR: Faltan introducir datos.");
-    return false;
-    }
-    
-    return true;
-    }*/
+      protected void guardarDatos() {
+          
+          metDeInt.setMedida_R(Integer.valueOf(String.valueOf(jftxMedida_R.getValue())));
+          metDeInt.setMedida_f(Integer.valueOf(String.valueOf(jftxMedida_f.getValue())));
+          metDeInt.setMedida_g(Integer.valueOf(String.valueOf(jftxMedida_g.getValue())));
+          metDeInt.setRangoInterior(Integer.valueOf(String.valueOf(jftxMetricaInterior.getValue())));
+          metDeInt.setMetricaInterior(Integer.valueOf(String.valueOf(jftxMetricaInterior.getValue())));
+          metDeInt.setPuntosDeMedicion(Integer.valueOf(String.valueOf(jcboxPuntosMedicion.getSelectedItem())));
+                
+      }
+      
+      protected void limpiarDatos() {
+          
+          jftxMedida_R.setValue(null);
+          jftxMedida_f.setValue(null);
+          jftxMedida_g.setValue(null);
+          jftxMetricaInterior.setValue(null);
+          jftxMetricaInterior.setValue(null);
+          jcboxPuntosMedicion.setSelectedIndex(0);
+          
+          
+      }
     
     @Override
       protected void actualizarCambio(String id, Object value) {}

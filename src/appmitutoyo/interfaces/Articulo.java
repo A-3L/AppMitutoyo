@@ -6,13 +6,16 @@ package appmitutoyo.interfaces;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.io.Serializable;
 import jguiextensible.JGuiExtensible;
 
 /**
  *
  * @author a31r1z
  */
-public class Articulo {
+ public class Articulo implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     public Articulo() {
     }
@@ -30,6 +33,12 @@ public class Articulo {
         
         setRefArticulo(null);
         setSerie(null);
+    }
+    
+    public void guardarDatos() {
+        
+       Utilidades.saveInXml("Articulo.xml", this);
+       
     }
 
     public static final String PROP_SERIE = "serie";
