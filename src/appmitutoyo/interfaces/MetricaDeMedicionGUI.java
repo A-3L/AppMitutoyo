@@ -4,23 +4,6 @@
  */
 package appmitutoyo.interfaces;
 
-import appmitutoyo.CalibreDeAlturas;
-import java.awt.Component;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.beans.XMLEncoder;
-import java.io.BufferedOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.util.EventObject;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JComponent;
-import javax.swing.JSlider;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import jguiextensible.JGuiExtensible;
-import jguiextensible.JGuiSimple;
 import jguiextensible.JGuiTabbed;
 
 /**
@@ -252,7 +235,7 @@ public class MetricaDeMedicionGUI extends JGuiTabbed {
      metDeMed.setResolucion(Integer.valueOf(String.valueOf(jftxResolucion.getValue())));
      metDeMed.setPresionDeMedida(Integer.valueOf(String.valueOf(jftxPresionDeMedida.getValue())));
      
-     Utilidades.saveInXml("Test MetDeMed", metDeMed);
+     metDeMed.guardarDatos();
    
     }
       
@@ -264,6 +247,8 @@ public class MetricaDeMedicionGUI extends JGuiTabbed {
           jftxPrecision.setValue(null);
           jftxResolucion.setValue(null);
           jftxPresionDeMedida.setValue(null); 
+          
+          metDeMed.borrarDatos();
           
       }
 }

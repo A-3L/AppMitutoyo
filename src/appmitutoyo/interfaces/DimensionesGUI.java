@@ -293,37 +293,22 @@ public class DimensionesGUI extends JGuiSimple {
        dimensiones.setMedida_e(Integer.valueOf(String.valueOf(jftxMedida_e.getValue())));
        dimensiones.setPeso(Integer.valueOf(String.valueOf(jftxPeso.getValue())));
   
-      
-      
-        System.out.println("GUARDANDO DATOS DimensionGui");    
+       dimensiones.guardarDatos();
   }
   
     @Override
   protected void limpiarDatos() {
   
-       jftxLongitud.setValue(null); 
-       jftxLongitud.setText(null);
-       
+       jftxLongitud.setValue(null);           
        jftxPeso.setValue(null);
-       jftxPeso.setText(null);
-       
        jftxMedida_a.setValue(null);
-       jftxMedida_a.setText(null);
-       
        jftxMedida_b.setValue(null);
-       jftxMedida_b.setText(null);
-       
        jftxMedida_c.setValue(null);
-       jftxMedida_c.setText(null);
-   
        jftxMedida_d.setValue(null);
-       jftxMedida_d.setText(null);
-  
        jftxMedida_e.setValue(null);
-       jftxMedida_e.setText(null);
-       
-  Utilidades.saveInXml("Test limpiarDatos dimensiones", dimensiones);
-        System.out.println("BORRANDO DATOS DimensionGui");
+            
+       dimensiones.borrarDatos();
+      
   }
   
     @Override

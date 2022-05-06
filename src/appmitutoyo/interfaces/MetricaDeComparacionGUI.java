@@ -145,7 +145,7 @@ public class MetricaDeComparacionGUI extends JGuiSimple {
 
     private void jftxErrorMaxPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jftxErrorMaxPropertyChange
            
-           if(jftxErrorMax.getValue() != null) {
+          if(jftxErrorMax.getValue() != null) {
                
                System.out.println("Notificacion ErrorMax");
                
@@ -218,6 +218,7 @@ public class MetricaDeComparacionGUI extends JGuiSimple {
          metDeComp.setEscala(Integer.valueOf(String.valueOf(jftxEscala.getValue())));
          metDeComp.setRangoDeMedida(Integer.valueOf(String.valueOf(jsldRangoMedida.getValue())));
          
+         metDeComp.guardarDatos();
      }
      
     @Override
@@ -227,6 +228,8 @@ public class MetricaDeComparacionGUI extends JGuiSimple {
          jftxHyteresis.setValue(null);
          jftxEscala.setValue(null);
          jsldRangoMedida.setValue(25);
+         
+         metDeComp.borrarDatos();
                
      }
       @Override

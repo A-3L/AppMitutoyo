@@ -211,7 +211,8 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
         metMicro.setPerpendicularidad(Integer.valueOf(String.valueOf(jftxPerpendicularidad.getValue())));
         metMicro.setPlanitud(Integer.valueOf(String.valueOf(jftxPlanitud.getValue())));
         metMicro.setRectitud(Integer.valueOf(String.valueOf(jftxRectitud.getValue())));
-           
+        
+        metMicro.guardarDatos();
     }
     
     @Override
@@ -223,6 +224,7 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
         jftxPlanitud.setValue(null);
         jftxRectitud.setValue(null);
         
+        metMicro.borrarDatos();
     }
  
     @Override

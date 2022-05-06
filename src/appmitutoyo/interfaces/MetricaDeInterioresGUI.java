@@ -237,10 +237,11 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
           metDeInt.setMedida_R(Integer.valueOf(String.valueOf(jftxMedida_R.getValue())));
           metDeInt.setMedida_f(Integer.valueOf(String.valueOf(jftxMedida_f.getValue())));
           metDeInt.setMedida_g(Integer.valueOf(String.valueOf(jftxMedida_g.getValue())));
-          metDeInt.setRangoInterior(Integer.valueOf(String.valueOf(jftxMetricaInterior.getValue())));
+          metDeInt.setRangoInterior(Integer.valueOf(String.valueOf(jftxRangoInterior.getValue())));
           metDeInt.setMetricaInterior(Integer.valueOf(String.valueOf(jftxMetricaInterior.getValue())));
           metDeInt.setPuntosDeMedicion(Integer.valueOf(String.valueOf(jcboxPuntosMedicion.getSelectedItem())));
-                
+           
+          metDeInt.guardarDatos();
       }
       
       protected void limpiarDatos() {
@@ -248,10 +249,11 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
           jftxMedida_R.setValue(null);
           jftxMedida_f.setValue(null);
           jftxMedida_g.setValue(null);
-          jftxMetricaInterior.setValue(null);
+          jftxRangoInterior.setValue(null);
           jftxMetricaInterior.setValue(null);
           jcboxPuntosMedicion.setSelectedIndex(0);
           
+          metDeInt.borrarDatos();
           
       }
     

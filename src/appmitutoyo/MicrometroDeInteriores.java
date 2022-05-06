@@ -44,17 +44,20 @@ public class MicrometroDeInteriores extends Micrometro {
         CalibreDigimatic calDig = new CalibreDigimatic();
        
          
-         listaGuis.add(metrDeInt.createDialog());
+        
          //listaGuis.add(super.createDialog());
          //listaGuis.add(cal.createDialog());
          //listaGuis.add(calDig.createDialog());
         // lista.add(metrDeInt.createDialog());
          lista.add(calAlt.createDialog());
+         listaGuis.add(metrDeInt.createDialog());
        
        // dialog.addExtensibleChild(calAlt.createDialog());
        // dialog.addExtensibleChild(comp.createDialog());
-        dialog.addExtensibleChildrenList(listaGuis);
+       
         dialog.addExtensibleChildrenList(lista);
+         dialog.addExtensibleChildrenList(listaGuis);
+         
        //  dialog.addExtensibleChild(metrDeInt.createDialog());
         //dialog.addExtensibleChild(compGui);
        // dialog.addExtensibleChild(calAlt.createDialog());

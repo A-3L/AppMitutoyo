@@ -111,6 +111,7 @@ public class FuncionesGUI extends JGuiSimple {
     private javax.swing.JCheckBox jchkValoracionGoNg;
     private jguiextensible.JGuiSimple jguiFunciones;
     // End of variables declaration//GEN-END:variables
+ 
     @Override
     protected void guardarDatos() {
         
@@ -121,6 +122,7 @@ public class FuncionesGUI extends JGuiSimple {
         funciones.setSelectorZeroAbs(jchkSelectorZeroAbs.isSelected());
         funciones.setValoracionGoNg(jchkValoracionGoNg.isSelected());
         
+        funciones.guardarDatos();
     }
     
     @Override
@@ -133,6 +135,7 @@ public class FuncionesGUI extends JGuiSimple {
        jchkSelectorZeroAbs.setSelected(false);
        jchkValoracionGoNg.setSelected(false);
        
+       funciones.borrarDatos();
     }
     
     

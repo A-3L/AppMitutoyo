@@ -49,11 +49,13 @@ public class ArticuloGUI extends JGuiSimple {
         lblRefArticulo.setText("Ref.Articulo");
 
         jtxtRefArticulo.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+        jtxtRefArticulo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         lblSerie.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblSerie.setText("Serie");
 
         jtxtSerie.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+        jtxtSerie.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout jGuiSimple1Layout = new javax.swing.GroupLayout(jGuiSimple1);
         jGuiSimple1.setLayout(jGuiSimple1Layout);

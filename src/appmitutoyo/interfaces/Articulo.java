@@ -37,7 +37,8 @@ import jguiextensible.JGuiExtensible;
     
     public void guardarDatos() {
         
-       Utilidades.saveInXml("Articulo.xml", this);
+       Utilidades.saveInStream("Articulo", this);
+       Utilidades.saveInXml("Articulo", this);
        
     }
 

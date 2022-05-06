@@ -160,7 +160,8 @@ public class VisualizadorGUI extends JGuiSimple {
        visualizador.setFuncionDeTolerancia(jchkFuncionTolerancia.isSelected());
        visualizador.setResolucion(Integer.valueOf(String.valueOf(jftxResolucion.getValue())));
        visualizador.setVisualizador(String.valueOf(jcbVisualizador.getSelectedItem()));
-               
+       
+       visualizador.guardarDatos();
     }
     
     protected void limpiarDatos() {
@@ -169,8 +170,7 @@ public class VisualizadorGUI extends JGuiSimple {
         jftxResolucion.setValue(null);
         jcbVisualizador.setSelectedIndex(0);
         
-        visualizador.borrarDatos();
-        
+        visualizador.borrarDatos();     
     }
     @Override
      protected void actualizarCambio(String id, Object value) {}

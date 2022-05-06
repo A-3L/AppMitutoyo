@@ -6,9 +6,6 @@ package appmitutoyo.interfaces;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 import java.beans.XMLEncoder;
 import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;
@@ -16,6 +13,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -86,33 +86,27 @@ public final class Utilidades {
     
     public static void saveInXml (String name, Object obj) {
       
-       XMLEncoder encoder;
-      try {
-            encoder = new XMLEncoder(
-                new BufferedOutputStream(
-                    new FileOutputStream(name)));
-            encoder.writeObject(obj);
-            encoder.close();
-  } catch (FileNotFoundException ex) {
-      java.util.logging.Logger.getLogger(obj.getClass().getName()).log(java.util.logging.Level.SEVERE, null, ex);
-     
-  }
-}
-    public static void saveInStream (String name, Object obj) {
-        
-        ObjectOutputStream output;
-        try {
-            output = new ObjectOutputStream(new FileOutputStream(name));
-            output.writeObject(obj);
-            output.close();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(obj.getClass().getName()).log(Level.SEVERE, null, ex);
+       Path path = FileSystems.getDefault().getPath("store", name);
+       
+       try (var encoder= new XMLEncoder (new BufferedOutputStream( Files.newOutputStream(path)))) {
+           
+           encoder.writeObject(obj);
+           
         } catch (IOException ex) {
             Logger.getLogger(obj.getClass().getName()).log(Level.SEVERE, null, ex);
         }
-       
+}
+    public static void saveInStream (String name, Object obj) {
         
+        Path path = FileSystems.getDefault().getPath("store", name);
         
+        try (var out = new ObjectOutputStream(Files.newOutputStream(path))) {
+            
+                out.writeObject(obj);    
+                
+                } catch (IOException ex) {
+            Logger.getLogger(obj.getClass().getName()).log(Level.SEVERE, null, ex);
+        }   
     }
          
 }
