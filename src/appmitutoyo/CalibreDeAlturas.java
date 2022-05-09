@@ -25,8 +25,8 @@ public class CalibreDeAlturas extends Calibre{
     @Override
     protected JGuiExtensible createDialog() {
               
-        //JFactory factory = new JFactory();
-        JGuiExtensible dialogo = factory.createDialog(JTipoGui.SIMPLE, true); 
+      
+        JGuiExtensible dialogo = factory.createDialog(JTipoGui.TABBED,false); 
         
         JGuiExtensible especificaciones = super.createDialog();
         //especif.setName("Especificaciones"); 
@@ -34,8 +34,10 @@ public class CalibreDeAlturas extends Calibre{
         JGuiExtensible dialog = metDeMed.createDialog();
         dialogo.setName("Calibre de Alturas");
        
+       
         dialogo.addExtensibleChild(especificaciones);
         dialogo.addExtensibleChild(dialog);
+         
         return dialogo;       
     }
 

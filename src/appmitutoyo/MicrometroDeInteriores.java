@@ -42,32 +42,33 @@ public class MicrometroDeInteriores extends Micrometro {
         Calibre cal = new Calibre();
         
         CalibreDigimatic calDig = new CalibreDigimatic();
-       
+        JGuiExtensible calAltGui = calAlt.createDialog();
+        calAltGui.setName("Especificaciones");
          
         
-         //listaGuis.add(super.createDialog());
-         //listaGuis.add(cal.createDialog());
-         //listaGuis.add(calDig.createDialog());
-        // lista.add(metrDeInt.createDialog());
-         lista.add(calAlt.createDialog());
+         listaGuis.add(super.createDialog());
+         listaGuis.add(cal.createDialog());
+         listaGuis.add(calDig.createDialog());
+         lista.add(metrDeInt.createDialog());
+         lista.add(calAltGui);
          listaGuis.add(metrDeInt.createDialog());
        
-       // dialog.addExtensibleChild(calAlt.createDialog());
-       // dialog.addExtensibleChild(comp.createDialog());
+        //dialog.addExtensibleChild(calAlt.createDialog());
+        //dialog.addExtensibleChild(comp.createDialog());
        
-        dialog.addExtensibleChildrenList(lista);
-         dialog.addExtensibleChildrenList(listaGuis);
+      //  dialog.addExtensibleChildrenList(lista);
+      //   dialog.addExtensibleChildrenList(listaGuis);
          
-       //  dialog.addExtensibleChild(metrDeInt.createDialog());
-        //dialog.addExtensibleChild(compGui);
-       // dialog.addExtensibleChild(calAlt.createDialog());
-       // dialog.addExtensibleChild(calDig.createDialog());
+        // dialog.addExtensibleChild(metrDeInt.createDialog());
+        dialog.addExtensibleChild(comp.createDialog());
+        dialog.addExtensibleChild(calAlt.createDialog());
+        //dialog.addExtensibleChild(calDig.createDialog());
         
-        calAlt.createDialog().setName("Especificaciones");
+        
         dialog.setName("Micrometro de interiores");
         
-       // Calibre cal = new Calibre();
-       // dialog.addExtensibleChild(cal.createDialog());
+        /*  Calibre cal = new Calibre();
+        dialog.addExtensibleChild(cal.createDialog());*/
          
                       
         return dialog;

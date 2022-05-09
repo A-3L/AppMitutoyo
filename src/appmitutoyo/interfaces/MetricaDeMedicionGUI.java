@@ -4,13 +4,14 @@
  */
 package appmitutoyo.interfaces;
 
+import jguiextensible.JGuiSimple;
 import jguiextensible.JGuiTabbed;
 
 /**
  *
  * @author a31r1z
  */
-public class MetricaDeMedicionGUI extends JGuiTabbed {
+public class MetricaDeMedicionGUI extends JGuiSimple {
 
     private static final long serialVersionUID = 1L;
     
@@ -177,53 +178,11 @@ public class MetricaDeMedicionGUI extends JGuiTabbed {
     @Override
    protected boolean validarDatos() {
         
-       if (jftxRango.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Rango");
-            jftxRango.requestFocusInWindow();
-        
-            return false;
-        } 
-       
-       if (jftxPrecision.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Precision");
-            jftxPrecision.requestFocusInWindow();
-        
-            return false;
-        } 
-       
-       if (jftxResolucion.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Resolucion");
-            jftxResolucion.requestFocusInWindow();
-        
-            return false;
-        } 
-       
-       if (jftxGraduacion.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Graduacion");
-            jftxGraduacion.requestFocusInWindow();
-        
-            return false;
-        } 
-       
-       if (jftxPresionDeMedida.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Presion de medida");
-            jftxPresionDeMedida.requestFocusInWindow();
-        
-            return false;
-        } 
-       
-       guardarDatos();
-        return true;
+        return  Utilidades.matcher(jftxRango, "Rango",this) &&
+                Utilidades.matcher(jftxPrecision, "Precision",this) &&
+                Utilidades.matcher(jftxResolucion, "Resolucion",this) &&
+                Utilidades.matcher(jftxGraduacion, "Graduacion",this) &&
+                Utilidades.matcher(jftxPresionDeMedida, "PresionDeMedida",this);             
     } 
   
     @Override

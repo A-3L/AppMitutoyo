@@ -173,63 +173,13 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
     
     @Override
     protected boolean validarDatos( ) {
-        
-        if (jftxRangoInterior.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Rango interior");
-            jftxRangoInterior.requestFocusInWindow();
-        
-            return false;
-        }   
-        
-        if (jftxMedida_R.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Medida_R");
-            jftxMedida_R.requestFocusInWindow();
-        
-            return false;
-        } 
-        
-              
-        if (jftxMetricaInterior.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Metrica interior desde");
-            jftxMetricaInterior.requestFocusInWindow();
-        
-            return false;
-        }
-        
-        if (jftxMedida_f.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Medida_f");
-            jftxMedida_f.requestFocusInWindow();
-        
-            return false;
-        } 
-        
-        if (jcboxPuntosMedicion.getSelectedIndex() == 0){
-            
-             Utilidades.mostrar("ERROR: Falta seleccion en:\n "
-                          + this.getName() +"-> Puntos de medicion");
-            jcboxPuntosMedicion.requestFocusInWindow();
-        
-            return false;
-        } 
-        
-        if (jftxMedida_g.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Medida_g");
-            jftxMedida_g.requestFocusInWindow();
-        
-            return false;
-        } 
-        
-        return true;
+    
+        return Utilidades.matcher(jftxRangoInterior, "Rango interior",this) &&
+               Utilidades.matcher(jftxMedida_R, "Medida_R",this) &&
+               Utilidades.matcher(jftxMetricaInterior, "MetricaInterior",this) &&
+               Utilidades.matcher(jftxMedida_f, "Medida_f",this) &&
+               Utilidades.matcher(jcboxPuntosMedicion, "Puntos de Medicion",this) &&
+               Utilidades.matcher(jftxMedida_g, "Medida_g",this) ;
     } 
     
       protected void guardarDatos() {
@@ -253,8 +203,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
           jftxMetricaInterior.setValue(null);
           jcboxPuntosMedicion.setSelectedIndex(0);
           
-          metDeInt.borrarDatos();
-          
+          metDeInt.borrarDatos();       
       }
     
     @Override

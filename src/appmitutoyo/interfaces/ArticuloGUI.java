@@ -102,26 +102,8 @@ public class ArticuloGUI extends JGuiSimple {
     
     protected boolean validarDatos() {
         
-        
-        if (!Utilidades.validarCampoVacio(jtxtRefArticulo.getText())) {
-                   
-              Utilidades.mostrar("ERROR: Falta introducir datos:\n "
-                          + this.getName() +"-> Referencia articulo");
-             jtxtRefArticulo.requestFocusInWindow();
-              
-            return false;
-        } 
-        
-        if (!Utilidades.validarCampoVacio(jtxtSerie.getText())) {
-                      
-            Utilidades.mostrar("ERROR: Falta introducir datos:\n "
-                          + this.getName() +"-> Serie");
-            jtxtSerie.requestFocusInWindow();
-           
-            return false;
-        } 
-        
-        return true;
+        return Utilidades.matcher(jtxtRefArticulo, "Ref.Articulo",this) &&
+               Utilidades.matcher(jtxtSerie, "Serie",this);
     }
  
     @Override
@@ -130,8 +112,7 @@ public class ArticuloGUI extends JGuiSimple {
         articulo.setRefArticulo(jtxtRefArticulo.getText());
         articulo.setSerie(jtxtSerie.getText());
         
-        articulo.guardarDatos();
-   
+        articulo.guardarDatos(); 
     }
     
     @Override
@@ -149,7 +130,7 @@ public class ArticuloGUI extends JGuiSimple {
           
        jtxtRefArticulo.setText(String.valueOf(value));
        jtxtSerie.setText(String.valueOf(value));
-       
+      
        }
        
     } 

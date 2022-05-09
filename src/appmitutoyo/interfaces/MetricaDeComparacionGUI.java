@@ -180,34 +180,9 @@ public class MetricaDeComparacionGUI extends JGuiSimple {
     @Override
     protected boolean validarDatos() {
         
-      if (jftxErrorMax.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Error maximo");
-            jftxErrorMax.requestFocusInWindow();
-        
-            return false;
-        } 
-      
-      if (jftxHyteresis.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Hyteresis");
-            jftxHyteresis.requestFocusInWindow();
-        
-            return false;
-        }
-      
-       if (jftxEscala.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Escala");
-            jftxEscala.requestFocusInWindow();
-        
-            return false;
-        }   
-      
-        return true;   
+        return Utilidades.matcher(jftxErrorMax, "ErrorMax",this) &&
+               Utilidades.matcher(jftxHyteresis, "Hyteresis",this) &&
+               Utilidades.matcher(jftxEscala, "Escala",this);   
     }
    
     @Override

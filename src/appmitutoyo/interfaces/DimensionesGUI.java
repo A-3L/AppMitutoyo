@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
+import javax.swing.JFormattedTextField;
 import jguiextensible.JGuiSimple;
 
 /**
@@ -212,76 +213,17 @@ public class DimensionesGUI extends JGuiSimple {
 
     @Override
     protected boolean validarDatos() {
-        
-     
-       if (jftxLongitud.getValue() == null){
-             
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Longitud");
-            jftxLongitud.requestFocusInWindow();
-        
-            return false;
-        }
-     
-       
-        if (jftxPeso.getValue() == null){
             
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Peso");
-            jftxPeso.requestFocusInWindow();
-        
-            return false;
-        }   
-       
-        if (jftxMedida_a.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Medida_a");
-            jftxMedida_a.requestFocusInWindow();
-        
-            return false;
-        }   
-        
-        if (jftxMedida_b.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Medida_b");
-            jftxMedida_b.requestFocusInWindow();
-        
-            return false;
-        }   
-        
-        if (jftxMedida_c.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Medida_c");
-            jftxMedida_c.requestFocusInWindow();
-        
-            return false;
-        }   
-        
-        if (jftxMedida_d.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Medida_d");
-            jftxMedida_d.requestFocusInWindow();
-        
-            return false;
-        }   
-        
-        if (jftxMedida_e.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Medida_e");
-            jftxMedida_e.requestFocusInWindow();
-        
-            return false;
-        }        
-        
-       
-    return true;    
+        return   
+                Utilidades.matcher(jftxLongitud, "Longitud",this) &&
+                Utilidades.matcher(jftxPeso, "Peso",this) &&
+                Utilidades.matcher(jftxMedida_a, "Medida_a",this) &&
+                Utilidades.matcher(jftxMedida_b, "Medida_b",this) &&
+                Utilidades.matcher(jftxMedida_c, "Medida_c",this) &&
+                Utilidades.matcher(jftxMedida_d, "Medida_d",this) &&
+                Utilidades.matcher(jftxMedida_e, "Medida_e",this);     
    }
-
+    
     @Override
     protected void guardarDatos() {
   
@@ -310,7 +252,22 @@ public class DimensionesGUI extends JGuiSimple {
        dimensiones.borrarDatos();
       
   }
-  
+   public boolean matcher(JFormattedTextField comp, String name) {
+      
+        switch(comp.getValue()) {
+            
+            case null -> {
+                Utilidades.mostrar("ERROR: Faltan datos en:\n "
+                          + this.getName() +"-> "+ name);
+                comp.requestFocusInWindow();
+             return false;
+            }
+            case default -> {
+                return true;
+            }
+        }
+       
+    }
     @Override
    protected void actualizarCambio(String id, Object value) {}
 }

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="17.0.3" class="java.beans.XMLDecoder">
- <object class="appmitutoyo.interfaces.MetricaDeMedicion">
-  <void property="graduacion">
+ <object class="appmitutoyo.interfaces.MetricaMicrometrica">
+  <void property="avance">
    <int>3</int>
   </void>
-  <void property="precision">
+  <void property="paralelismo">
    <int>3</int>
   </void>
-  <void property="presionDeMedida">
+  <void property="perpendicularidad">
    <int>3</int>
   </void>
-  <void property="rango">
+  <void property="planitud">
    <int>3</int>
   </void>
-  <void property="resolucion">
+  <void property="rectitud">
    <int>3</int>
   </void>
  </object>

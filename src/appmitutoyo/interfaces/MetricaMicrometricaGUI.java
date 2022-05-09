@@ -154,53 +154,12 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
 
     @Override
  protected boolean validarDatos( ) {
-       
-        if (jftxAvance.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Avance");
-            jftxAvance.requestFocusInWindow();
-        
-            return false;
-        }
-       
-        if (jftxPlanitud.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Planitud");
-            jftxPlanitud.requestFocusInWindow();
-        
-            return false;
-        }
-        
-        if (jftxParalelismo.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Paralelismo");
-            jftxParalelismo.requestFocusInWindow();
-        
-            return false;
-        }
-        
-        if (jftxPerpendicularidad.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Perpendicularidad");
-            jftxPerpendicularidad.requestFocusInWindow();
-        
-            return false;
-        }
-            
-        if (jftxRectitud.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Rectitud");
-            jftxRectitud.requestFocusInWindow();
-        
-            return false;
-        }
              
-    return true;    
+    return  Utilidades.matcher(jftxAvance, "Avance",this) &&
+            Utilidades.matcher(jftxPlanitud, "Planitud",this) &&
+            Utilidades.matcher(jftxParalelismo, "Paralelismo",this) &&
+            Utilidades.matcher(jftxPerpendicularidad, "Perpendicularidad",this) &&
+            Utilidades.matcher(jftxRectitud, "Rectitud",this) ;
  }
  
     @Override

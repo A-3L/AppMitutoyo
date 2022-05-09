@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="17.0.3" class="java.beans.XMLDecoder">
+ <object class="appmitutoyo.interfaces.MetricaDeComparacion">
+  <void property="errorMaximo">
+   <int>3</int>
+  </void>
+  <void property="escala">
+   <int>3</int>
+  </void>
+  <void property="hyteresis">
+   <int>3</int>
+  </void>
+  <void property="rangoDeMedida">
+   <int>25</int>
+  </void>
+ </object>
+</java>

@@ -134,24 +134,8 @@ public class VisualizadorGUI extends JGuiSimple {
     @Override  
     protected boolean validarDatos( ) {  
     
-    if (jftxResolucion.getValue() == null){
-            
-             Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> Resolucion");
-            jftxResolucion.requestFocusInWindow();
-        
-            return false;
-        }
-    
-     if (jcbVisualizador.getSelectedIndex() == 0){
-            
-             Utilidades.mostrar("ERROR: Falta seleccion en:\n "
-                          + this.getName() +"-> Visualizador");
-            jcbVisualizador.requestFocusInWindow();
-        
-            return false;
-        } 
-    return true;
+    return  Utilidades.matcher(jftxResolucion, "Resolucion",this) &&
+            Utilidades.matcher(jcbVisualizador, "Visualizador",this);
 }
     
     @Override

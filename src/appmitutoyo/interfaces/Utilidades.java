@@ -8,18 +8,18 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.beans.XMLEncoder;
 import java.io.BufferedOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -28,39 +28,6 @@ import javax.swing.JOptionPane;
 public final class Utilidades {
 
    
-    public static boolean validarCampoVacio(String campo) {
-        
-        return !(campo.toString().trim().isEmpty());
-    }
-    
-    public static boolean numeroEntero(String campo) {
-        try {
-            Long.parseLong(campo);
-            return true;
-        }catch(NumberFormatException e) {
-              return false;
-        } 
-    }
-   
-    public static boolean numeroDecimal(String campo) {
-        try {
-            Float.parseFloat(campo);
-            return true;
-        }catch(NumberFormatException e) {
-              return false;
-        } 
-    }
-    
-    public static boolean rango(String campo, double inf, double sup) {
-      
-          var numero = Double.parseDouble(campo);
-           if (numero >= inf || numero <= sup) 
-            return true;
-           else
-            return false;
-        
-    }
-    
     public static void mostrar(String message) {
         
         JOptionPane.showMessageDialog(null,message);
@@ -84,6 +51,56 @@ public final class Utilidades {
     
     }
     
+    public static boolean validarCampoVacio(String campo) {
+        
+        return !(campo.toString().trim().isEmpty());
+    }
+    
+    public static boolean matcher(JFormattedTextField comp, String name, Object obj) {
+      
+        switch(comp.getValue()) {
+            
+            case null -> {
+                Utilidades.mostrar("ERROR: Faltan datos en:\n "
+                          + obj +" -> "+ name);
+                comp.requestFocusInWindow();              
+             return false;
+            }
+            case default -> {            
+                return true;
+            }
+        }
+       
+    }
+     
+    public static boolean matcher(JTextField comp, String name, Object obj) {
+      
+        if (!Utilidades.validarCampoVacio(comp.getText())) {
+                   
+              Utilidades.mostrar("ERROR: Falta introducir datos:\n "
+                          + obj +" -> "+ name);
+              comp.requestFocusInWindow();
+              
+            return false;
+        }else          
+            return true;
+       
+    }
+     
+    public static boolean matcher(JComboBox<String> comp, String name, Object obj) {
+                  
+        if (comp.getSelectedIndex() == 0){
+            
+             Utilidades.mostrar("ERROR: Falta seleccion en:\n "
+                          + obj +" -> " + name);
+            comp.requestFocusInWindow();
+        
+            return false;
+        }else 
+            return true;
+    }
+             
+     
     public static void saveInXml (String name, Object obj) {
       
        Path path = FileSystems.getDefault().getPath("store", name);
@@ -96,6 +113,7 @@ public final class Utilidades {
             Logger.getLogger(obj.getClass().getName()).log(Level.SEVERE, null, ex);
         }
 }
+    
     public static void saveInStream (String name, Object obj) {
         
         Path path = FileSystems.getDefault().getPath("store", name);

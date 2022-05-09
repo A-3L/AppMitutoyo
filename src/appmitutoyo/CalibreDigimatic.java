@@ -27,8 +27,7 @@ public class CalibreDigimatic extends Calibre {
       
         dialog.addExtensibleChild(visualGui);      
         dialog.setName("Calibre Digimatic");
-       
-       
+          
         return dialog;              
     }
     
