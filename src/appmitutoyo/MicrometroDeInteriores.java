@@ -4,7 +4,9 @@
  */
 package appmitutoyo;
 
-import appmitutoyo.interfaces.MetricaDeInteriores;
+import appmitutoyo.data.MetricaComparativa;
+import appmitutoyo.data.MetricaDeInteriores;
+import appmitutoyo.data.Visualizador;
 import appmitutoyo.interfaces.MetricaDeInterioresGUI;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,48 +36,36 @@ public class MicrometroDeInteriores extends Micrometro {
         List<JGuiExtensible> listaGuis = new ArrayList<>();
         List<JGuiExtensible> lista = new ArrayList<>();
         
-        CalibreDeAlturas calAlt = new CalibreDeAlturas();
-       
-        MetricaDeInteriores metrDeInt = new MetricaDeInteriores();
-        Comparador comp = new Comparador();
-        
         Calibre cal = new Calibre();
-        
+        CalibreDeAlturas calAlt = new CalibreDeAlturas(); 
         CalibreDigimatic calDig = new CalibreDigimatic();
+        MetricaComparativa metComp = new MetricaComparativa();
+        MetricaDeInteriores metDeInt= new MetricaDeInteriores();
+        Visualizador visual= new Visualizador();
+        
+        JGuiExtensible compGui = metComp.createDialog();
         JGuiExtensible calAltGui = calAlt.createDialog();
+        JGuiExtensible microGui= super.createDialog();
+        
+        compGui.addExtensibleChild(visual.createDialog());
+        
+        compGui.setName("Metrica comparativa");
+        microGui.setName("Metrica micrometrica");
         calAltGui.setName("Especificaciones");
          
+        dialog.addExtensibleChild(calAltGui);
         
-         listaGuis.add(super.createDialog());
-         listaGuis.add(cal.createDialog());
-         listaGuis.add(calDig.createDialog());
-         lista.add(metrDeInt.createDialog());
-         lista.add(calAltGui);
-         listaGuis.add(metrDeInt.createDialog());
-       
-        //dialog.addExtensibleChild(calAlt.createDialog());
-        //dialog.addExtensibleChild(comp.createDialog());
-       
-      //  dialog.addExtensibleChildrenList(lista);
-      //   dialog.addExtensibleChildrenList(listaGuis);
+        lista.add(metDeInt.createDialog());
          
-        // dialog.addExtensibleChild(metrDeInt.createDialog());
-        dialog.addExtensibleChild(comp.createDialog());
-        dialog.addExtensibleChild(calAlt.createDialog());
-        //dialog.addExtensibleChild(calDig.createDialog());
+        listaGuis.add(microGui);   
+        listaGuis.add(compGui);
         
-        
+        dialog.addExtensibleChildrenList(lista);
+        dialog.addExtensibleChildrenList(listaGuis);
+         
         dialog.setName("Micrometro de interiores");
-        
-        /*  Calibre cal = new Calibre();
-        dialog.addExtensibleChild(cal.createDialog());*/
-         
-                      
+                
         return dialog;
     }
-    
-    @Override
-       public String toString() {
-           return "Micrometro de interiores";
-       }
+   
 }

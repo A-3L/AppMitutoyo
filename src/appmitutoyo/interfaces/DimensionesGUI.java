@@ -4,6 +4,7 @@
  */
 package appmitutoyo.interfaces;
 
+import appmitutoyo.data.Dimensiones;
 import javax.swing.JFormattedTextField;
 import jguiextensible.JGuiSimple;
 

@@ -103,8 +103,8 @@ public final class Utilidades {
      
     public static void saveInXml (String name, Object obj) {
       
-       Path path = FileSystems.getDefault().getPath("store", name);
-       
+       Path path = FileSystems.getDefault().getPath(name);
+    System.out.println(path.toAbsolutePath());  
        try (var encoder= new XMLEncoder (new BufferedOutputStream( Files.newOutputStream(path)))) {
            
            encoder.writeObject(obj);
@@ -116,8 +116,8 @@ public final class Utilidades {
     
     public static void saveInStream (String name, Object obj) {
         
-        Path path = FileSystems.getDefault().getPath("store", name);
-        
+        Path path = FileSystems.getDefault().getPath(name);
+      System.out.println(path.toAbsolutePath());
         try (var out = new ObjectOutputStream(Files.newOutputStream(path))) {
             
                 out.writeObject(obj);    

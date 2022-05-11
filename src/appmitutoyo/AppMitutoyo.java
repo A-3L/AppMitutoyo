@@ -19,6 +19,7 @@ import jguiextensible.JGuiExtensible;
 public class AppMitutoyo extends WindowAdapter{
     
 private static final List<JGuiExtensible> lista = new ArrayList<>();
+
     /**
      * @param args the command line arguments
      */
@@ -32,15 +33,11 @@ private static final List<JGuiExtensible> lista = new ArrayList<>();
     private static void init() {
         
        Calibre cal = new Calibre();
-       Calibre calAbsDig = new CalibreDigimatic();
        Calibre calAlt = new CalibreDeAlturas();
+       Calibre calDig = new CalibreDigimatic();
        Micrometro micro = new Micrometro();
        Comparador comp = new Comparador();
-        MicrometroDeInteriores microInt = new MicrometroDeInteriores(); 
-       
-       JGuiExtensible jgui= cal.createDialog();
-       //jgui.addExtensibleChild(micro.createDialog());
-       jgui.addExtensibleChild(calAlt.createDialog());
+       MicrometroDeInteriores microInt = new MicrometroDeInteriores(); 
     
        JFrame frame1= Utilidades.crearFrame(cal.createDialog());
        frame1.addWindowListener(new WindowAdapter() {
@@ -53,7 +50,7 @@ private static final List<JGuiExtensible> lista = new ArrayList<>();
               
               @Override
               public void windowClosed(WindowEvent evt) {
-              JFrame frame3=Utilidades.crearFrame(micro.createDialog());
+              JFrame frame3=Utilidades.crearFrame(comp.createDialog());
               frame3.addWindowListener(new WindowAdapter() {
               
               @Override

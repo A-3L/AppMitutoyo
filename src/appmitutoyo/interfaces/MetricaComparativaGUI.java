@@ -4,6 +4,7 @@
  */
 package appmitutoyo.interfaces;
 
+import appmitutoyo.data.MetricaComparativa;
 import java.beans.PropertyChangeListener;
 import java.text.NumberFormat;
 import javax.swing.JFormattedTextField;
@@ -14,16 +15,16 @@ import jguiextensible.JGuiSimple;
  *
  * @author a31r1z
  */
-public class MetricaDeComparacionGUI extends JGuiSimple {
+public class MetricaComparativaGUI extends JGuiSimple {
 
     private static final long serialVersionUID = 1L;
    
-    private MetricaDeComparacion metDeComp = new MetricaDeComparacion();
+    private MetricaComparativa metDeComp = new MetricaComparativa();
    
     /**
      * Creates new form MetricaComparador
      */
-    public MetricaDeComparacionGUI() {
+    public MetricaComparativaGUI() {
         initComponents();
            
     }

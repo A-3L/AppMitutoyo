@@ -4,6 +4,7 @@
  */
 package appmitutoyo.interfaces;
 
+import appmitutoyo.data.MetricaDeMedicion;
 import jguiextensible.JGuiSimple;
 import jguiextensible.JGuiTabbed;
 

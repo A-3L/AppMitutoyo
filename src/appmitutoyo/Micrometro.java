@@ -26,11 +26,8 @@ public class Micrometro {
     
      protected JGuiExtensible createDialog() {
         
-         JGuiExtensible dialog = new MetricaMicrometricaGUI();
-         dialog.setName("Metrica micrometrica");
-         
+         JGuiExtensible dialog = new MetricaMicrometricaGUI();        
          JGuiExtensible funciones = new FuncionesGUI();
-         //funciones.setName("Funciones");
          
          dialog.addExtensibleChild(funciones);
          dialog.setName("Micrometro");

@@ -4,6 +4,7 @@
  */
 package appmitutoyo.interfaces;
 
+import appmitutoyo.data.Articulo;
 import jguiextensible.JGuiSimple;
 
 /**

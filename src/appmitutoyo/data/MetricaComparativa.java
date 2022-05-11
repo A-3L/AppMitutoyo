@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package appmitutoyo.interfaces;
+package appmitutoyo.data;
 
+import appmitutoyo.interfaces.MetricaComparativaGUI;
+import appmitutoyo.interfaces.Utilidades;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import jguiextensible.JGuiExtensible;
@@ -12,9 +14,9 @@ import jguiextensible.JGuiExtensible;
  *
  * @author a31r1z
  */
-public class MetricaDeComparacion {
+public class MetricaComparativa {
 
-    public MetricaDeComparacion() {
+    public MetricaComparativa() {
     }
     
     private Integer errorMaximo;  
@@ -25,7 +27,7 @@ public class MetricaDeComparacion {
     
     public JGuiExtensible createDialog() {
                   
-    return new MetricaDeComparacionGUI(); 
+    return new MetricaComparativaGUI(); 
     }
     
     public void borrarDatos() {

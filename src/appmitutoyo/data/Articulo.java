@@ -2,8 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package appmitutoyo.interfaces;
+package appmitutoyo.data;
 
+import appmitutoyo.interfaces.ArticuloGUI;
+import appmitutoyo.interfaces.Utilidades;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
@@ -37,7 +39,7 @@ import jguiextensible.JGuiExtensible;
     
     public void guardarDatos() {
         
-       Utilidades.saveInStream("Articulo", this);
+       //Utilidades.saveInStream("Articulo", this);
        Utilidades.saveInXml("Articulo", this);
        
     }

@@ -4,6 +4,7 @@
  */
 package appmitutoyo.interfaces;
 
+import appmitutoyo.data.MetricaDeInteriores;
 import javax.swing.JOptionPane;
 import jguiextensible.JGuiSimple;
 import jguiextensible.JGuiTree;

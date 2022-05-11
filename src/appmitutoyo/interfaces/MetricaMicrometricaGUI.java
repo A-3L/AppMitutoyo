@@ -4,6 +4,7 @@
  */
 package appmitutoyo.interfaces;
 
+import appmitutoyo.data.MetricaMicrometrica;
 import javax.swing.JTextField;
 import jguiextensible.JGuiSimple;
 import jguiextensible.JGuiTabbed;

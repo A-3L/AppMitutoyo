@@ -4,8 +4,8 @@
  */
 package appmitutoyo;
 
-import appmitutoyo.interfaces.Articulo;
-import appmitutoyo.interfaces.Dimensiones;
+import appmitutoyo.data.Articulo;
+import appmitutoyo.data.Dimensiones;
 import jguiextensible.JGuiExtensible;
 
 /**
