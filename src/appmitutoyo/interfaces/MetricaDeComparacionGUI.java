@@ -90,6 +90,7 @@ public class MetricaDeComparacionGUI extends JGuiSimple {
 
         jftxEscala.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxEscala.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxEscala.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         lblEscala.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblEscala.setText("Escala");
@@ -123,7 +124,7 @@ public class MetricaDeComparacionGUI extends JGuiSimple {
                 .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(lblRangoMedida)
                     .addComponent(jsldRangoMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(lblErrorMaximo)
                     .addComponent(jftxErrorMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))

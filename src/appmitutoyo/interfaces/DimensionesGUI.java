@@ -4,13 +4,6 @@
  */
 package appmitutoyo.interfaces;
 
-import appmitutoyo.Calibre;
-import java.beans.XMLEncoder;
-import java.io.BufferedOutputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.lang.System.Logger;
-import java.lang.System.Logger.Level;
 import javax.swing.JFormattedTextField;
 import jguiextensible.JGuiSimple;
 

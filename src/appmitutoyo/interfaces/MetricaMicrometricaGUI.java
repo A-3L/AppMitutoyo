@@ -79,6 +79,7 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
 
         jftxPerpendicularidad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxPerpendicularidad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxPerpendicularidad.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         jftxRectitud.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxRectitud.setHorizontalAlignment(javax.swing.JTextField.CENTER);

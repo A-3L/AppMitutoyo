@@ -58,7 +58,7 @@
                       <Component id="lblRangoMedida" alignment="2" min="-2" max="-2" attributes="0"/>
                       <Component id="jsldRangoMedida" alignment="2" min="-2" pref="70" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <EmptySpace pref="17" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
                       <Component id="lblErrorMaximo" alignment="2" min="-2" max="-2" attributes="0"/>
                       <Component id="jftxErrorMax" linkSize="4" alignment="2" min="-2" max="-2" attributes="0"/>
@@ -151,6 +151,9 @@
               <Format subtype="1" type="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
+            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblEscala">

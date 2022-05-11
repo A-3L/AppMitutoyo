@@ -5,19 +5,12 @@
 package appmitutoyo;
 
 import appmitutoyo.interfaces.Utilidades;
-import java.awt.BorderLayout;
-import java.awt.Container;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
-import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
-import jguiextensible.JTipoGui;
 
 /**
  *
