@@ -56,11 +56,6 @@ public class MetricaComparativaGUI extends JGuiSimple {
         jftxErrorMax.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxErrorMax.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jftxErrorMax.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
-        jftxErrorMax.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jftxErrorMaxPropertyChange(evt);
-            }
-        });
 
         jsldRangoMedida.setFont(new java.awt.Font("URW Gothic", 0, 12)); // NOI18N
         jsldRangoMedida.setMajorTickSpacing(10);
@@ -145,16 +140,6 @@ public class MetricaComparativaGUI extends JGuiSimple {
         add(jguiMetricaComp);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jftxErrorMaxPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jftxErrorMaxPropertyChange
-           
-          if(jftxErrorMax.getValue() != null) {
-               
-               System.out.println("Notificacion ErrorMax");
-               
-               notificarCambio("errorMax", jftxErrorMax.getValue());              
-           }     
-    }//GEN-LAST:event_jftxErrorMaxPropertyChange
-
     private void jsldRangoMedidaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jsldRangoMedidaStateChanged
        
              System.out.println("Notificacion Slide");
@@ -209,6 +194,4 @@ public class MetricaComparativaGUI extends JGuiSimple {
          metDeComp.borrarDatos();
                
      }
-      @Override
-   protected void actualizarCambio(String id, Object value) {}
 }

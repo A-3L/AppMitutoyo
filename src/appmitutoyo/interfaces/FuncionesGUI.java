@@ -138,10 +138,4 @@ public class FuncionesGUI extends JGuiSimple {
        
        funciones.borrarDatos();
     }
-    
-    
-    @Override
-     protected void actualizarCambio(String id, Object value) { }
-     
-  
 }

@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="17.0.3" class="java.beans.XMLDecoder">
- <object class="appmitutoyo.data.Funciones">
-  <void property="valoracionGoNg">
-   <boolean>true</boolean>
-  </void>
- </object>
+ <object class="appmitutoyo.data.Funciones"/>
 </java>

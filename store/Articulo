@@ -2,10 +2,10 @@
 <java version="17.0.3" class="java.beans.XMLDecoder">
  <object class="appmitutoyo.data.Articulo">
   <void property="refArticulo">
-   <string>4</string>
+   <string>2</string>
   </void>
   <void property="serie">
-   <string>4</string>
+   <string>2</string>
   </void>
  </object>
 </java>

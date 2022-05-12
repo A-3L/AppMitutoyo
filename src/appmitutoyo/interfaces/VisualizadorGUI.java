@@ -157,6 +157,5 @@ public class VisualizadorGUI extends JGuiSimple {
         
         visualizador.borrarDatos();     
     }
-    @Override
-     protected void actualizarCambio(String id, Object value) {}
+   
 }

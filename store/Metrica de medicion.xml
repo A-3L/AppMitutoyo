@@ -2,19 +2,19 @@
 <java version="17.0.3" class="java.beans.XMLDecoder">
  <object class="appmitutoyo.data.MetricaDeMedicion">
   <void property="graduacion">
-   <int>4</int>
+   <int>2</int>
   </void>
   <void property="precision">
-   <int>4</int>
+   <int>2</int>
   </void>
   <void property="presionDeMedida">
-   <int>4</int>
+   <int>2</int>
   </void>
   <void property="rango">
-   <int>4</int>
+   <int>2</int>
   </void>
   <void property="resolucion">
-   <int>4</int>
+   <int>2</int>
   </void>
  </object>
 </java>

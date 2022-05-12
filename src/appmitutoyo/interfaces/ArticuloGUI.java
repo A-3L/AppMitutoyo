@@ -15,7 +15,7 @@ public class ArticuloGUI extends JGuiSimple {
 
     private static final long serialVersionUID = 1L;
     
-    private Articulo articulo= new Articulo();
+    private final Articulo articulo= new Articulo();
    
     /**
      * Creates new form Articulo
@@ -122,19 +122,5 @@ public class ArticuloGUI extends JGuiSimple {
         jtxtRefArticulo.setText(null);
         jtxtSerie.setText(null);
     }
-    
-    @Override
-    protected void actualizarCambio(String id, Object value) {
-      
-        System.out.println("Actualizando Articulo");
-       if (id.equals("rangoMedida")) {  
-          
-       jtxtRefArticulo.setText(String.valueOf(value));
-       jtxtSerie.setText(String.valueOf(value));
-      
-       }
-       
-    } 
-    
-    
+  
 }

@@ -183,6 +183,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
                Utilidades.matcher(jftxMedida_g, "Medida_g",this) ;
     } 
     
+    @Override
       protected void guardarDatos() {
           
           metDeInt.setMedida_R(Integer.valueOf(String.valueOf(jftxMedida_R.getValue())));
@@ -195,6 +196,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
           metDeInt.guardarDatos();
       }
       
+    @Override
       protected void limpiarDatos() {
           
           jftxMedida_R.setValue(null);
@@ -206,7 +208,13 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
           
           metDeInt.borrarDatos();       
       }
-    
     @Override
-      protected void actualizarCambio(String id, Object value) {}
+    protected void actualizarCambio(String id, Object value) {
+      
+        System.out.println("Actualizando Articulo");
+        switch(id) {
+            case "rangoMedida" -> {jftxRangoInterior.setText(String.valueOf(value));
+                                   jftxMedida_R.setText(String.valueOf(value)); }
+        }      
+    }  
 }

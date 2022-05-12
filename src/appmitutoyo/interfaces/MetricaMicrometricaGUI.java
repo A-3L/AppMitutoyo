@@ -187,7 +187,4 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
         
         metMicro.borrarDatos();
     }
- 
-    @Override
-    protected void actualizarCambio(String id, Object value) {}
 }

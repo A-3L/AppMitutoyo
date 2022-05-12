@@ -162,18 +162,10 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
 
     @Override
     protected void actualizarCambio(String id, Object value) {
-        System.out.println("Actualizando Metrica De Medicion");
-     if (id.equals("rangoMedida")) {  
-          
-       jftxRango.setValue(value); 
-       
-     }
      
-     if(id.equals("errorMax")) {
-         
-        System.out.println("YEPIYEI " +String.valueOf(value));               
-     }
-   
+        switch(id) {
+            case "rangoMedida" -> { jftxRango.setValue(value); }
+        }
     }
     
     @Override

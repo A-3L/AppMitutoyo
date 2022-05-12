@@ -246,22 +246,5 @@ public class DimensionesGUI extends JGuiSimple {
        dimensiones.borrarDatos();
       
   }
-   public boolean matcher(JFormattedTextField comp, String name) {
-      
-        switch(comp.getValue()) {
-            
-            case null -> {
-                Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + this.getName() +"-> "+ name);
-                comp.requestFocusInWindow();
-             return false;
-            }
-            case default -> {
-                return true;
-            }
-        }
-       
-    }
-    @Override
-   protected void actualizarCambio(String id, Object value) {}
+
 }
