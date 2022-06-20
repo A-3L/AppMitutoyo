@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
  */
-package appmitutoyo.interfaces;
+package mitutoyo.interfaces;
 
-import appmitutoyo.data.MetricaComparativa;
+import mitutoyo.data.MetricaComparativa;
 import java.beans.PropertyChangeListener;
 import java.text.NumberFormat;
 import javax.swing.JFormattedTextField;
@@ -146,9 +146,9 @@ public class MetricaComparativaGUI extends JGuiSimple {
         
         metDeComp.setRangoDeMedida(jsldRangoMedida.getValue());
         
-             System.out.println(metDeComp.getRangoDeMedida());
+             System.out.println("RANGOMEDIDA :"+metDeComp.getRangoDeMedida());
         
-        notificarCambio("rangoMedida", jsldRangoMedida.getValue());
+        notifyChanges(this,"rangoMedida", jsldRangoMedida.getValue());
     }//GEN-LAST:event_jsldRangoMedidaStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -165,7 +165,7 @@ public class MetricaComparativaGUI extends JGuiSimple {
 
 
     @Override
-    protected boolean validarDatos() {
+    protected boolean validateData() {
         
         return Utilidades.matcher(jftxErrorMax, "ErrorMax",this) &&
                Utilidades.matcher(jftxHyteresis, "Hyteresis",this) &&
@@ -173,7 +173,7 @@ public class MetricaComparativaGUI extends JGuiSimple {
     }
    
     @Override
-     protected void guardarDatos() {
+     protected void saveData() {
      
          metDeComp.setErrorMaximo(Integer.valueOf(String.valueOf(jftxErrorMax.getValue())));
          metDeComp.setHyteresis(Integer.valueOf(String.valueOf(jftxHyteresis.getValue())));
@@ -184,7 +184,7 @@ public class MetricaComparativaGUI extends JGuiSimple {
      }
      
     @Override
-     protected void limpiarDatos() {
+     protected void cleanData() {
          
          jftxErrorMax.setValue(null);
          jftxHyteresis.setValue(null);
@@ -194,4 +194,8 @@ public class MetricaComparativaGUI extends JGuiSimple {
          metDeComp.borrarDatos();
                
      }
+     
+       @Override
+     protected void updateChanges(String id, Object value) {}
+
 }

@@ -2,10 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package appmitutoyo;
+package mitutoyo;
 
-import appmitutoyo.interfaces.VisualizadorGUI;
+import mitutoyo.interfaces.FuncionesGUI;
+import mitutoyo.interfaces.VisualizadorGUI;
+import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
+import jguiextensible.JTipoGui;
 
 /**
  *
@@ -13,7 +16,7 @@ import jguiextensible.JGuiExtensible;
  */
 public class CalibreDigimatic extends Calibre {
 
-   
+    private final JFactory factory = new JFactory();
     
     public CalibreDigimatic() {
        
@@ -22,10 +25,15 @@ public class CalibreDigimatic extends Calibre {
     @Override
     protected JGuiExtensible createDialog() {
         
-        JGuiExtensible dialog = super.createDialog();
+        JGuiExtensible dialog = factory.createDialog(JTipoGui.SIMPLE,true); 
+        JGuiExtensible dialogo = super.createDialog();
+        FuncionesGUI funciones = new FuncionesGUI();
         VisualizadorGUI visualGui = new VisualizadorGUI();
       
-        dialog.addExtensibleChild(visualGui);      
+        dialog.addExtensibleChild(dialogo);
+        dialog.addExtensibleChild(visualGui);
+       
+        dialogo.setName("Especificaciones");
         dialog.setName("Calibre Digimatic");
           
         return dialog;              

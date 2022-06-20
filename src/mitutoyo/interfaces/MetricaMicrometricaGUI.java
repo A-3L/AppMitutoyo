@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
  */
-package appmitutoyo.interfaces;
+package mitutoyo.interfaces;
 
-import appmitutoyo.data.MetricaMicrometrica;
+import mitutoyo.data.MetricaMicrometrica;
 import javax.swing.JTextField;
 import jguiextensible.JGuiSimple;
 import jguiextensible.JGuiTabbed;
@@ -46,6 +46,7 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
         jftxRectitud = new javax.swing.JFormattedTextField();
 
         setName("Metrica micrometrica"); // NOI18N
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.PAGE_AXIS));
 
         panelMetrMicrometrica.setBorder(javax.swing.BorderFactory.createTitledBorder("Metrica Micrometrica"));
         panelMetrMicrometrica.setName("Metrica micrometrica"); // NOI18N
@@ -155,7 +156,7 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
     // End of variables declaration//GEN-END:variables
 
     @Override
- protected boolean validarDatos( ) {
+ protected boolean validateData( ) {
              
     return  Utilidades.matcher(jftxAvance, "Avance",this) &&
             Utilidades.matcher(jftxPlanitud, "Planitud",this) &&
@@ -165,7 +166,7 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
  }
  
     @Override
-    protected void guardarDatos() {
+    protected void saveData() {
         
         metMicro.setAvance(Integer.valueOf(String.valueOf(jftxAvance.getValue())));
         metMicro.setParalelismo(Integer.valueOf(String.valueOf(jftxParalelismo.getValue())));
@@ -177,7 +178,7 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
     }
     
     @Override
-    protected void limpiarDatos() {
+    protected void cleanData() {
         
         jftxAvance.setValue(null);
         jftxParalelismo.setValue(null);
@@ -187,4 +188,14 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
         
         metMicro.borrarDatos();
     }
+    
+         @Override
+    protected void updateChanges(String id, Object value) {
+     
+             System.out.println("Actualizando Avance");
+        switch(id) {
+            case "rangoMedida" -> { jftxAvance.setValue(value); }
+        }
+    }
+
 }

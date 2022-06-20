@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="17.0.3" class="java.beans.XMLDecoder">
+<java version="18.0.1.1" class="java.beans.XMLDecoder">
  <object class="appmitutoyo.data.MetricaDeMedicion">
   <void property="graduacion">
-   <int>2</int>
+   <int>3</int>
   </void>
   <void property="precision">
-   <int>2</int>
+   <int>3</int>
   </void>
   <void property="presionDeMedida">
-   <int>2</int>
+   <int>3</int>
   </void>
   <void property="rango">
-   <int>2</int>
+   <int>40</int>
   </void>
   <void property="resolucion">
-   <int>2</int>
+   <int>3</int>
   </void>
  </object>
 </java>

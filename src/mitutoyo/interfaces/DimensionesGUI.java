@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
  */
-package appmitutoyo.interfaces;
+package mitutoyo.interfaces;
 
-import appmitutoyo.data.Dimensiones;
+import mitutoyo.data.Dimensiones;
 import javax.swing.JFormattedTextField;
 import jguiextensible.JGuiSimple;
 
@@ -54,6 +54,7 @@ public class DimensionesGUI extends JGuiSimple {
         jftxMedida_e = new javax.swing.JFormattedTextField();
 
         setName("Dimensiones"); // NOI18N
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.PAGE_AXIS));
 
         panelDimensiones.setBorder(javax.swing.BorderFactory.createTitledBorder("Dimensiones"));
         panelDimensiones.setOpaque(false);
@@ -206,7 +207,7 @@ public class DimensionesGUI extends JGuiSimple {
     // End of variables declaration//GEN-END:variables
 
     @Override
-    protected boolean validarDatos() {
+    protected boolean validateData() {
             
         return   
                 Utilidades.matcher(jftxLongitud, "Longitud",this) &&
@@ -219,7 +220,7 @@ public class DimensionesGUI extends JGuiSimple {
    }
     
     @Override
-    protected void guardarDatos() {
+    protected void saveData() {
   
        dimensiones.setLongitud(Integer.valueOf(String.valueOf(jftxLongitud.getValue())));
        dimensiones.setMedida_a(Integer.valueOf(String.valueOf(jftxMedida_a.getValue())));
@@ -233,7 +234,7 @@ public class DimensionesGUI extends JGuiSimple {
   }
   
     @Override
-  protected void limpiarDatos() {
+  protected void cleanData() {
   
        jftxLongitud.setValue(null);           
        jftxPeso.setValue(null);
@@ -246,5 +247,9 @@ public class DimensionesGUI extends JGuiSimple {
        dimensiones.borrarDatos();
       
   }
+  
+    @Override
+     protected void updateChanges(String id, Object value) {}
+
 
 }

@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package appmitutoyo;
+package mitutoyo;
 
-import appmitutoyo.interfaces.MetricaMicrometricaGUI;
-import appmitutoyo.interfaces.FuncionesGUI;
-import appmitutoyo.interfaces.Utilidades;
+import mitutoyo.interfaces.MetricaMicrometricaGUI;
+import mitutoyo.interfaces.FuncionesGUI;
+import mitutoyo.interfaces.Utilidades;
 import java.util.Arrays;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;

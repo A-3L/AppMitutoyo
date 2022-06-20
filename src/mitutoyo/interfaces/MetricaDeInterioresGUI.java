@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
  */
-package appmitutoyo.interfaces;
+package mitutoyo.interfaces;
 
-import appmitutoyo.data.MetricaDeInteriores;
+import mitutoyo.data.MetricaDeInteriores;
 import javax.swing.JOptionPane;
 import jguiextensible.JGuiSimple;
 import jguiextensible.JGuiTree;
@@ -173,7 +173,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
     
     
     @Override
-    protected boolean validarDatos( ) {
+    protected boolean validateData( ) {
     
         return Utilidades.matcher(jftxRangoInterior, "Rango interior",this) &&
                Utilidades.matcher(jftxMedida_R, "Medida_R",this) &&
@@ -184,7 +184,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
     } 
     
     @Override
-      protected void guardarDatos() {
+      protected void saveData() {
           
           metDeInt.setMedida_R(Integer.valueOf(String.valueOf(jftxMedida_R.getValue())));
           metDeInt.setMedida_f(Integer.valueOf(String.valueOf(jftxMedida_f.getValue())));
@@ -197,7 +197,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
       }
       
     @Override
-      protected void limpiarDatos() {
+      protected void cleanData() {
           
           jftxMedida_R.setValue(null);
           jftxMedida_f.setValue(null);
@@ -209,12 +209,14 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
           metDeInt.borrarDatos();       
       }
     @Override
-    protected void actualizarCambio(String id, Object value) {
+    protected void updateChanges(String id, Object value) {
       
-        System.out.println("Actualizando Articulo");
-        switch(id) {
-            case "rangoMedida" -> {jftxRangoInterior.setText(String.valueOf(value));
-                                   jftxMedida_R.setText(String.valueOf(value)); }
-        }      
+        System.out.println("Actualizando RangoInterior");
+        
+          switch(id) {
+        case "rangoMedida" -> {jftxRangoInterior.setText(String.valueOf(value)); }
+        }
+        
+        //jftxRangoInterior.setText(String.valueOf(value));
     }  
 }

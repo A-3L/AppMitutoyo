@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
  */
-package appmitutoyo.interfaces;
+package mitutoyo.interfaces;
 
-import appmitutoyo.data.Visualizador;
+import mitutoyo.data.Visualizador;
 import jguiextensible.JGuiSimple;
 
 /**
@@ -133,14 +133,14 @@ public class VisualizadorGUI extends JGuiSimple {
      * @return
      */
     @Override  
-    protected boolean validarDatos( ) {  
+    protected boolean validateData( ) {  
     
     return  Utilidades.matcher(jftxResolucion, "Resolucion",this) &&
             Utilidades.matcher(jcbVisualizador, "Visualizador",this);
 }
     
     @Override
-    protected void guardarDatos() {
+    protected void saveData() {
         
        visualizador.setFuncionDeTolerancia(jchkFuncionTolerancia.isSelected());
        visualizador.setResolucion(Integer.valueOf(String.valueOf(jftxResolucion.getValue())));
@@ -149,7 +149,7 @@ public class VisualizadorGUI extends JGuiSimple {
        visualizador.guardarDatos();
     }
     
-    protected void limpiarDatos() {
+    protected void cleanData() {
         
         jchkFuncionTolerancia.setSelected(false);
         jftxResolucion.setValue(null);
@@ -157,5 +157,8 @@ public class VisualizadorGUI extends JGuiSimple {
         
         visualizador.borrarDatos();     
     }
+    
+    @Override
+     protected void updateChanges(String id, Object value) {}
    
 }

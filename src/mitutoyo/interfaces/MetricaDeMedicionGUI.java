@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
  */
-package appmitutoyo.interfaces;
+package mitutoyo.interfaces;
 
-import appmitutoyo.data.MetricaDeMedicion;
+import mitutoyo.data.MetricaDeMedicion;
 import jguiextensible.JGuiSimple;
 import jguiextensible.JGuiTabbed;
 
@@ -49,6 +49,7 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
         jftxPresionDeMedida = new javax.swing.JFormattedTextField();
 
         setName(" Metrica de medicion"); // NOI18N
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.PAGE_AXIS));
 
         panelMetrMedicion.setBorder(javax.swing.BorderFactory.createTitledBorder("Metrica de Medicion"));
         panelMetrMedicion.setName("Metrica de Medicion"); // NOI18N
@@ -160,16 +161,9 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
     private javax.swing.JPanel panelMetrMedicion;
     // End of variables declaration//GEN-END:variables
 
+ 
     @Override
-    protected void actualizarCambio(String id, Object value) {
-     
-        switch(id) {
-            case "rangoMedida" -> { jftxRango.setValue(value); }
-        }
-    }
-    
-    @Override
-   protected boolean validarDatos() {
+   protected boolean validateData() {
         
         return  Utilidades.matcher(jftxRango, "Rango",this) &&
                 Utilidades.matcher(jftxPrecision, "Precision",this) &&
@@ -179,7 +173,7 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
     } 
   
     @Override
-      protected void guardarDatos() {
+      protected void saveData() {
   
      metDeMed.setGraduacion(Integer.valueOf(String.valueOf(jftxGraduacion.getValue())));
      metDeMed.setRango(Integer.valueOf(String.valueOf(jftxRango.getValue())));
@@ -192,7 +186,7 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
     }
       
     @Override
-      protected void limpiarDatos() {
+      protected void cleanData() {
           
           jftxGraduacion.setValue(null);
           jftxRango.setValue(null);
@@ -203,4 +197,15 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
           metDeMed.borrarDatos();
           
       }
+      
+         @Override
+    protected void updateChanges(String id, Object value) {
+     
+             System.out.println("Actualizando Rango");
+        switch(id) {
+            case "rangoMedida" -> { jftxRango.setValue(value); }
+        }
+    }
+    
+      
 }

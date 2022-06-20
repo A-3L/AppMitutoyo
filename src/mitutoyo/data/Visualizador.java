@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package appmitutoyo.data;
+package mitutoyo.data;
 
-import appmitutoyo.interfaces.Utilidades;
-import appmitutoyo.interfaces.VisualizadorGUI;
+import mitutoyo.interfaces.Utilidades;
+import mitutoyo.interfaces.VisualizadorGUI;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import jguiextensible.JGuiExtensible;

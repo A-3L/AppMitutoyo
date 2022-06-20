@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package appmitutoyo;
+package mitutoyo;
 
-import appmitutoyo.interfaces.Utilidades;
+import mitutoyo.interfaces.Utilidades;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import jguiextensible.JGuiExtensible;
  *
  * @author a31r1z
  */
-public class AppMitutoyo extends WindowAdapter{
+public class Mitutoyo extends WindowAdapter{
     
 private static final List<JGuiExtensible> lista = new ArrayList<>();
 
@@ -38,23 +38,29 @@ private static final List<JGuiExtensible> lista = new ArrayList<>();
        Micrometro micro = new Micrometro();
        Comparador comp = new Comparador();
        MicrometroDeInteriores microInt = new MicrometroDeInteriores(); 
-    
-       JFrame frame1= Utilidades.crearFrame(cal.createDialog());
+     
+       JFrame frame0= Utilidades.crearFrame(cal.createDialog());
+       frame0.addWindowListener(new WindowAdapter() {
+       
+       @Override
+       public void windowClosed(WindowEvent evt) {
+           
+           JFrame frame1= Utilidades.crearFrame(calDig.createDialog());
        frame1.addWindowListener(new WindowAdapter() {
-         
-          @Override
-          public void windowClosed(WindowEvent evt) {
-          
-              JFrame frame2=Utilidades.crearFrame(calAlt.createDialog());
-              frame2.addWindowListener(new WindowAdapter() {
-              
-              @Override
-              public void windowClosed(WindowEvent evt) {
-              JFrame frame3=Utilidades.crearFrame(comp.createDialog());
-              frame3.addWindowListener(new WindowAdapter() {
-              
-              @Override
-              public void windowClosed(WindowEvent evt) {
+       
+       @Override
+       public void windowClosed(WindowEvent evt) {
+       
+       JFrame frame2=Utilidades.crearFrame(calAlt.createDialog());
+       frame2.addWindowListener(new WindowAdapter() {
+       
+       @Override
+       public void windowClosed(WindowEvent evt) {
+       JFrame frame3=Utilidades.crearFrame(comp.createDialog());
+       frame3.addWindowListener(new WindowAdapter() {
+       
+       @Override
+       public void windowClosed(WindowEvent evt) {
               
               JFrame frame4=Utilidades.crearFrame(microInt.createDialog());
               frame4.addWindowListener(new WindowAdapter(){
@@ -63,15 +69,18 @@ private static final List<JGuiExtensible> lista = new ArrayList<>();
                   System.exit(0);
             }
             });
-                           
-            }
-            });
               
-            }
-            }); 
+              }
+              });
               
-        }
-        }); 
+              }
+              });
+              
+              }
+              }); 
+              
+              }
+              }); 
     }  
 }
         

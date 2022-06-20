@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
  */
-package appmitutoyo.interfaces;
+package mitutoyo.interfaces;
 
-import appmitutoyo.data.Articulo;
+import mitutoyo.data.Articulo;
 import jguiextensible.JGuiSimple;
 
 /**
@@ -76,13 +76,13 @@ public class ArticuloGUI extends JGuiSimple {
         jGuiSimple1Layout.setVerticalGroup(
             jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jGuiSimple1Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(lblRefArticulo)
                     .addComponent(jtxtRefArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSerie)
                     .addComponent(jtxtSerie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         add(jGuiSimple1);
@@ -101,14 +101,14 @@ public class ArticuloGUI extends JGuiSimple {
     @Override
   
     
-    protected boolean validarDatos() {
+    protected boolean validateData() {
         
         return Utilidades.matcher(jtxtRefArticulo, "Ref.Articulo",this) &&
                Utilidades.matcher(jtxtSerie, "Serie",this);
     }
  
     @Override
-    protected void guardarDatos() {
+    protected void saveData() {
         
         articulo.setRefArticulo(jtxtRefArticulo.getText());
         articulo.setSerie(jtxtSerie.getText());
@@ -117,10 +117,14 @@ public class ArticuloGUI extends JGuiSimple {
     }
     
     @Override
-    protected void limpiarDatos() {
+    protected void cleanData() {
         
         jtxtRefArticulo.setText(null);
         jtxtSerie.setText(null);
     }
+    
+      @Override
+     protected void updateChanges(String id, Object value) {}
+
   
 }

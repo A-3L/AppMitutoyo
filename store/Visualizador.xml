@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="17.0.3" class="java.beans.XMLDecoder">
+<java version="18.0.1.1" class="java.beans.XMLDecoder">
  <object class="appmitutoyo.data.Visualizador">
   <void property="resolucion">
-   <int>2</int>
+   <int>4</int>
   </void>
   <void property="visualizador">
-   <string>TN Monocrome</string>
+   <string>LCD-9Digitos</string>
   </void>
  </object>
 </java>

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package appmitutoyo.interfaces;
+package mitutoyo.interfaces;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -53,24 +53,24 @@ public final class Utilidades {
     
     public static boolean validarCampoVacio(String campo) {
         
-        return !(campo.toString().trim().isEmpty());
+        return !(campo.trim().isEmpty());
     }
     
     public static boolean matcher(JFormattedTextField comp, String name, Object obj) {
       
         switch(comp.getValue()) {
-            
-            case null -> {
-                Utilidades.mostrar("ERROR: Faltan datos en:\n "
-                          + obj +" -> "+ name);
-                comp.requestFocusInWindow();              
-             return false;
-            }
-            case default -> {            
-                return true;
-            }
-        }
-       
+        
+        case null -> {
+                       Utilidades.mostrar("ERROR: Faltan datos en:\n "
+                       + obj +" -> "+ name);
+                       comp.requestFocusInWindow();
+                       
+                       return false;
+                    }
+        case default -> {
+                       return true;
+                    }
+        }  
     }
      
     public static boolean matcher(JTextField comp, String name, Object obj) {
@@ -103,27 +103,27 @@ public final class Utilidades {
      
     public static void saveInXml (String name, Object obj) {
       
-       Path path = FileSystems.getDefault().getPath(name);
-    
-       try (var encoder= new XMLEncoder (new BufferedOutputStream( Files.newOutputStream(path)))) {
-           
-           encoder.writeObject(obj);
-           
+          Path path = FileSystems.getDefault().getPath(name);
+        
+        try (var encoder= new XMLEncoder (new BufferedOutputStream( Files.newOutputStream(path)))) {
+        
+        encoder.writeObject(obj);
+        
         } catch (IOException ex) {
-            Logger.getLogger(obj.getClass().getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(obj.getClass().getName()).log(Level.SEVERE, null, ex);
         }
 }
     
     public static void saveInStream (String name, Object obj) {
         
-        Path path = FileSystems.getDefault().getPath(name);
-    
+           Path path = FileSystems.getDefault().getPath(name);
+        
         try (var out = new ObjectOutputStream(Files.newOutputStream(path))) {
-            
-                out.writeObject(obj);    
-                
-                } catch (IOException ex) {
-            Logger.getLogger(obj.getClass().getName()).log(Level.SEVERE, null, ex);
+        
+        out.writeObject(obj);
+        
+        } catch (IOException ex) {
+        Logger.getLogger(obj.getClass().getName()).log(Level.SEVERE, null, ex);
         }   
     }
          

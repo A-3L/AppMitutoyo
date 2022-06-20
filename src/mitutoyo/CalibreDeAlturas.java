@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package appmitutoyo;
+package mitutoyo;
 
-import appmitutoyo.data.MetricaDeMedicion;
+import mitutoyo.data.MetricaDeMedicion;
+import mitutoyo.interfaces.MetricaDeMedicionGUI;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
 import jguiextensible.JTipoGui;
@@ -26,12 +27,12 @@ public class CalibreDeAlturas extends Calibre{
     protected JGuiExtensible createDialog() {
               
       
-        JGuiExtensible dialog = factory.createDialog(JTipoGui.TABBED,false); 
+        JGuiExtensible dialog = factory.createDialog(JTipoGui.TABBED,true); 
         
         JGuiExtensible especificaciones = super.createDialog();
         especificaciones.setName("Especificaciones"); 
         
-        JGuiExtensible metDeMedGui = metDeMed.createDialog();
+        JGuiExtensible metDeMedGui = new MetricaDeMedicionGUI();
         dialog.setName("Calibre de Alturas");
        
        

@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
  */
-package appmitutoyo.interfaces;
+package mitutoyo.interfaces;
 
-import appmitutoyo.data.Funciones;
+import mitutoyo.data.Funciones;
 import jguiextensible.JGuiSimple;
 
 /**
@@ -113,8 +113,14 @@ public class FuncionesGUI extends JGuiSimple {
     private jguiextensible.JGuiSimple jguiFunciones;
     // End of variables declaration//GEN-END:variables
  
+     @Override
+    protected boolean validateData() {
+            
+        return true;
+    }
+    
     @Override
-    protected void guardarDatos() {
+    protected void saveData() {
         
         funciones.setAjusteFino(jchkAjusteFino.isSelected());
         funciones.setBloqueo(jchkBloqueo.isSelected());
@@ -127,7 +133,7 @@ public class FuncionesGUI extends JGuiSimple {
     }
     
     @Override
-    protected void limpiarDatos() {
+    protected void cleanData() {
         
        jchkAjusteFino.setSelected(false);
        jchkBloqueo.setSelected(false);
@@ -138,4 +144,8 @@ public class FuncionesGUI extends JGuiSimple {
        
        funciones.borrarDatos();
     }
+    
+      @Override
+     protected void updateChanges(String id, Object value) {}
+
 }
