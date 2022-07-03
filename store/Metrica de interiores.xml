@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="18.0.1.1" class="java.beans.XMLDecoder">
- <object class="appmitutoyo.data.MetricaDeInteriores">
+ <object class="mitutoyo.data.MetricaDeInteriores">
   <void property="medida_R">
-   <int>3</int>
+   <int>2</int>
   </void>
   <void property="medida_f">
-   <int>3</int>
+   <int>2</int>
   </void>
   <void property="medida_g">
-   <int>3</int>
+   <int>2</int>
   </void>
   <void property="metricaInterior">
-   <int>3</int>
+   <int>2</int>
   </void>
   <void property="puntosDeMedicion">
-   <int>3</int>
+   <int>2</int>
   </void>
   <void property="rangoInterior">
-   <int>3</int>
+   <int>30</int>
   </void>
  </object>
 </java>

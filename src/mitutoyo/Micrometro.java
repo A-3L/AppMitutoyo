@@ -11,6 +11,8 @@ import java.util.Arrays;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
 import jguiextensible.JTipoGui;
+import mitutoyo.interfaces.EspecificacionesGUI;
+import mitutoyo.interfaces.VisualizadorGUI;
 
 /**
  *
@@ -18,18 +20,22 @@ import jguiextensible.JTipoGui;
  */
 public class Micrometro {
    
+     private final JFactory factory = new JFactory();;
 
-    public Micrometro() {
+     public Micrometro() {
         
-       
     }
     
      protected JGuiExtensible createDialog() {
-        
-         JGuiExtensible dialog = new MetricaMicrometricaGUI();        
-         JGuiExtensible funciones = new FuncionesGUI();
          
-         dialog.addExtensibleChild(funciones);
+        JGuiExtensible dialog = factory.createDialog(JTipoGui.SIMPLE,false);
+                
+         var especif= new EspecificacionesGUI();
+         var metMicr = new MetricaMicrometricaGUI();
+      
+         dialog.addExtensibleChild(especif);
+         dialog.addExtensibleChild(metMicr);
+        
          dialog.setName("Micrometro");
                
         return dialog;       

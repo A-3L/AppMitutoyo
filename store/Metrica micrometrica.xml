@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="18.0.1.1" class="java.beans.XMLDecoder">
- <object class="appmitutoyo.data.MetricaMicrometrica">
+ <object class="mitutoyo.data.MetricaMicrometrica">
   <void property="avance">
-   <int>40</int>
+   <int>30</int>
   </void>
   <void property="paralelismo">
-   <int>3</int>
+   <int>2</int>
   </void>
   <void property="perpendicularidad">
-   <int>3</int>
+   <int>2</int>
   </void>
   <void property="planitud">
-   <int>3</int>
+   <int>2</int>
   </void>
   <void property="rectitud">
-   <int>3</int>
+   <int>2</int>
   </void>
  </object>
 </java>

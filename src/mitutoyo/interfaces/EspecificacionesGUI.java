@@ -5,6 +5,7 @@
 package mitutoyo.interfaces;
 
 import jguiextensible.JGuiSimple;
+import mitutoyo.data.Especificaciones;
 
 /**
  *
@@ -12,6 +13,7 @@ import jguiextensible.JGuiSimple;
  */
 public class EspecificacionesGUI extends JGuiSimple {
 
+    private final Especificaciones especificaciones = new Especificaciones();
     /**
      * Creates new form EspecificacionesGUI
      */
@@ -28,36 +30,64 @@ public class EspecificacionesGUI extends JGuiSimple {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        articuloGUI1 = new mitutoyo.interfaces.ArticuloGUI();
+        dimensionesGUI1 = new mitutoyo.interfaces.DimensionesGUI();
 
-        setBackground(new java.awt.Color(14, 80, 136));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        setName("Especificaciones"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(257, Short.MAX_VALUE))
+            .addComponent(articuloGUI1, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
+            .addComponent(dimensionesGUI1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(251, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(articuloGUI1, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(dimensionesGUI1, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                .addGap(1, 1, 1))
         );
+
+        getAccessibleContext().setAccessibleName("Especificaciones");
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private mitutoyo.interfaces.ArticuloGUI articuloGUI1;
+    private mitutoyo.interfaces.DimensionesGUI dimensionesGUI1;
     // End of variables declaration//GEN-END:variables
+   
+    @Override
+    protected boolean validateData() {
+            
+        return articuloGUI1.validateData() && dimensionesGUI1.validateData();
+               
+   }
+    
+    @Override
+    protected void saveData() {
+        
+        articuloGUI1.saveData();
+        dimensionesGUI1.saveData();
+        
+        especificaciones.guardarDatos();
+        
+  }
+  
+    @Override
+  protected void cleanData() {
+  
+      articuloGUI1.cleanData();
+      dimensionesGUI1.cleanData();
+      
+      especificaciones.borrarDatos();
+      
+  }
+  
+    @Override
+     protected void updateChanges(String id, Object value) {}
+
 }

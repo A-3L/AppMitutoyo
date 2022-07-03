@@ -36,7 +36,7 @@ public class FuncionesGUI extends JGuiSimple {
 
         jguiFunciones = new jguiextensible.JGuiSimple();
         jchkSelectorZeroAbs = new javax.swing.JCheckBox();
-        jchkSalidaDeDatos = new javax.swing.JCheckBox();
+        jchkFuncionTolerancia = new javax.swing.JCheckBox();
         jchkCambioSentidoContaje = new javax.swing.JCheckBox();
         jchkValoracionGoNg = new javax.swing.JCheckBox();
         jchkAjusteFino = new javax.swing.JCheckBox();
@@ -50,8 +50,8 @@ public class FuncionesGUI extends JGuiSimple {
         jchkSelectorZeroAbs.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jchkSelectorZeroAbs.setText("Selector ZERO/ABS");
 
-        jchkSalidaDeDatos.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
-        jchkSalidaDeDatos.setText("Salida de datos");
+        jchkFuncionTolerancia.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+        jchkFuncionTolerancia.setText("Funcion de tolerancia");
 
         jchkCambioSentidoContaje.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jchkCambioSentidoContaje.setText("Cambio sentido contaje");
@@ -75,28 +75,31 @@ public class FuncionesGUI extends JGuiSimple {
                     .addComponent(jchkSelectorZeroAbs)
                     .addComponent(jchkCambioSentidoContaje)
                     .addComponent(jchkValoracionGoNg))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jguiFuncionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jchkAjusteFino)
-                    .addComponent(jchkSalidaDeDatos)
+                    .addComponent(jchkFuncionTolerancia)
                     .addComponent(jchkBloqueo))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jguiFuncionesLayout.setVerticalGroup(
             jguiFuncionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jguiFuncionesLayout.createSequentialGroup()
+            .addGroup(jguiFuncionesLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jguiFuncionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jchkSelectorZeroAbs)
-                    .addComponent(jchkSalidaDeDatos))
-                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jguiFuncionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jchkCambioSentidoContaje)
-                    .addComponent(jchkAjusteFino, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(jguiFuncionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jchkValoracionGoNg)
-                    .addComponent(jchkBloqueo)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jguiFuncionesLayout.createSequentialGroup()
+                        .addComponent(jchkSelectorZeroAbs)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jchkCambioSentidoContaje)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jchkValoracionGoNg))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jguiFuncionesLayout.createSequentialGroup()
+                        .addComponent(jchkFuncionTolerancia)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jchkAjusteFino)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jchkBloqueo)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         add(jguiFunciones);
@@ -107,7 +110,7 @@ public class FuncionesGUI extends JGuiSimple {
     private javax.swing.JCheckBox jchkAjusteFino;
     private javax.swing.JCheckBox jchkBloqueo;
     private javax.swing.JCheckBox jchkCambioSentidoContaje;
-    private javax.swing.JCheckBox jchkSalidaDeDatos;
+    private javax.swing.JCheckBox jchkFuncionTolerancia;
     private javax.swing.JCheckBox jchkSelectorZeroAbs;
     private javax.swing.JCheckBox jchkValoracionGoNg;
     private jguiextensible.JGuiSimple jguiFunciones;
@@ -125,7 +128,7 @@ public class FuncionesGUI extends JGuiSimple {
         funciones.setAjusteFino(jchkAjusteFino.isSelected());
         funciones.setBloqueo(jchkBloqueo.isSelected());
         funciones.setCambioSentidoContaje(jchkCambioSentidoContaje.isSelected());
-        funciones.setSalidaDeDatos(jchkSalidaDeDatos.isSelected());
+        funciones.setFuncionTolerancia(jchkFuncionTolerancia.isSelected());
         funciones.setSelectorZeroAbs(jchkSelectorZeroAbs.isSelected());
         funciones.setValoracionGoNg(jchkValoracionGoNg.isSelected());
         
@@ -138,7 +141,7 @@ public class FuncionesGUI extends JGuiSimple {
        jchkAjusteFino.setSelected(false);
        jchkBloqueo.setSelected(false);
        jchkCambioSentidoContaje.setSelected(false);
-       jchkSalidaDeDatos.setSelected(false);
+       jchkFuncionTolerancia.setSelected(false);
        jchkSelectorZeroAbs.setSelected(false);
        jchkValoracionGoNg.setSelected(false);
        

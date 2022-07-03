@@ -17,6 +17,12 @@ import java.util.List;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
 import jguiextensible.JTipoGui;
+import mitutoyo.data.Especificaciones;
+import mitutoyo.interfaces.EspecificacionesGUI;
+import mitutoyo.interfaces.FuncionesGUI;
+import mitutoyo.interfaces.MetricaDeMedicionGUI;
+import mitutoyo.interfaces.MetricaMicrometricaGUI;
+import mitutoyo.interfaces.ObservacionesGUI;
 
 /**
  *
@@ -28,56 +34,47 @@ public class MicrometroDeInteriores extends Micrometro {
 
     public MicrometroDeInteriores() {
         
+        factory = new JFactory();
        
     }
     
     @Override
        protected JGuiExtensible createDialog() {
-           
-        factory = new JFactory();  
+               
         JGuiExtensible dialog = factory.createDialog(JTipoGui.TREE, true);
        
         List<JGuiExtensible> listaGuis = new ArrayList<>();
         List<JGuiExtensible> lista = new ArrayList<>();
         
-        Calibre cal = new Calibre();
-        CalibreDeAlturas calAlt = new CalibreDeAlturas(); 
-        CalibreDigimatic calDig = new CalibreDigimatic();
-        Articulo articulo = new Articulo();
-        Dimensiones dimensiones = new Dimensiones();
+       
+ 
+        var metComp = new MetricaComparativa();
+        var metDeInt= new MetricaDeInterioresGUI();
+        var metDeMed= new MetricaDeMedicionGUI();
+        var metMicr = new MetricaMicrometricaGUI();
+        var especif = new EspecificacionesGUI();
+        var visual= new VisualizadorGUI();
+        var funciones = new FuncionesGUI();
+        var obs = new ObservacionesGUI();
         
-        MetricaComparativa metComp = new MetricaComparativa();
-        MetricaDeInterioresGUI metDeInt= new MetricaDeInterioresGUI();
-        Visualizador visual= new Visualizador();
-        
-        JGuiExtensible compGui = metComp.createDialog();
-        JGuiExtensible calAltGui = calAlt.createDialog();
+        JGuiExtensible compGui = metComp.createDialog(); 
         JGuiExtensible microGui= super.createDialog();
-        JGuiExtensible articuloGui= articulo.createDialog();
-        JGuiExtensible dimensionesGui= dimensiones.createDialog();
         
-        compGui.addExtensibleChild(new VisualizadorGUI());
+        lista.add(metDeMed);
+        lista.add(compGui);
+        lista.add(metDeInt);
+          
+        listaGuis.add(visual);
+        
+        dialog.addExtensibleChild(microGui); 
+        visual.addExtensibleChild(obs);
+        dialog.addExtensibleChildrenList(lista);   
+        dialog.addExtensibleChildrenList(listaGuis);
+        dialog.addExtensibleChild(funciones);
         
         compGui.setName("Metrica comparativa");
-        microGui.setName("Metrica micrometrica");
-        calAltGui.setName("Especificaciones");
-        
-        articuloGui.addExtensibleChild(dimensionesGui);
-         
-        dialog.addExtensibleChild(articuloGui);
-        dialog.addExtensibleChild(metComp.createDialog());
-        lista.add(calAltGui);
-         
-        listaGuis.add(compGui);
-        listaGuis.add(microGui);
-        
-        dialog.addExtensibleChildrenList(lista);
-       
-       
-       
-          
-        dialog.addExtensibleChildrenList(listaGuis);
-         
+        microGui.setName("Especificaciones");
+        obs.setName("Observaciones");
         dialog.setName("Micrometro de interiores");
                 
         return dialog;

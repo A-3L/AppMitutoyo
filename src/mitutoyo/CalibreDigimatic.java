@@ -9,6 +9,7 @@ import mitutoyo.interfaces.VisualizadorGUI;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
 import jguiextensible.JTipoGui;
+import mitutoyo.interfaces.ObservacionesGUI;
 
 /**
  *
@@ -27,14 +28,18 @@ public class CalibreDigimatic extends Calibre {
         
         JGuiExtensible dialog = factory.createDialog(JTipoGui.SIMPLE,true); 
         JGuiExtensible dialogo = super.createDialog();
-        FuncionesGUI funciones = new FuncionesGUI();
-        VisualizadorGUI visualGui = new VisualizadorGUI();
-      
-        dialog.addExtensibleChild(dialogo);
-        dialog.addExtensibleChild(visualGui);
-       
+        
+        var visualGui = new VisualizadorGUI();
+        var obs = new ObservacionesGUI();
+        
         dialogo.setName("Especificaciones");
         dialog.setName("Calibre Digimatic");
+        
+        visualGui.addExtensibleChild(obs);
+        dialog.addExtensibleChild(dialogo);   
+        dialog.addExtensibleChild(visualGui);
+          
+        
           
         return dialog;              
     }

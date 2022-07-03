@@ -1,26 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="18.0.1.1" class="java.beans.XMLDecoder">
- <object class="appmitutoyo.data.Dimensiones">
-  <void property="longitud">
-   <int>2</int>
-  </void>
-  <void property="medida_a">
-   <int>3</int>
-  </void>
-  <void property="medida_b">
-   <int>2</int>
-  </void>
-  <void property="medida_c">
-   <int>4</int>
-  </void>
-  <void property="medida_d">
-   <int>4</int>
-  </void>
-  <void property="medida_e">
-   <int>4</int>
-  </void>
-  <void property="peso">
-   <int>3</int>
-  </void>
- </object>
+ <object class="mitutoyo.data.Dimensiones"/>
 </java>

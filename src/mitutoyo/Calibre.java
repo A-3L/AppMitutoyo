@@ -6,11 +6,11 @@ package mitutoyo;
 
 import mitutoyo.data.Articulo;
 import mitutoyo.data.Dimensiones;
-import mitutoyo.interfaces.ArticuloGUI;
-import mitutoyo.interfaces.DimensionesGUI;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
 import jguiextensible.JTipoGui;
+import mitutoyo.interfaces.EspecificacionesGUI;
+import mitutoyo.interfaces.MetricaDeMedicionGUI;
 
 /**
  *
@@ -18,9 +18,7 @@ import jguiextensible.JTipoGui;
  */
 public class Calibre {
     
-    private Articulo articulo = new Articulo();
-    private Dimensiones dimensiones = new Dimensiones();
-    private final JFactory factory = new JFactory();;
+    private final JFactory factory = new JFactory();
     
     
     public Calibre() {
@@ -29,14 +27,16 @@ public class Calibre {
  
     protected JGuiExtensible createDialog() {
         
-        JGuiExtensible dialog = factory.createDialog(JTipoGui.SIMPLE,false);         
-        var articuloGui = new ArticuloGUI();
-        var dimensionesGui = new DimensionesGUI();
+        JGuiExtensible dialog = factory.createDialog(JTipoGui.SIMPLE,false); 
         
-        dialog.addExtensibleChild(articuloGui);
-        dialog.addExtensibleChild(dimensionesGui);
         dialog.setName("Calibre");
-                      
+        
+        var especificacionesGui = new EspecificacionesGUI();
+        var metDeMedGui = new MetricaDeMedicionGUI();
+       
+        dialog.addExtensibleChild(especificacionesGui);
+        dialog.addExtensibleChild(metDeMedGui);
+                   
         return dialog;
     } 
 }

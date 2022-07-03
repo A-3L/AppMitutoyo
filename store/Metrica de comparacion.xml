@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="18.0.1.1" class="java.beans.XMLDecoder">
- <object class="appmitutoyo.data.MetricaComparativa">
+ <object class="mitutoyo.data.MetricaComparativa">
   <void property="errorMaximo">
-   <int>3</int>
+   <int>2</int>
   </void>
   <void property="escala">
-   <int>3</int>
+   <int>2</int>
   </void>
   <void property="hyteresis">
-   <int>3</int>
+   <int>2</int>
   </void>
   <void property="rangoDeMedida">
-   <int>40</int>
+   <int>30</int>
   </void>
  </object>
 </java>

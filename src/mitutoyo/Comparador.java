@@ -10,6 +10,10 @@ import mitutoyo.interfaces.Utilidades;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
 import jguiextensible.JTipoGui;
+import mitutoyo.interfaces.FuncionesGUI;
+import mitutoyo.interfaces.MetricaDeInterioresGUI;
+import mitutoyo.interfaces.ObservacionesGUI;
+import mitutoyo.interfaces.VisualizadorGUI;
 
 /**
  *
@@ -25,15 +29,34 @@ public class Comparador {
     
       protected JGuiExtensible createDialog() {
        
-        //JGuiExtensible dialog =  factory.createDialog(JTipoGui.SIMPLE,true);
-        JGuiExtensible  dialog= new MetricaComparativaGUI(); 
+        JGuiExtensible dialog =  factory.createDialog(JTipoGui.TABBED,true);
+        JGuiExtensible tree =  factory.createDialog(JTipoGui.TREE,false);
+       
+        Calibre calibre = new Calibre();
+        JGuiExtensible especif = calibre.createDialog();
+        JGuiExtensible metComp= new MetricaComparativaGUI(); 
         JGuiExtensible metMicr = new MetricaMicrometricaGUI();
         
-        //dialog.addExtensibleChild(metComp);
-        dialog.addExtensibleChild(metMicr);
+        var visualGui = new VisualizadorGUI();
+        var funciones = new FuncionesGUI();
+        var metDeInt= new MetricaDeInterioresGUI();
+        var obs = new ObservacionesGUI();
+         
+        especif.setName("Especificaciones");
         dialog.setName("Comparador");
-       
-      return dialog;       
+        tree.setName("Visualizador");
+        
+        metMicr.addExtensibleChild(metComp);
+        metDeInt.addExtensibleChild(obs);
+        visualGui.addExtensibleChild(funciones); 
+        tree.addExtensibleChild(visualGui);
+        tree.addExtensibleChild(metDeInt);
+        
+        dialog.addExtensibleChild(especif);
+        dialog.addExtensibleChild(metMicr);
+        dialog.addExtensibleChild(tree);
+        
+        return dialog;       
     }
     
 }

@@ -38,7 +38,7 @@ public class Funciones {
         setAjusteFino(false);
         setBloqueo(false);
         setCambioSentidoContaje(false);
-        setSalidaDeDatos(false);
+        setFuncionTolerancia(false);
         setSelectorZeroAbs(false);
         setValoracionGoNg(false);
      
@@ -122,7 +122,7 @@ public class Funciones {
      *
      * @return the value of salidaDeDatos
      */
-    public boolean isSalidaDeDatos() {
+    public boolean isFuncionTolerancia() {
         return salidaDeDatos;
     }
 
@@ -131,7 +131,7 @@ public class Funciones {
      *
      * @param salidaDeDatos new value of salidaDeDatos
      */
-    public void setSalidaDeDatos(boolean salidaDeDatos) {
+    public void setFuncionTolerancia(boolean salidaDeDatos) {
         boolean oldSalidaDeDatos = this.salidaDeDatos;
         this.salidaDeDatos = salidaDeDatos;
         propertyChangeSupport.firePropertyChange(PROP_SALIDADEDATOS, oldSalidaDeDatos, salidaDeDatos);
