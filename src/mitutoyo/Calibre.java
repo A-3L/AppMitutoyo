@@ -17,18 +17,15 @@ import mitutoyo.interfaces.MetricaDeMedicionGUI;
  * @author a31r1z
  */
 public class Calibre {
-    
-    private final JFactory factory = new JFactory();
-    
-    
+ 
     public Calibre() {
          
     }
  
     protected JGuiExtensible createDialog() {
         
-        JGuiExtensible dialog = factory.createDialog(JTipoGui.SIMPLE,false); 
-        
+        JGuiExtensible dialog = JFactory.getInstance().createDialog(JTipoGui.SIMPLE,false); 
+       
         dialog.setName("Calibre");
         
         var especificacionesGui = new EspecificacionesGUI();

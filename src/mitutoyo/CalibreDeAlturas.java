@@ -18,7 +18,7 @@ import mitutoyo.interfaces.ObservacionesGUI;
 
 public class CalibreDeAlturas extends Calibre{
 
-    private final JFactory factory = new JFactory();
+  
       
     public CalibreDeAlturas() {
         
@@ -27,7 +27,7 @@ public class CalibreDeAlturas extends Calibre{
     @Override
     protected JGuiExtensible createDialog() {
                
-        JGuiExtensible dialog = factory.createDialog(JTipoGui.TABBED,false); 
+        JGuiExtensible dialog = JFactory.getInstance().createDialog(JTipoGui.TABBED,false); 
         
         var especificaciones = super.createDialog();
         var metDeInt = new MetricaDeInterioresGUI();

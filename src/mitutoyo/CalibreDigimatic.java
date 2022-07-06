@@ -17,8 +17,7 @@ import mitutoyo.interfaces.ObservacionesGUI;
  */
 public class CalibreDigimatic extends Calibre {
 
-    private final JFactory factory = new JFactory();
-    
+      
     public CalibreDigimatic() {
        
     }
@@ -26,7 +25,7 @@ public class CalibreDigimatic extends Calibre {
     @Override
     protected JGuiExtensible createDialog() {
         
-        JGuiExtensible dialog = factory.createDialog(JTipoGui.SIMPLE,true); 
+        JGuiExtensible dialog = JFactory.getInstance().createDialog(JTipoGui.SIMPLE,true); 
         JGuiExtensible dialogo = super.createDialog();
         
         var visualGui = new VisualizadorGUI();

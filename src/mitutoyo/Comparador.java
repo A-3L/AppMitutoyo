@@ -21,7 +21,7 @@ import mitutoyo.interfaces.VisualizadorGUI;
  */
 public class Comparador {
    
-    JFactory factory = new JFactory();
+   
 
     public Comparador() {
         
@@ -29,8 +29,8 @@ public class Comparador {
     
       protected JGuiExtensible createDialog() {
        
-        JGuiExtensible dialog =  factory.createDialog(JTipoGui.TABBED,true);
-        JGuiExtensible tree =  factory.createDialog(JTipoGui.TREE,false);
+        JGuiExtensible dialog = JFactory.getInstance().createDialog(JTipoGui.TABBED,true);
+        JGuiExtensible tree =  JFactory.getInstance().createDialog(JTipoGui.TREE,false);
        
         Calibre calibre = new Calibre();
         JGuiExtensible especif = calibre.createDialog();

@@ -30,18 +30,16 @@ import mitutoyo.interfaces.ObservacionesGUI;
  */
 public class MicrometroDeInteriores extends Micrometro {
     
-    private JFactory factory;
+  
 
     public MicrometroDeInteriores() {
         
-        factory = new JFactory();
-       
     }
     
     @Override
        protected JGuiExtensible createDialog() {
                
-        JGuiExtensible dialog = factory.createDialog(JTipoGui.TREE, true);
+        JGuiExtensible dialog = JFactory.getInstance().createDialog(JTipoGui.TREE, true);
        
         List<JGuiExtensible> listaGuis = new ArrayList<>();
         List<JGuiExtensible> lista = new ArrayList<>();

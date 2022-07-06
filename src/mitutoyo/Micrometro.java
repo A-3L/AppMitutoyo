@@ -20,15 +20,14 @@ import mitutoyo.interfaces.VisualizadorGUI;
  */
 public class Micrometro {
    
-     private final JFactory factory = new JFactory();;
-
+   
      public Micrometro() {
         
     }
     
      protected JGuiExtensible createDialog() {
          
-        JGuiExtensible dialog = factory.createDialog(JTipoGui.SIMPLE,false);
+        JGuiExtensible dialog = JFactory.getInstance().createDialog(JTipoGui.SIMPLE,false);
                 
          var especif= new EspecificacionesGUI();
          var metMicr = new MetricaMicrometricaGUI();
