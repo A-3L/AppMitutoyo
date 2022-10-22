@@ -45,7 +45,7 @@ public class FuncionesGUI extends JGuiSimple {
         setName("Funciones"); // NOI18N
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
-        jguiFunciones.setBorder(javax.swing.BorderFactory.createTitledBorder("Funciones opcionales"));
+        jguiFunciones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Funciones opcionales", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 12))); // NOI18N
 
         jchkSelectorZeroAbs.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jchkSelectorZeroAbs.setText("Selector ZERO/ABS");

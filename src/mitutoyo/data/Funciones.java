@@ -5,16 +5,17 @@
 package mitutoyo.data;
 
 import mitutoyo.interfaces.FuncionesGUI;
-import mitutoyo.interfaces.Utilidades;
+import mitutoyo.Utilidades;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.io.Serializable;
 import jguiextensible.JGuiExtensible;
 
 /**
  *
  * @author a31r1z
  */
-public class Funciones {
+public class Funciones implements Serializable{
     
     private static final long serialVersionUID = 1L;
 

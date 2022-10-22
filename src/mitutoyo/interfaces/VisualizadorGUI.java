@@ -4,6 +4,7 @@
  */
 package mitutoyo.interfaces;
 
+import mitutoyo.Utilidades;
 import mitutoyo.data.Visualizador;
 import jguiextensible.JGuiSimple;
 
@@ -45,7 +46,7 @@ public class VisualizadorGUI extends JGuiSimple {
         setName("Visualizador"); // NOI18N
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
-        jGuiSimple1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("Visualizador")));
+        jGuiSimple1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("Visualizador"), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12))); // NOI18N
 
         jftxResolucion.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxResolucion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -54,6 +55,7 @@ public class VisualizadorGUI extends JGuiSimple {
         jchkSalidaDeDatos.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jchkSalidaDeDatos.setText("Salida  de Datos");
 
+        jcbVisualizador.setFont(new java.awt.Font("URW Gothic", 1, 11)); // NOI18N
         jcbVisualizador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccione-", "LCD-6Digitos", "LCD-9Digitos", "TN Monocrome", "Graficos LCD", "Analogico", " " }));
         jcbVisualizador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

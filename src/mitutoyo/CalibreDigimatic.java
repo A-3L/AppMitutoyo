@@ -4,7 +4,6 @@
  */
 package mitutoyo;
 
-import mitutoyo.interfaces.FuncionesGUI;
 import mitutoyo.interfaces.VisualizadorGUI;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
@@ -34,9 +33,9 @@ public class CalibreDigimatic extends Calibre {
         dialogo.setName("Especificaciones");
         dialog.setName("Calibre Digimatic");
         
-        visualGui.addExtensibleChild(obs);
-        dialog.addExtensibleChild(dialogo);   
-        dialog.addExtensibleChild(visualGui);
+        visualGui.addJGui(obs);
+        dialog.addJGui(dialogo);   
+        dialog.addJGui(visualGui);
           
         
           

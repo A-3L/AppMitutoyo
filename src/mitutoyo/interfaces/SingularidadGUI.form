@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="name" type="java.lang.String" value="Singularidad" noResource="true"/>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+              <Component id="jGuiSimple1" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jGuiSimple1" alignment="1" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="jguiextensible.JGuiSimple" name="jGuiSimple1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Singularidad">
+              <Font PropertyName="font" name="DialogInput" size="12" style="1"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+        <Property name="name" type="java.lang.String" value="Singularidad" noResource="true"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace pref="31" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblMargen" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblSingularidad" pref="91" max="32767" attributes="0"/>
+                          <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jftxtSingularidad" min="-2" pref="49" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="lblLimite" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jftxtLimite" min="-2" pref="50" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jsldMargen" pref="212" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <Component id="jGuiSimple2" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jGuiSimple3" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblMargen" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jsldMargen" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblSingularidad" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jftxtSingularidad" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblLimite" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jftxtLimite" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jGuiSimple3" alignment="3" max="32767" attributes="0"/>
+                      <Component id="jGuiSimple2" alignment="3" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JFormattedTextField" name="jftxtSingularidad">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+              <Format subtype="1" type="0"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblMargen">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Margen"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSlider" name="jsldMargen">
+          <Events>
+            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jsldMargenStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblSingularidad">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Singularidad "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblLimite">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Limite"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="jftxtLimite">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+              <Format subtype="1" type="0"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Container class="jguiextensible.JGuiSimple" name="jGuiSimple2">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Desviacion">
+                  <Font PropertyName="font" name="DialogInput" size="12" style="1"/>
+                </TitledBorder>
+              </Border>
+            </Property>
+            <Property name="name" type="java.lang.String" value="Desviacion" noResource="true"/>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblMediana" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblValorRef" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblPromedio" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jftxtMediana" linkSize="5" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="jftxtPromedio" linkSize="5" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="jftxtValorRef" linkSize="5" min="-2" pref="38" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblMediana" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jftxtMediana" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblValorRef" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jftxtValorRef" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblPromedio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jftxtPromedio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblPromedio">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="URW Gothic" size="13" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Promedio"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="jftxtPromedio">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format subtype="1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="URW Gothic" size="13" style="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblMediana">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="URW Gothic" size="13" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mediana"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="jftxtMediana">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format subtype="1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="URW Gothic" size="13" style="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblValorRef">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="URW Gothic" size="13" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Valor Ref."/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="jftxtValorRef">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format subtype="1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="URW Gothic" size="13" style="0"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="jguiextensible.JGuiSimple" name="jGuiSimple3">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Dispersion">
+                  <Font PropertyName="font" name="DialogInput" size="12" style="1"/>
+                </TitledBorder>
+              </Border>
+            </Property>
+            <Property name="name" type="java.lang.String" value="Dispersion" noResource="true"/>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblDesvTipica" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblDesvAbsoluta" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblDesvMedia" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jftxtDesvMedia" linkSize="1" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="jftxtDesvAbsoluta" linkSize="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jftxtDesvTipica" linkSize="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblDesvMedia" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jftxtDesvMedia" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblDesvTipica" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jftxtDesvTipica" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="lblDesvAbsoluta" min="-2" max="-2" attributes="0"/>
+                          <Component id="jftxtDesvAbsoluta" linkSize="2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblDesvMedia">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="URW Gothic" size="13" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Desv. Media"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblDesvTipica">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="URW Gothic" size="13" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Desv. Tipica"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblDesvAbsoluta">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="URW Gothic" size="13" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Desv. Absoluta"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="jftxtDesvMedia">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format subtype="1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="URW Gothic" size="13" style="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="jftxtDesvTipica">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format subtype="1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="URW Gothic" size="13" style="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="jftxtDesvAbsoluta">
+              <Properties>
+                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+                  <Format subtype="1" type="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="URW Gothic" size="13" style="0"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

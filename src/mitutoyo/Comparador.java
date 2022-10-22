@@ -6,7 +6,6 @@ package mitutoyo;
 
 import mitutoyo.interfaces.MetricaMicrometricaGUI;
 import mitutoyo.interfaces.MetricaComparativaGUI;
-import mitutoyo.interfaces.Utilidades;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
 import jguiextensible.JTipoGui;
@@ -46,15 +45,15 @@ public class Comparador {
         dialog.setName("Comparador");
         tree.setName("Visualizador");
         
-        metMicr.addExtensibleChild(metComp);
-        metDeInt.addExtensibleChild(obs);
-        visualGui.addExtensibleChild(funciones); 
-        tree.addExtensibleChild(visualGui);
-        tree.addExtensibleChild(metDeInt);
+        metMicr.addJGui(metComp);
+        metDeInt.addJGui(obs);
+        visualGui.addJGui(funciones); 
+        tree.addJGui(visualGui);
+        tree.addJGui(metDeInt);
         
-        dialog.addExtensibleChild(especif);
-        dialog.addExtensibleChild(metMicr);
-        dialog.addExtensibleChild(tree);
+        dialog.addJGui(especif);
+        dialog.addJGui(metMicr);
+        dialog.addJGui(tree);
         
         return dialog;       
     }

@@ -5,14 +5,10 @@
 package mitutoyo;
 
 import mitutoyo.interfaces.MetricaMicrometricaGUI;
-import mitutoyo.interfaces.FuncionesGUI;
-import mitutoyo.interfaces.Utilidades;
-import java.util.Arrays;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
 import jguiextensible.JTipoGui;
 import mitutoyo.interfaces.EspecificacionesGUI;
-import mitutoyo.interfaces.VisualizadorGUI;
 
 /**
  *
@@ -29,11 +25,15 @@ public class Micrometro {
          
         JGuiExtensible dialog = JFactory.getInstance().createDialog(JTipoGui.SIMPLE,false);
                 
-         var especif= new EspecificacionesGUI();
+        // var especif= new EspecificacionesGUI();
          var metMicr = new MetricaMicrometricaGUI();
+         var calibre = new CalibreDeAlturas();
+         var cal = calibre.createDialog();
       
-         dialog.addExtensibleChild(especif);
-         dialog.addExtensibleChild(metMicr);
+         //dialog.addJGui(especif);
+         
+         dialog.addJGui(cal);
+         dialog.addJGui(metMicr);
         
          dialog.setName("Micrometro");
                

@@ -4,17 +4,20 @@
  */
 package mitutoyo.data;
 
-import mitutoyo.interfaces.Utilidades;
+import mitutoyo.Utilidades;
 import mitutoyo.interfaces.VisualizadorGUI;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.io.Serializable;
 import jguiextensible.JGuiExtensible;
 
 /**
  *
  * @author a31r1z
  */
-public class Visualizador {
+public class Visualizador  implements Serializable{
+
+    private static final long serialVersionUID = 1L;
 
     public Visualizador() {
         

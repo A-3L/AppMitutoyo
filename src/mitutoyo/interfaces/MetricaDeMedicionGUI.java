@@ -4,9 +4,9 @@
  */
 package mitutoyo.interfaces;
 
+import mitutoyo.Utilidades;
 import mitutoyo.data.MetricaDeMedicion;
 import jguiextensible.JGuiSimple;
-import jguiextensible.JGuiTabbed;
 
 /**
  *
@@ -48,10 +48,9 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
         jftxGraduacion = new javax.swing.JFormattedTextField();
         jftxPresionDeMedida = new javax.swing.JFormattedTextField();
 
-        setName(" Metrica de medicion"); // NOI18N
-        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.PAGE_AXIS));
+        setName("Metrica de medicion"); // NOI18N
 
-        panelMetrMedicion.setBorder(javax.swing.BorderFactory.createTitledBorder("Metrica de Medicion"));
+        panelMetrMedicion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Metrica de Medicion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12))); // NOI18N
         panelMetrMedicion.setName("Metrica de Medicion"); // NOI18N
 
         lblRango.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N

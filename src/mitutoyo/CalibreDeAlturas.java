@@ -37,10 +37,10 @@ public class CalibreDeAlturas extends Calibre{
         especificaciones.setName("Especificaciones"); 
         dialog.setName("Calibre de Alturas");
         
-        funciones.addExtensibleChild(obs);
-        dialog.addExtensibleChild(especificaciones);
-        dialog.addExtensibleChild(metDeInt);
-        dialog.addExtensibleChild(funciones);
+        funciones.addJGui(obs);
+        dialog.addJGui(especificaciones);
+        dialog.addJGui(metDeInt);
+        dialog.addJGui(funciones);
          
         return dialog;       
     }

@@ -4,6 +4,7 @@
  */
 package mitutoyo.interfaces;
 
+import mitutoyo.Utilidades;
 import mitutoyo.data.Articulo;
 import jguiextensible.JGuiSimple;
 
@@ -43,7 +44,7 @@ public class ArticuloGUI extends JGuiSimple {
         setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         setName("Articulo"); // NOI18N
 
-        jGuiSimple1.setBorder(javax.swing.BorderFactory.createTitledBorder("Articulo"));
+        jGuiSimple1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Articulo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 12))); // NOI18N
         jGuiSimple1.setName("Articulo"); // NOI18N
 
         lblRefArticulo.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N

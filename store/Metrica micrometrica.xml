@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="18.0.1.1" class="java.beans.XMLDecoder">
+<java version="18.0.2" class="java.beans.XMLDecoder">
  <object class="mitutoyo.data.MetricaMicrometrica">
   <void property="avance">
-   <int>30</int>
+   <int>2</int>
   </void>
   <void property="paralelismo">
    <int>2</int>

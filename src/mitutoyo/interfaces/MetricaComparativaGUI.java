@@ -4,11 +4,8 @@
  */
 package mitutoyo.interfaces;
 
+import mitutoyo.Utilidades;
 import mitutoyo.data.MetricaComparativa;
-import java.beans.PropertyChangeListener;
-import java.text.NumberFormat;
-import javax.swing.JFormattedTextField;
-import javax.swing.text.NumberFormatter;
 import jguiextensible.JGuiSimple;
 
 /**
@@ -51,7 +48,7 @@ public class MetricaComparativaGUI extends JGuiSimple {
         setName("Metrica Comparador"); // NOI18N
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
-        jguiMetricaComp.setBorder(javax.swing.BorderFactory.createTitledBorder("Metrica comparativa"));
+        jguiMetricaComp.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Metrica comparativa", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 12))); // NOI18N
 
         jftxErrorMax.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxErrorMax.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -120,7 +117,7 @@ public class MetricaComparativaGUI extends JGuiSimple {
                 .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(lblRangoMedida)
                     .addComponent(jsldRangoMedida, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jguiMetricaCompLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(lblErrorMaximo)
                     .addComponent(jftxErrorMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -141,14 +138,13 @@ public class MetricaComparativaGUI extends JGuiSimple {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jsldRangoMedidaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jsldRangoMedidaStateChanged
-       
-             System.out.println("Notificacion Slide");
+           System.out.println("Notificacion Slide");
         
         metDeComp.setRangoDeMedida(jsldRangoMedida.getValue());
         
              System.out.println("RANGOMEDIDA :"+metDeComp.getRangoDeMedida());
         
-        notifyChanges(this,"rangoMedida", jsldRangoMedida.getValue());
+        notifyChanges("rangoMedida", jsldRangoMedida.getValue());
     }//GEN-LAST:event_jsldRangoMedidaStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

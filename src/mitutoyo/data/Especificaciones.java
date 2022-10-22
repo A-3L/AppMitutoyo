@@ -4,21 +4,20 @@
  */
 package mitutoyo.data;
 
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
+import java.io.Serializable;
 import jguiextensible.JGuiExtensible;
-import mitutoyo.interfaces.ArticuloGUI;
 import mitutoyo.interfaces.EspecificacionesGUI;
-import mitutoyo.interfaces.Utilidades;
 
 /**
  *
  * @author a31r1z
  */
-public class Especificaciones {
+public class Especificaciones implements Serializable{
 
-    private Articulo articulo= new Articulo();
-    private Dimensiones dimensiones = new Dimensiones();
+    private static final long serialVersionUID = 1L;
+
+    private final Articulo articulo= new Articulo();
+    private final Dimensiones dimensiones = new Dimensiones();
     
     public Especificaciones() {
     }

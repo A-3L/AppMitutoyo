@@ -2,7 +2,7 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
-    <Property name="name" type="java.lang.String" value=" Metrica de medicion" noResource="true"/>
+    <Property name="name" type="java.lang.String" value="Metrica de medicion" noResource="true"/>
   </Properties>
   <AccessibilityProperties>
     <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Metrica de medicion"/>
@@ -28,7 +28,9 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Metrica de Medicion"/>
+            <TitledBorder title="Metrica de Medicion">
+              <Font PropertyName="font" name="Dialog" size="12" style="1"/>
+            </TitledBorder>
           </Border>
         </Property>
         <Property name="name" type="java.lang.String" value="Metrica de Medicion" noResource="true"/>

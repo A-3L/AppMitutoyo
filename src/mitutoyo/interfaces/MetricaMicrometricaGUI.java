@@ -4,6 +4,7 @@
  */
 package mitutoyo.interfaces;
 
+import mitutoyo.Utilidades;
 import mitutoyo.data.MetricaMicrometrica;
 import javax.swing.JTextField;
 import jguiextensible.JGuiSimple;
@@ -46,9 +47,8 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
         jftxRectitud = new javax.swing.JFormattedTextField();
 
         setName("Metrica micrometrica"); // NOI18N
-        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.PAGE_AXIS));
 
-        panelMetrMicrometrica.setBorder(javax.swing.BorderFactory.createTitledBorder("Metrica Micrometrica"));
+        panelMetrMicrometrica.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Metrica Micrometrica", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 12))); // NOI18N
         panelMetrMicrometrica.setName("Metrica micrometrica"); // NOI18N
 
         lblAvance.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N

@@ -6,16 +6,19 @@ package mitutoyo.data;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import mitutoyo.interfaces.Utilidades;
+import java.io.Serializable;
+import jguiextensible.JGuiExtensible;
+import mitutoyo.Utilidades;
+import mitutoyo.interfaces.ObservacionesGUI;
 
 /**
  *
  * @author a31r1z
  */
-public class Observaciones {
+public class Observaciones  implements Serializable{
 
-    
-    
+    private static final long serialVersionUID = 1L;
+ 
     public Observaciones() {
     }
     
@@ -72,6 +75,10 @@ public class Observaciones {
      */
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.removePropertyChangeListener(listener);
+    }
+
+    public JGuiExtensible createDialog() {
+        return new ObservacionesGUI();
     }
 
     

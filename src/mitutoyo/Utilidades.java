@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package mitutoyo.interfaces;
+package mitutoyo;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -33,7 +33,7 @@ public final class Utilidades {
         JOptionPane.showMessageDialog(null,message);
     }
     
-    public static JFrame crearFrame(Container gui) {
+    public static JFrame crearFrame(Container gui)  {
        
     JFrame frame;
     frame= new JFrame(gui.getName());
@@ -56,12 +56,46 @@ public final class Utilidades {
         return !(campo.trim().isEmpty());
     }
     
+    public static boolean rango(JFormattedTextField comp, int max, int min) {
+        
+        Long value = (Long)comp.getValue(); 
+        return (value<min || value>max); 
+    }  
+    
+     public static boolean matcher(JFormattedTextField comp, String name, int max, int min, Object obj) {
+      
+        switch(comp.getValue()) {
+        
+        case null -> {
+                       Utilidades.mostrar(" ATENCION: Faltan datos en:\n "
+                       + obj +" -> "+ name);
+                       comp.requestFocusInWindow();
+                       
+                       return false;
+                    }
+        case default -> {
+            
+                      if (rango(comp, max, min)) {
+                          Utilidades.mostrar("ATENCION: Numero fuera de rango (" +min+ ", " +max+ ") en:\n"
+                          + obj +" -> "+ name);
+                          comp.setValue(null);
+                          comp.requestFocusInWindow();
+                       
+                          return false;}
+                      else{
+                          return true;
+                       }
+                    }
+        }
+    }
+    
+    
     public static boolean matcher(JFormattedTextField comp, String name, Object obj) {
       
         switch(comp.getValue()) {
         
         case null -> {
-                       Utilidades.mostrar("ERROR: Faltan datos en:\n "
+                       Utilidades.mostrar("ATENCION: Faltan datos en:\n "
                        + obj +" -> "+ name);
                        comp.requestFocusInWindow();
                        
@@ -77,7 +111,7 @@ public final class Utilidades {
       
         if (!Utilidades.validarCampoVacio(comp.getText())) {
                    
-              Utilidades.mostrar("ERROR: Falta introducir datos:\n "
+              Utilidades.mostrar("ATENCION: Falta introducir datos:\n "
                           + obj +" -> "+ name);
               comp.requestFocusInWindow();
               
@@ -91,7 +125,7 @@ public final class Utilidades {
                   
         if (comp.getSelectedIndex() == 0){
             
-             Utilidades.mostrar("ERROR: Falta seleccion en:\n "
+             Utilidades.mostrar("ATENCION: Falta seleccion en:\n "
                           + obj +" -> " + name);
             comp.requestFocusInWindow();
         
@@ -112,19 +146,7 @@ public final class Utilidades {
         } catch (IOException ex) {
         Logger.getLogger(obj.getClass().getName()).log(Level.SEVERE, null, ex);
         }
-}
-    
-    public static void saveInStream (String name, Object obj) {
-        
-           Path path = FileSystems.getDefault().getPath(name);
-        
-        try (var out = new ObjectOutputStream(Files.newOutputStream(path))) {
-        
-        out.writeObject(obj);
-        
-        } catch (IOException ex) {
-        Logger.getLogger(obj.getClass().getName()).log(Level.SEVERE, null, ex);
-        }   
     }
+  
          
 }

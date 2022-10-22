@@ -4,6 +4,7 @@
  */
 package mitutoyo.interfaces;
 
+import mitutoyo.Utilidades;
 import mitutoyo.data.Dimensiones;
 import javax.swing.JFormattedTextField;
 import jguiextensible.JGuiSimple;
@@ -54,9 +55,8 @@ public class DimensionesGUI extends JGuiSimple {
         jftxMedida_e = new javax.swing.JFormattedTextField();
 
         setName("Dimensiones"); // NOI18N
-        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.PAGE_AXIS));
 
-        panelDimensiones.setBorder(javax.swing.BorderFactory.createTitledBorder("Dimensiones"));
+        panelDimensiones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dimensiones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 12))); // NOI18N
         panelDimensiones.setOpaque(false);
 
         lblLongitud.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
@@ -210,7 +210,7 @@ public class DimensionesGUI extends JGuiSimple {
     protected boolean validateData() {
             
         return   
-                Utilidades.matcher(jftxLongitud, "Longitud",this) &&
+                Utilidades.matcher(jftxLongitud, "Longitud",500,10,this) &&
                 Utilidades.matcher(jftxPeso, "Peso",this) &&
                 Utilidades.matcher(jftxMedida_a, "Medida_a",this) &&
                 Utilidades.matcher(jftxMedida_b, "Medida_b",this) &&

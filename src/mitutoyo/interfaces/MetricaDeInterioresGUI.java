@@ -4,6 +4,7 @@
  */
 package mitutoyo.interfaces;
 
+import mitutoyo.Utilidades;
 import mitutoyo.data.MetricaDeInteriores;
 import javax.swing.JOptionPane;
 import jguiextensible.JGuiSimple;
@@ -52,7 +53,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
         setName("Metrica de Interiores"); // NOI18N
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
-        jguiMetricaDeInteriores.setBorder(javax.swing.BorderFactory.createTitledBorder("Metrica de interiores"));
+        jguiMetricaDeInteriores.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Metrica de interiores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12))); // NOI18N
         jguiMetricaDeInteriores.setName("Metrica de Interiores"); // NOI18N
 
         lblRangoInterior.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
@@ -93,7 +94,7 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
         jftxMetricaInterior.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jftxMetricaInterior.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
-        jcboxPuntosMedicion.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+        jcboxPuntosMedicion.setFont(new java.awt.Font("URW Gothic", 1, 11)); // NOI18N
         jcboxPuntosMedicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccione-", "1", "2", "3" }));
 
         javax.swing.GroupLayout jguiMetricaDeInterioresLayout = new javax.swing.GroupLayout(jguiMetricaDeInteriores);
@@ -175,25 +176,25 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
     @Override
     protected boolean validateData( ) {
     
-        return Utilidades.matcher(jftxRangoInterior, "Rango interior",this) &&
-               Utilidades.matcher(jftxMedida_R, "Medida_R",this) &&
-               Utilidades.matcher(jftxMetricaInterior, "MetricaInterior",this) &&
-               Utilidades.matcher(jftxMedida_f, "Medida_f",this) &&
-               Utilidades.matcher(jcboxPuntosMedicion, "Puntos de Medicion",this) &&
-               Utilidades.matcher(jftxMedida_g, "Medida_g",this) ;
+        return Utilidades.matcher(jftxRangoInterior, "Rango interior", this)
+                && Utilidades.matcher(jftxMedida_R, "Medida_R", this)
+                && Utilidades.matcher(jftxMetricaInterior, "MetricaInterior", this)
+                && Utilidades.matcher(jftxMedida_f, "Medida_f", this)
+                && Utilidades.matcher(jcboxPuntosMedicion, "Puntos de Medicion", this)
+                && Utilidades.matcher(jftxMedida_g, "Medida_g", this);
     } 
     
     @Override
       protected void saveData() {
           
-          metDeInt.setMedida_R(Integer.valueOf(String.valueOf(jftxMedida_R.getValue())));
-          metDeInt.setMedida_f(Integer.valueOf(String.valueOf(jftxMedida_f.getValue())));
-          metDeInt.setMedida_g(Integer.valueOf(String.valueOf(jftxMedida_g.getValue())));
-          metDeInt.setRangoInterior(Integer.valueOf(String.valueOf(jftxRangoInterior.getValue())));
-          metDeInt.setMetricaInterior(Integer.valueOf(String.valueOf(jftxMetricaInterior.getValue())));
-          metDeInt.setPuntosDeMedicion(Integer.valueOf(String.valueOf(jcboxPuntosMedicion.getSelectedItem())));
-           
-          metDeInt.guardarDatos();
+        metDeInt.setMedida_R(Integer.valueOf(String.valueOf(jftxMedida_R.getValue())));
+        metDeInt.setMedida_f(Integer.valueOf(String.valueOf(jftxMedida_f.getValue())));
+        metDeInt.setMedida_g(Integer.valueOf(String.valueOf(jftxMedida_g.getValue())));
+        metDeInt.setRangoInterior(Integer.valueOf(String.valueOf(jftxRangoInterior.getValue())));
+        metDeInt.setMetricaInterior(Integer.valueOf(String.valueOf(jftxMetricaInterior.getValue())));
+        metDeInt.setPuntosDeMedicion(Integer.valueOf(String.valueOf(jcboxPuntosMedicion.getSelectedItem())));
+
+        metDeInt.guardarDatos();
       }
       
     @Override

@@ -5,7 +5,7 @@
 package mitutoyo.data;
 
 import mitutoyo.interfaces.ArticuloGUI;
-import mitutoyo.interfaces.Utilidades;
+import mitutoyo.Utilidades;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.Serializable;

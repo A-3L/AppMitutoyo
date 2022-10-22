@@ -23,7 +23,9 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Metrica comparativa"/>
+            <TitledBorder title="Metrica comparativa">
+              <Font PropertyName="font" name="DialogInput" size="12" style="1"/>
+            </TitledBorder>
           </Border>
         </Property>
       </Properties>
@@ -58,7 +60,7 @@
                       <Component id="lblRangoMedida" alignment="2" min="-2" max="-2" attributes="0"/>
                       <Component id="jsldRangoMedida" alignment="2" min="-2" pref="70" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="17" max="32767" attributes="0"/>
+                  <EmptySpace pref="20" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
                       <Component id="lblErrorMaximo" alignment="2" min="-2" max="-2" attributes="0"/>
                       <Component id="jftxErrorMax" linkSize="4" alignment="2" min="-2" max="-2" attributes="0"/>

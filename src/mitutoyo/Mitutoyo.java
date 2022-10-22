@@ -4,13 +4,13 @@
  */
 package mitutoyo;
 
-import mitutoyo.interfaces.Utilidades;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JFrame;
-import jguiextensible.JGuiExtensible;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,16 +18,30 @@ import jguiextensible.JGuiExtensible;
  */
 public class Mitutoyo extends WindowAdapter{
     
-private static final List<JGuiExtensible> lista = new ArrayList<>();
-
+    private static final String LOOKANDFEEL="com.jtattoo.plaf.luna.LunaLookAndFeel";
+   
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
        
        javax.swing.SwingUtilities.invokeLater(() -> {
+        //setMyLookAndFeel();
          init();
+        
      });
+    }
+    
+    private static void setMyLookAndFeel() {
+        
+        try{
+    
+            UIManager.setLookAndFeel(LOOKANDFEEL);
+           
+        } catch(UnsupportedLookAndFeelException | ClassNotFoundException | IllegalAccessException | InstantiationException ex){
+           Logger.getLogger(Mitutoyo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
      
     private static void init() {
@@ -72,9 +86,10 @@ private static final List<JGuiExtensible> lista = new ArrayList<>();
                        JFrame frame4=Utilidades.crearFrame(microInt.createDialog());
                        frame4.addWindowListener(new WindowAdapter() {
                   
-                           public void WindowClosed(WindowEvent evt) {
-                                                       
+                           public void WindowClosing(WindowEvent evt) {
+                              
                                System.exit(0);
+                               
                                }
                             });
                             }

@@ -33,9 +33,13 @@ public class ObservacionesGUI extends jguiextensible.JGuiSimple {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
+        setMinimumSize(new java.awt.Dimension(200, 100));
+
+        jScrollPane1.setMinimumSize(new java.awt.Dimension(200, 100));
+
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createTitledBorder("Observaciones"));
+        jTextArea1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Observaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12))); // NOI18N
         jTextArea1.setMinimumSize(new java.awt.Dimension(100, 400));
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -43,11 +47,11 @@ public class ObservacionesGUI extends jguiextensible.JGuiSimple {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

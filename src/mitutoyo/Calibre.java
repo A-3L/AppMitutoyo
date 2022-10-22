@@ -4,13 +4,11 @@
  */
 package mitutoyo;
 
-import mitutoyo.data.Articulo;
-import mitutoyo.data.Dimensiones;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
 import jguiextensible.JTipoGui;
-import mitutoyo.interfaces.EspecificacionesGUI;
-import mitutoyo.interfaces.MetricaDeMedicionGUI;
+import mitutoyo.data.Certificados;
+import mitutoyo.data.Especificaciones;
 
 /**
  *
@@ -28,11 +26,17 @@ public class Calibre {
        
         dialog.setName("Calibre");
         
-        var especificacionesGui = new EspecificacionesGUI();
-        var metDeMedGui = new MetricaDeMedicionGUI();
+        var especificaciones = new Especificaciones();
+        var especificacionesGui= especificaciones.createDialog();
+        var certificados = new Certificados();
+        var certGui = certificados.createDialog();
+       // var singGui = new SingularidadGUI();
+       // var metDeMedGui = new MetricaDeMedicionGUI();
        
-        dialog.addExtensibleChild(especificacionesGui);
-        dialog.addExtensibleChild(metDeMedGui);
+        dialog.addJGui(especificacionesGui);
+        dialog.addJGui(certGui);
+       // dialog.addJGui(singGui);
+       // dialog.addJGui(metDeMedGui);
                    
         return dialog;
     } 

@@ -4,12 +4,7 @@
  */
 package mitutoyo;
 
-import mitutoyo.data.Articulo;
-import mitutoyo.data.Dimensiones;
 import mitutoyo.data.MetricaComparativa;
-import mitutoyo.data.MetricaDeInteriores;
-import mitutoyo.data.Visualizador;
-import mitutoyo.interfaces.MetricaComparativaGUI;
 import mitutoyo.interfaces.MetricaDeInterioresGUI;
 import mitutoyo.interfaces.VisualizadorGUI;
 import java.util.ArrayList;
@@ -17,11 +12,13 @@ import java.util.List;
 import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
 import jguiextensible.JTipoGui;
-import mitutoyo.data.Especificaciones;
-import mitutoyo.interfaces.EspecificacionesGUI;
+import mitutoyo.data.Funciones;
+import mitutoyo.data.MetricaDeInteriores;
+import mitutoyo.data.MetricaDeMedicion;
+import mitutoyo.data.Observaciones;
+import mitutoyo.data.Visualizador;
 import mitutoyo.interfaces.FuncionesGUI;
 import mitutoyo.interfaces.MetricaDeMedicionGUI;
-import mitutoyo.interfaces.MetricaMicrometricaGUI;
 import mitutoyo.interfaces.ObservacionesGUI;
 
 /**
@@ -44,35 +41,40 @@ public class MicrometroDeInteriores extends Micrometro {
         List<JGuiExtensible> listaGuis = new ArrayList<>();
         List<JGuiExtensible> lista = new ArrayList<>();
         
-       
- 
         var metComp = new MetricaComparativa();
-        var metDeInt= new MetricaDeInterioresGUI();
-        var metDeMed= new MetricaDeMedicionGUI();
-        var metMicr = new MetricaMicrometricaGUI();
-        var especif = new EspecificacionesGUI();
-        var visual= new VisualizadorGUI();
-        var funciones = new FuncionesGUI();
-        var obs = new ObservacionesGUI();
+        var metDeInt= new MetricaDeInteriores();
+        var metDeMed= new MetricaDeMedicion();
+        var visual= new Visualizador();
+        var funciones = new Funciones();
+        var obs = new Observaciones();
+  
         
-        JGuiExtensible compGui = metComp.createDialog(); 
-        JGuiExtensible microGui= super.createDialog();
+        JGuiExtensible metCompGui = metComp.createDialog(); 
+        JGuiExtensible metDeIntGui = metDeInt.createDialog();
+        JGuiExtensible metDeMedGui = metDeMed.createDialog();
+        JGuiExtensible visualGui = visual.createDialog();
+        JGuiExtensible funcionesGui = funciones.createDialog();
+        JGuiExtensible obsGui = obs.createDialog();
+        JGuiExtensible obs2Gui = obs.createDialog();
+        JGuiExtensible microGui= super.createDialog();        
+               
+        lista.add(metDeMedGui);
+        lista.add(metCompGui);
+        lista.add(metDeIntGui);
+         
+        visualGui.addJGui(obsGui);
+        funcionesGui.addJGui(obs2Gui);
         
-        lista.add(metDeMed);
-        lista.add(compGui);
-        lista.add(metDeInt);
-          
-        listaGuis.add(visual);
+        listaGuis.add(visualGui);
+   
+        dialog.addJGui(microGui); 
+        dialog.addJGuiChildrenList(lista);   
+        dialog.addJGuiChildrenList(listaGuis);
+        dialog.addJGui(funcionesGui);
         
-        dialog.addExtensibleChild(microGui); 
-        visual.addExtensibleChild(obs);
-        dialog.addExtensibleChildrenList(lista);   
-        dialog.addExtensibleChildrenList(listaGuis);
-        dialog.addExtensibleChild(funciones);
-        
-        compGui.setName("Metrica comparativa");
+        metCompGui.setName("Metrica comparativa");
         microGui.setName("Especificaciones");
-        obs.setName("Observaciones");
+        obsGui.setName("Observaciones");
         dialog.setName("Micrometro de interiores");
                 
         return dialog;
