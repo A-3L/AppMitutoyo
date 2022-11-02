@@ -1,18 +1,42 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Other/Simple.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.interfaces;
 
 import mitutoyo.data.Observaciones;
 
 /**
- *
+ * This class creates a graphical interface for the data structure with the same name
+ * 
  * @author a31r1z
  */
 public class ObservacionesGUI extends jguiextensible.JGuiSimple {
 
-    private Observaciones obs = new Observaciones();
+    private static final long serialVersionUID = 1L;
+
+    private final Observaciones obs = new Observaciones();
     
     /**
      * Creates new Observacionesform JGuiSimple
@@ -38,8 +62,9 @@ public class ObservacionesGUI extends jguiextensible.JGuiSimple {
         jScrollPane1.setMinimumSize(new java.awt.Dimension(200, 100));
 
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Observaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12))); // NOI18N
+        jTextArea1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Observaciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bitstream Vera Sans", 1, 12))); // NOI18N
         jTextArea1.setMinimumSize(new java.awt.Dimension(100, 400));
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -60,24 +85,42 @@ public class ObservacionesGUI extends jguiextensible.JGuiSimple {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
+    
+    /**
+     * Validates the data inserted in the diferent widgets of the gui
+     * 
+     * @return true of false if data inserted in the fields are valid
+     */
     @Override
     protected boolean validateData() {        
         
        return true;
     }
 
+    /**
+     * Saves the data inserted in the gui
+     */
     @Override
     protected void saveData() {
            
        if (jTextArea1.getText()!=null) obs.setText(jTextArea1.getText());
     }
 
+    /**
+     * Cleans the data inserted in the widgets of the gui
+     */
     @Override
     protected void cleanData() {
         
        obs.borrarDatos();
     }
 
+    /**
+     * Updates the value of diferent widgets notified by other component whose name is id.
+     * 
+     * @param id name of the component that notifies a change in his value
+     * @param value value that changes
+     */
     @Override
     protected void updateChanges(String id, Object value) {}
         

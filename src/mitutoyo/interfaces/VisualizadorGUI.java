@@ -1,7 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.interfaces;
 
 import mitutoyo.Utilidades;
@@ -9,14 +30,15 @@ import mitutoyo.data.Visualizador;
 import jguiextensible.JGuiSimple;
 
 /**
- *
+ * This class creates a graphical interface for the data structure with the same name
+ * 
  * @author a31r1z
  */
 public class VisualizadorGUI extends JGuiSimple {
 
     private static final long serialVersionUID = 1L;
     
-    private Visualizador visualizador = new Visualizador();
+    private final Visualizador visualizador = new Visualizador();
     
     /**
      * Creates new form Visualizador
@@ -42,11 +64,14 @@ public class VisualizadorGUI extends JGuiSimple {
         jcbVisualizador = new javax.swing.JComboBox<>();
         lblResolucion = new javax.swing.JLabel();
         lblVisualizador = new javax.swing.JLabel();
+        lblTasRefresco = new javax.swing.JLabel();
+        jftxTasaRefresco = new javax.swing.JFormattedTextField();
 
         setName("Visualizador"); // NOI18N
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
-        jGuiSimple1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("Visualizador"), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12))); // NOI18N
+        jGuiSimple1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("Visualizador"), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bitstream Vera Sans", 1, 12))); // NOI18N
+        jGuiSimple1.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         jftxResolucion.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxResolucion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -69,6 +94,13 @@ public class VisualizadorGUI extends JGuiSimple {
         lblVisualizador.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblVisualizador.setText("Visualizador");
 
+        lblTasRefresco.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+        lblTasRefresco.setText("Tasa de Refresco");
+
+        jftxTasaRefresco.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        jftxTasaRefresco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxTasaRefresco.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+
         javax.swing.GroupLayout jGuiSimple1Layout = new javax.swing.GroupLayout(jGuiSimple1);
         jGuiSimple1.setLayout(jGuiSimple1Layout);
         jGuiSimple1Layout.setHorizontalGroup(
@@ -77,32 +109,38 @@ public class VisualizadorGUI extends JGuiSimple {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jGuiSimple1Layout.createSequentialGroup()
+                        .addComponent(jchkSalidaDeDatos)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jGuiSimple1Layout.createSequentialGroup()
                         .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblVisualizador)
+                            .addComponent(lblTasRefresco)
                             .addComponent(lblResolucion))
-                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jftxResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jftxTasaRefresco, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jcbVisualizador, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jGuiSimple1Layout.createSequentialGroup()
-                        .addComponent(jchkSalidaDeDatos)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 14, Short.MAX_VALUE))))
         );
         jGuiSimple1Layout.setVerticalGroup(
             jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jGuiSimple1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblResolucion, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jftxResolucion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblVisualizador, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jcbVisualizador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblResolucion)
+                    .addComponent(jftxResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTasRefresco)
+                    .addComponent(jftxTasaRefresco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblVisualizador)
+                    .addComponent(jcbVisualizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jchkSalidaDeDatos)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         add(jGuiSimple1);
@@ -119,40 +157,59 @@ public class VisualizadorGUI extends JGuiSimple {
     private javax.swing.JComboBox<String> jcbVisualizador;
     private javax.swing.JCheckBox jchkSalidaDeDatos;
     private javax.swing.JFormattedTextField jftxResolucion;
+    private javax.swing.JFormattedTextField jftxTasaRefresco;
     private javax.swing.JLabel lblResolucion;
+    private javax.swing.JLabel lblTasRefresco;
     private javax.swing.JLabel lblVisualizador;
     // End of variables declaration//GEN-END:variables
 
     /**
-     *
-     * @return
+     * Validates the data inserted in the diferent widgets of the gui
+     * 
+     * @return true of false if data inserted in the fields are valid
      */
     @Override  
     protected boolean validateData( ) {  
     
     return  Utilidades.matcher(jftxResolucion, "Resolucion",this) &&
+            Utilidades.matcher(jftxTasaRefresco, "Tasa de Refresco",this) &&
             Utilidades.matcher(jcbVisualizador, "Visualizador",this);
 }
-    
+   
+    /**
+     * Saves the data inserted in the gui
+     */
     @Override
     protected void saveData() {
         
-       visualizador.setFuncionDeTolerancia(jchkSalidaDeDatos.isSelected());
+       visualizador.setSalidaDeDatos(jchkSalidaDeDatos.isSelected());
+       visualizador.setTasaDeRefresco(Integer.valueOf(String.valueOf(jftxTasaRefresco.getValue())));
        visualizador.setResolucion(Integer.valueOf(String.valueOf(jftxResolucion.getValue())));
        visualizador.setVisualizador(String.valueOf(jcbVisualizador.getSelectedItem()));
        
        visualizador.guardarDatos();
     }
     
+    /**
+     * Cleans the data inserted in the widgets of the gui
+     */
+    @Override
     protected void cleanData() {
         
         jchkSalidaDeDatos.setSelected(false);
         jftxResolucion.setValue(null);
+        jftxTasaRefresco.setValue(null);
         jcbVisualizador.setSelectedIndex(0);
         
         visualizador.borrarDatos();     
     }
     
+    /**
+     * Updates the value of diferent widgets notified by other component whose name is id.
+     * 
+     * @param id name of the component that notifies a change in his value
+     * @param value value that changes
+     */
     @Override
      protected void updateChanges(String id, Object value) {}
    

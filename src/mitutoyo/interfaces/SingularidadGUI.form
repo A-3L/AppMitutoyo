@@ -37,9 +37,12 @@
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
             <TitledBorder title="Singularidad">
-              <Font PropertyName="font" name="DialogInput" size="12" style="1"/>
+              <Font PropertyName="font" name="Bitstream Vera Sans" size="12" style="1"/>
             </TitledBorder>
           </Border>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="13" style="0"/>
         </Property>
         <Property name="name" type="java.lang.String" value="Singularidad" noResource="true"/>
       </Properties>
@@ -48,15 +51,15 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace pref="31" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblMargen" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="lblSingularidad" pref="91" max="32767" attributes="0"/>
+                          <Component id="lblSingularidad" max="32767" attributes="0"/>
                           <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace pref="52" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jftxtSingularidad" min="-2" pref="49" max="-2" attributes="0"/>
@@ -65,15 +68,14 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jftxtLimite" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jsldMargen" pref="212" max="32767" attributes="0"/>
+                      <Component id="jsldMargen" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace pref="52" max="32767" attributes="0"/>
               </Group>
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <Component id="jGuiSimple2" max="32767" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="jGuiSimple3" max="32767" attributes="0"/>
-                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -81,14 +83,16 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblMargen" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jsldMargen" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="lblMargen" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jsldMargen" alignment="2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                  <EmptySpace pref="17" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblSingularidad" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jftxtSingularidad" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                          <Component id="jftxtSingularidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblSingularidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <Component id="lblLimite" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="jftxtLimite" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -122,6 +126,15 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JSlider" name="jsldMargen">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="10" style="0"/>
+            </Property>
+            <Property name="majorTickSpacing" type="int" value="10"/>
+            <Property name="minorTickSpacing" type="int" value="5"/>
+            <Property name="paintLabels" type="boolean" value="true"/>
+            <Property name="paintTicks" type="boolean" value="true"/>
+          </Properties>
           <Events>
             <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jsldMargenStateChanged"/>
           </Events>
@@ -158,9 +171,12 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                 <TitledBorder title="Desviacion">
-                  <Font PropertyName="font" name="DialogInput" size="12" style="1"/>
+                  <Font PropertyName="font" name="Bitstream Vera Sans" size="12" style="1"/>
                 </TitledBorder>
               </Border>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
             </Property>
             <Property name="name" type="java.lang.String" value="Desviacion" noResource="true"/>
           </Properties>
@@ -169,19 +185,19 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="16" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblMediana" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblValorRef" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblValorRef" alignment="0" pref="66" max="32767" attributes="0"/>
                           <Component id="lblPromedio" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" pref="22" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jftxtMediana" linkSize="5" min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="jftxtPromedio" linkSize="5" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="jftxtValorRef" linkSize="5" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="19" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -273,9 +289,12 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                 <TitledBorder title="Dispersion">
-                  <Font PropertyName="font" name="DialogInput" size="12" style="1"/>
+                  <Font PropertyName="font" name="Bitstream Vera Sans" size="12" style="1"/>
                 </TitledBorder>
               </Border>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="URW Gothic" size="13" style="0"/>
             </Property>
             <Property name="name" type="java.lang.String" value="Dispersion" noResource="true"/>
           </Properties>
@@ -284,19 +303,19 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="26" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblDesvTipica" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblDesvAbsoluta" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lblDesvMedia" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="27" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jftxtDesvMedia" linkSize="1" min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="jftxtDesvAbsoluta" linkSize="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jftxtDesvTipica" linkSize="1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="27" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

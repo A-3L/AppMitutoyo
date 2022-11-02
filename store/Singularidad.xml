@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="18.0.2" class="java.beans.XMLDecoder">
+ <object class="mitutoyo.data.Singularidad">
+  <void property="desvAbsoluta">
+   <int>4</int>
+  </void>
+ </object>
+</java>

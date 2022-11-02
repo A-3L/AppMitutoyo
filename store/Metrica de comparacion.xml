@@ -2,13 +2,13 @@
 <java version="18.0.2" class="java.beans.XMLDecoder">
  <object class="mitutoyo.data.MetricaComparativa">
   <void property="errorMaximo">
-   <int>2</int>
+   <int>4</int>
   </void>
   <void property="escala">
-   <int>2</int>
+   <int>4</int>
   </void>
   <void property="hyteresis">
-   <int>2</int>
+   <int>4</int>
   </void>
   <void property="rangoDeMedida">
    <int>25</int>

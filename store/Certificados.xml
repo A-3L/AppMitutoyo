@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="18.0.2" class="java.beans.XMLDecoder">
+ <object class="mitutoyo.data.Certificados">
+  <void property="anguloHz">
+   <int>4</int>
+  </void>
+  <void property="anguloV">
+   <int>4</int>
+  </void>
+  <void property="desviacion">
+   <int>4</int>
+  </void>
+  <void property="grado">
+   <string>0</string>
+  </void>
+  <void property="intervalo">
+   <int>4</int>
+  </void>
+  <void property="medidaPatron">
+   <int>44</int>
+  </void>
+  <void property="numId">
+   <int>4</int>
+  </void>
+  <void property="sufijo">
+   <int>4</int>
+  </void>
+  <void property="tipoCalibracion">
+   <string>DAkkS</string>
+  </void>
+  <void property="tipoInspeccion">
+   <string>DIN</string>
+  </void>
+ </object>
+</java>

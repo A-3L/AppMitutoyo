@@ -1,7 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.data;
 
 import mitutoyo.interfaces.MetricaDeInterioresGUI;
@@ -12,13 +33,17 @@ import java.io.Serializable;
 import jguiextensible.JGuiExtensible;
 
 /**
- *
+ * This is a data structure to save the fields´s values of the GUI with the same name as this class.
+ * 
  * @author a31r1z
  */
 public class MetricaDeInteriores  implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
+    /**
+    * Creates an instance of MetricaDeInteriores.
+    */
     public MetricaDeInteriores() {
     }
        
@@ -29,11 +54,18 @@ public class MetricaDeInteriores  implements Serializable{
     private Integer medida_g;    
     private Integer puntosDeMedicion;
  
+     /**
+     * Creates a graphical interface to edit the properties of this class
+     * 
+     * @return one dialog with widgets for all the properties of this class
+     */
     public JGuiExtensible createDialog() {
         
      return new MetricaDeInterioresGUI();    
     }
-    
+    /**
+     * This method clean all the values inserted in the properties
+     */
     public void borrarDatos() {
         
         this.setMedida_R(null);
@@ -44,12 +76,19 @@ public class MetricaDeInteriores  implements Serializable{
         this.setRangoInterior(null);
         
     }
+    
+    /**
+     * This method saves all the values of the properties in an XML file.
+     */
     public void guardarDatos() {
         
        Utilidades.saveInXml("Metrica de interiores.xml", this);
        
     }
 
+    /**
+     * Number of measurement points that have been taken
+     */
     public static final String PROP_PUNTOSDEMEDICION = "puntosDeMedicion";
 
     /**
@@ -72,7 +111,9 @@ public class MetricaDeInteriores  implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_PUNTOSDEMEDICION, oldPuntosDeMedicion, puntosDeMedicion);
     }
 
-
+    /**
+     *  The g measure of the instrument
+     */
     public static final String PROP_MEDIDA_G = "medida_g";
 
     /**
@@ -95,7 +136,9 @@ public class MetricaDeInteriores  implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_MEDIDA_G, oldMedida_g, medida_g);
     }
 
-
+    /**
+     *  The f measure of the instrument
+     */
     public static final String PROP_MEDIDA_F = "medida_f";
 
     /**
@@ -118,7 +161,9 @@ public class MetricaDeInteriores  implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_MEDIDA_F, oldMedida_f, medida_f);
     }
 
-
+    /**
+     *  The R measure of the instrument
+     */
     public static final String PROP_MEDIDA_R = "medida_R";
 
     /**
@@ -141,7 +186,9 @@ public class MetricaDeInteriores  implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_MEDIDA_R, oldMedida_R, medida_R);
     }
 
-
+    /**
+     * The inside measurement
+     */
     public static final String PROP_METRICAINTERIOR = "metricaInterior";
 
     /**
@@ -164,7 +211,9 @@ public class MetricaDeInteriores  implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_METRICAINTERIOR, oldMetricaInterior, metricaInterior);
     }
 
-
+    /**
+     * The inside measure range of the instrument
+     */
     public static final String PROP_RANGOINTERIOR = "rangoInterior";
 
     /**
@@ -192,7 +241,7 @@ public class MetricaDeInteriores  implements Serializable{
     /**
      * Add PropertyChangeListener.
      *
-     * @param listener
+     * @param listener listener to add
      */
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.addPropertyChangeListener(listener);
@@ -201,7 +250,7 @@ public class MetricaDeInteriores  implements Serializable{
     /**
      * Remove PropertyChangeListener.
      *
-     * @param listener
+     * @param listener listener to remove
      */
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.removePropertyChangeListener(listener);

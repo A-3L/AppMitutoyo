@@ -1,22 +1,44 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.interfaces;
 
 import mitutoyo.Utilidades;
 import mitutoyo.data.MetricaDeInteriores;
-import javax.swing.JOptionPane;
 import jguiextensible.JGuiSimple;
-import jguiextensible.JGuiTree;
 
 /**
- *
+ * This class creates a graphical interface for the data structure with the same name
+ * 
  * @author a31r1z
  */
 public class MetricaDeInterioresGUI extends JGuiSimple {
 
-    private MetricaDeInteriores metDeInt = new MetricaDeInteriores();
+    private static final long serialVersionUID = 1L;
+
+    private final MetricaDeInteriores metDeInt = new MetricaDeInteriores();
     
     /**
      * Creates new form MetricaInterior
@@ -53,7 +75,8 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
         setName("Metrica de Interiores"); // NOI18N
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
-        jguiMetricaDeInteriores.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Metrica de interiores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12))); // NOI18N
+        jguiMetricaDeInteriores.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Metrica de interiores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bitstream Vera Sans", 1, 12))); // NOI18N
+        jguiMetricaDeInteriores.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jguiMetricaDeInteriores.setName("Metrica de Interiores"); // NOI18N
 
         lblRangoInterior.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
@@ -172,7 +195,11 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
     private javax.swing.JLabel lblRangoInterior;
     // End of variables declaration//GEN-END:variables
     
-    
+    /**
+     * Validates the data inserted in the diferent widgets of the gui
+     * 
+     * @return true of false if data inserted in the fields are valid
+     */
     @Override
     protected boolean validateData( ) {
     
@@ -184,6 +211,9 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
                 && Utilidades.matcher(jftxMedida_g, "Medida_g", this);
     } 
     
+    /**
+     * Saves the data inserted in the gui
+     */
     @Override
       protected void saveData() {
           
@@ -196,7 +226,10 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
 
         metDeInt.guardarDatos();
       }
-      
+    
+     /**
+     * Cleans the data inserted in the widgets of the gui
+     */
     @Override
       protected void cleanData() {
           
@@ -209,15 +242,21 @@ public class MetricaDeInterioresGUI extends JGuiSimple {
           
           metDeInt.borrarDatos();       
       }
+      
+      /**
+     * Updates the value of diferent widgets notified by other component whose name is id.
+     * 
+     * @param id name of the component that notifies a change in his value
+     * @param value value that changes
+     */
     @Override
     protected void updateChanges(String id, Object value) {
       
         System.out.println("Actualizando RangoInterior");
         
           switch(id) {
-        case "rangoMedida" -> {jftxRangoInterior.setText(String.valueOf(value)); }
+                 case "rangoMedida" -> {jftxRangoInterior.setText(String.valueOf(value)); }
         }
-        
-        //jftxRangoInterior.setText(String.valueOf(value));
+      
     }  
 }

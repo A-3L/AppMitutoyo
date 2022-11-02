@@ -1,7 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.data;
 
 import mitutoyo.interfaces.MetricaComparativaGUI;
@@ -12,13 +33,17 @@ import java.io.Serializable;
 import jguiextensible.JGuiExtensible;
 
 /**
- *
+ * This is a data structure to save the fields´s values of the GUI with the same name as this class.
+ * 
  * @author a31r1z
  */
 public class MetricaComparativa  implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
+    /**
+    * Creates an instance of MetricaComparativa.
+    */
     public MetricaComparativa() {
     }
     
@@ -27,12 +52,18 @@ public class MetricaComparativa  implements Serializable{
     private Integer escala;
     private Integer rangoDeMedida;
     
-    
+     /**
+     * Creates a graphical interface to edit the properties of this class
+     * 
+     * @return one dialog with widgets for all the properties of this class
+     */
     public JGuiExtensible createDialog() {
                   
     return new MetricaComparativaGUI(); 
     }
-    
+    /**
+     * This method clean all the values inserted in the properties
+     */
     public void borrarDatos() {
         
         this.setErrorMaximo(null);
@@ -41,13 +72,18 @@ public class MetricaComparativa  implements Serializable{
         this.setRangoDeMedida(25);
         
     }
-    
+    /**
+     * This method saves all the values of the properties in an XML file.
+     */
       public void guardarDatos() {
         
        Utilidades.saveInXml("Metrica de comparacion.xml", this);
        
     }
 
+    /**
+     * The measure range of the instrument
+     */
     public static final String PROP_RANGODEMEDIDA = "rangoDeMedida";
 
     /**
@@ -70,7 +106,9 @@ public class MetricaComparativa  implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_RANGODEMEDIDA, oldRangoDeMedida, rangoDeMedida);
     }
 
-
+    /**
+     * The measurement scale of the instrument
+     */
     public static final String PROP_ESCALA = "escala";
 
     /**
@@ -93,7 +131,9 @@ public class MetricaComparativa  implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_ESCALA, oldEscala, escala);
     }
 
-
+    /**
+     * The hyteresis value of the measure
+     */
     public static final String PROP_HYTERESIS = "hyteresis";
 
     /**
@@ -116,7 +156,9 @@ public class MetricaComparativa  implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_HYTERESIS, oldHyteresis, hyteresis);
     }
 
-
+    /**
+     * The maxim measurement error
+     */
     public static final String PROP_ERRORMAXIMO = "errorMaximo";
 
     /**
@@ -144,7 +186,7 @@ public class MetricaComparativa  implements Serializable{
     /**
      * Add PropertyChangeListener.
      *
-     * @param listener
+     * @param listener listener to add
      */
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.addPropertyChangeListener(listener);
@@ -153,7 +195,7 @@ public class MetricaComparativa  implements Serializable{
     /**
      * Remove PropertyChangeListener.
      *
-     * @param listener
+     * @param listener listener to remove
      */
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.removePropertyChangeListener(listener);

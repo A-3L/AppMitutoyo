@@ -1,14 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Other/Simple.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.interfaces;
 
 import mitutoyo.Utilidades;
 import mitutoyo.data.Singularidad;
 
 /**
- *
+ * This class creates a graphical interface for the data structure with the same name
+ * 
  * @author a31r1z
  */
 public class SingularidadGUI extends jguiextensible.JGuiSimple {
@@ -18,7 +40,7 @@ public class SingularidadGUI extends jguiextensible.JGuiSimple {
     private Singularidad sing = new Singularidad();
 
     /**
-     * Creates new SingularidadGUIçform JGuiSimple
+     * Creates new SingularidadGUI form JGuiSimple
      */
     public SingularidadGUI() {
         initComponents();
@@ -57,7 +79,8 @@ public class SingularidadGUI extends jguiextensible.JGuiSimple {
 
         setName("Singularidad"); // NOI18N
 
-        jGuiSimple1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Singularidad", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 12))); // NOI18N
+        jGuiSimple1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Singularidad", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bitstream Vera Sans", 1, 12))); // NOI18N
+        jGuiSimple1.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jGuiSimple1.setName("Singularidad"); // NOI18N
 
         jftxtSingularidad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
@@ -67,6 +90,11 @@ public class SingularidadGUI extends jguiextensible.JGuiSimple {
         lblMargen.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblMargen.setText("Margen");
 
+        jsldMargen.setFont(new java.awt.Font("URW Gothic", 0, 10)); // NOI18N
+        jsldMargen.setMajorTickSpacing(10);
+        jsldMargen.setMinorTickSpacing(5);
+        jsldMargen.setPaintLabels(true);
+        jsldMargen.setPaintTicks(true);
         jsldMargen.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 jsldMargenStateChanged(evt);
@@ -83,7 +111,8 @@ public class SingularidadGUI extends jguiextensible.JGuiSimple {
         jftxtLimite.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jftxtLimite.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
-        jGuiSimple2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Desviacion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 12))); // NOI18N
+        jGuiSimple2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Desviacion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bitstream Vera Sans", 1, 12))); // NOI18N
+        jGuiSimple2.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jGuiSimple2.setName("Desviacion"); // NOI18N
 
         lblPromedio.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
@@ -112,17 +141,17 @@ public class SingularidadGUI extends jguiextensible.JGuiSimple {
         jGuiSimple2Layout.setHorizontalGroup(
             jGuiSimple2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jGuiSimple2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(jGuiSimple2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblMediana, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblValorRef, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblValorRef, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
                     .addComponent(lblPromedio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 22, Short.MAX_VALUE)
                 .addGroup(jGuiSimple2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jftxtMediana, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jftxtPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jftxtValorRef, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jGuiSimple2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jftxtMediana, jftxtPromedio, jftxtValorRef});
@@ -145,7 +174,8 @@ public class SingularidadGUI extends jguiextensible.JGuiSimple {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jGuiSimple3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dispersion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 12))); // NOI18N
+        jGuiSimple3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dispersion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bitstream Vera Sans", 1, 12))); // NOI18N
+        jGuiSimple3.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jGuiSimple3.setName("Dispersion"); // NOI18N
 
         lblDesvMedia.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
@@ -174,17 +204,17 @@ public class SingularidadGUI extends jguiextensible.JGuiSimple {
         jGuiSimple3Layout.setHorizontalGroup(
             jGuiSimple3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jGuiSimple3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addGroup(jGuiSimple3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblDesvTipica)
                     .addComponent(lblDesvAbsoluta)
                     .addComponent(lblDesvMedia))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jGuiSimple3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jftxtDesvMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jftxtDesvAbsoluta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jftxtDesvTipica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         jGuiSimple3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jftxtDesvAbsoluta, jftxtDesvMedia, jftxtDesvTipica});
@@ -214,13 +244,13 @@ public class SingularidadGUI extends jguiextensible.JGuiSimple {
         jGuiSimple1Layout.setHorizontalGroup(
             jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jGuiSimple1Layout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblMargen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jGuiSimple1Layout.createSequentialGroup()
-                        .addComponent(lblSingularidad, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                        .addComponent(lblSingularidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(19, 19, 19)))
-                .addGap(31, 31, 31)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jGuiSimple1Layout.createSequentialGroup()
                         .addComponent(jftxtSingularidad, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -228,25 +258,25 @@ public class SingularidadGUI extends jguiextensible.JGuiSimple {
                         .addComponent(lblLimite, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jftxtLimite, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jsldMargen, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))
-                .addGap(31, 31, 31))
+                    .addComponent(jsldMargen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
             .addGroup(jGuiSimple1Layout.createSequentialGroup()
                 .addComponent(jGuiSimple2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jGuiSimple3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(7, 7, 7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jGuiSimple3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jGuiSimple1Layout.setVerticalGroup(
             jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jGuiSimple1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblMargen)
+                    .addComponent(jsldMargen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblMargen, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jsldMargen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addGroup(jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblSingularidad, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jftxtSingularidad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jGuiSimple1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jftxtSingularidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblSingularidad))
                     .addComponent(lblLimite, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jftxtLimite, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
@@ -270,7 +300,12 @@ public class SingularidadGUI extends jguiextensible.JGuiSimple {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jsldMargenStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jsldMargenStateChanged
+        System.out.println("Notificacion Margen");
         jftxtDesvMedia.setValue(jsldMargen.getValue());
+        
+        sing.setMargen(jsldMargen.getValue());
+        notifyChanges("margen",jsldMargen.getValue());
+      
     }//GEN-LAST:event_jsldMargenStateChanged
 
 
@@ -297,20 +332,29 @@ public class SingularidadGUI extends jguiextensible.JGuiSimple {
     private javax.swing.JLabel lblSingularidad;
     private javax.swing.JLabel lblValorRef;
     // End of variables declaration//GEN-END:variables
+    
+    /**
+     * Validates the data inserted in the diferent widgets of the gui
+     * 
+     * @return true of false if data inserted in the fields are valid
+     */
     @Override
     protected boolean validateData() {        
         
-         return Utilidades.matcher(jftxtSingularidad, "Singularidad",this) &&
-                Utilidades.matcher(jftxtLimite, "Limite",this) &&
-                Utilidades.matcher(jftxtMediana, "Mediana",this) &&
-                Utilidades.matcher(jftxtValorRef, "ValorRef",this)&&
-                Utilidades.matcher(jftxtPromedio, "Promedio",this)&&
-                Utilidades.matcher(jftxtDesvTipica, "Desv.Tipica",this) &&
-                Utilidades.matcher(jftxtDesvMedia, "Desv.Media",this) &&
-                Utilidades.matcher(jftxtDesvAbsoluta, "Desv.Absoluta",this);
+        return Utilidades.matcher(jftxtSingularidad, "Singularidad", this)
+                && Utilidades.matcher(jftxtLimite, "Limite", this)
+                && Utilidades.matcher(jftxtMediana, "Mediana", this)
+                && Utilidades.matcher(jftxtValorRef, "ValorRef", this)
+                && Utilidades.matcher(jftxtPromedio, "Promedio", this)
+                && Utilidades.matcher(jftxtDesvMedia, "Desv.Media", this)
+                && Utilidades.matcher(jftxtDesvTipica, "Desv.Tipica", this)
+                && Utilidades.matcher(jftxtDesvAbsoluta, "Desv.Absoluta", this);
                             
     }
 
+    /**
+     * Saves the data inserted in the gui
+     */
     @Override
     protected void saveData() {
         sing.setDesvAbsoluta(Integer.valueOf(String.valueOf(jsldMargen.getValue())));
@@ -319,13 +363,16 @@ public class SingularidadGUI extends jguiextensible.JGuiSimple {
         sing.setDesvAbsoluta(Integer.valueOf(String.valueOf(jftxtMediana.getValue())));
         sing.setDesvAbsoluta(Integer.valueOf(String.valueOf(jftxtValorRef.getValue())));
         sing.setDesvAbsoluta(Integer.valueOf(String.valueOf(jftxtPromedio.getValue())));
-        sing.setDesvAbsoluta(Integer.valueOf(String.valueOf(jftxtDesvTipica.getValue())));
         sing.setDesvAbsoluta(Integer.valueOf(String.valueOf(jftxtDesvMedia.getValue())));
+        sing.setDesvAbsoluta(Integer.valueOf(String.valueOf(jftxtDesvTipica.getValue())));
         sing.setDesvAbsoluta(Integer.valueOf(String.valueOf(jftxtDesvAbsoluta.getValue())));
 
         sing.guardarDatos();
     }
 
+    /**
+     * Cleans the data inserted in the widgets of the gui
+     */
     @Override
     protected void cleanData() {
         
@@ -342,6 +389,12 @@ public class SingularidadGUI extends jguiextensible.JGuiSimple {
          sing.borrarDatos();
     }
 
+    /**
+     * Updates the value of diferent widgets notified by other component whose name is id.
+     * 
+     * @param id name of the component that notifies a change in his value
+     * @param value value that changes
+     */
     @Override
     protected void updateChanges(String id, Object value) {
         

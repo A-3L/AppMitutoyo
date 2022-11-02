@@ -2,19 +2,19 @@
 <java version="18.0.2" class="java.beans.XMLDecoder">
  <object class="mitutoyo.data.MetricaMicrometrica">
   <void property="avance">
-   <int>2</int>
+   <int>4</int>
   </void>
   <void property="paralelismo">
-   <int>2</int>
+   <int>4</int>
   </void>
   <void property="perpendicularidad">
-   <int>2</int>
+   <int>4</int>
   </void>
   <void property="planitud">
-   <int>2</int>
+   <int>4</int>
   </void>
   <void property="rectitud">
-   <int>2</int>
+   <int>4</int>
   </void>
  </object>
 </java>

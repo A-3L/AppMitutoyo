@@ -1,7 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.interfaces;
 
 import mitutoyo.Utilidades;
@@ -9,14 +30,15 @@ import mitutoyo.data.MetricaDeMedicion;
 import jguiextensible.JGuiSimple;
 
 /**
- *
+ * This class creates a graphical interface for the data structure with the same name
+ * 
  * @author a31r1z
  */
 public class MetricaDeMedicionGUI extends JGuiSimple {
 
     private static final long serialVersionUID = 1L;
     
-    private MetricaDeMedicion metDeMed = new MetricaDeMedicion();
+    private final MetricaDeMedicion metDeMed = new MetricaDeMedicion();
   
     /**
      * Creates new form CalibrePieDeReyGui
@@ -50,7 +72,8 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
 
         setName("Metrica de medicion"); // NOI18N
 
-        panelMetrMedicion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Metrica de Medicion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12))); // NOI18N
+        panelMetrMedicion.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Metrica de Medicion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bitstream Vera Sans", 1, 12))); // NOI18N
+        panelMetrMedicion.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         panelMetrMedicion.setName("Metrica de Medicion"); // NOI18N
 
         lblRango.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
@@ -100,7 +123,7 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
                     .addComponent(lblResolucion)
                     .addComponent(lblPrecision)
                     .addComponent(lblRango))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jftxRango, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jftxPrecision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -121,19 +144,19 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
                 .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(lblRango)
                     .addComponent(jftxRango, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPrecision)
                     .addComponent(jftxPrecision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblResolucion)
                     .addComponent(jftxResolucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblGraduacion)
                     .addComponent(jftxGraduacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelMetrMedicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPresionMedida)
                     .addComponent(jftxPresionDeMedida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -161,6 +184,11 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
     // End of variables declaration//GEN-END:variables
 
  
+    /**
+     * Validates the data inserted in the diferent widgets of the gui
+     * 
+     * @return true of false if data inserted in the fields are valid
+     */
     @Override
    protected boolean validateData() {
         
@@ -171,6 +199,9 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
                 Utilidades.matcher(jftxPresionDeMedida, "PresionDeMedida",this);             
     } 
   
+   /**
+     * Saves the data inserted in the gui
+     */
     @Override
       protected void saveData() {
   
@@ -183,7 +214,10 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
      metDeMed.guardarDatos();
    
     }
-      
+     
+     /**
+     * Cleans the data inserted in the widgets of the gui
+     */
     @Override
       protected void cleanData() {
           
@@ -196,13 +230,21 @@ public class MetricaDeMedicionGUI extends JGuiSimple {
           metDeMed.borrarDatos();
           
       }
-      
-         @Override
+     
+    /**
+     * Updates the value of diferent widgets notified by other component whose name is id.
+     * 
+     * @param id name of the component that notifies a change in his value
+     * @param value value that changes
+     */  
+    @Override
     protected void updateChanges(String id, Object value) {
      
              System.out.println("Actualizando Rango");
+             
         switch(id) {
             case "rangoMedida" -> { jftxRango.setValue(value); }
+            case "margen"-> { jftxRango.setValue(value);}
         }
     }
     

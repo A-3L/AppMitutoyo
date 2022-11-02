@@ -25,77 +25,49 @@
 */
 package mitutoyo;
 
-import jguiextensible.JFactory;
 import jguiextensible.JGuiExtensible;
-import jguiextensible.JTipoGui;
 import mitutoyo.data.Certificados;
-import mitutoyo.data.Funciones;
 import mitutoyo.data.MetricaDeMedicion;
-import mitutoyo.data.Observaciones;
-import mitutoyo.data.Singularidad;
-import mitutoyo.data.Visualizador;
 
 /**
  * This class creates a graphical interface for one measurement instrument
- * called CalibreDeAlturas.
+ * called CalibrePieDeRey.
  * Superclass: Calibre.
  * 
  * @see Calibre
  * @author a31r1z
  */
+public class CalibrePieDeRey extends Calibre {
 
-public class CalibreDeAlturas extends Calibre{
-
-   /**
-    * Creates a new CalibreDeAlturas
-    */
-      
-    public CalibreDeAlturas() {
-        
+    /**
+     * Creates a new CalibrePieDeRey
+     */
+    public CalibrePieDeRey() {
     }
+
      /**
-      * Creates a CalibreDeAlturas extensible gui
+      * Creates a CalibrePieDeRey extensible gui
       * 
       * @return an extensible gui for this measurement instrument
       */
     @Override
     protected JGuiExtensible createDialog() {
-               
-        JGuiExtensible dialog = JFactory.getInstance().createDialog(JTipoGui.TABBED,false); 
         
-        var especificaciones = super.createDialog();
-               
-        var sing = new Singularidad();
-        var singGui = sing.createDialog();
-        
-        var funciones = new Funciones();
-        var funcionesGui = funciones.createDialog();
-        
-        var visual = new Visualizador();
-        var visualGui = visual.createDialog();
+        JGuiExtensible dialog = super.createDialog(); 
+         
+        dialog.setName("Calibre PieDeRey");
         
         var certif = new Certificados();
         var certifGui = certif.createDialog();
         
-        var obs = new Observaciones();
-        var obsGui = obs.createDialog();
-        
         var metDeMed = new MetricaDeMedicion();
         var metDeMedGui = metDeMed.createDialog();
-         
-        especificaciones.setName("Especificaciones"); 
-        dialog.setName("Calibre de Alturas");
         
-        funcionesGui.addJGui(singGui);
-        visualGui.addJGui(obsGui);
-        
-        
-        dialog.addJGui(especificaciones);     
         dialog.addJGui(metDeMedGui);
-        dialog.addJGui(visualGui);
-        dialog.addJGui(certifGui);
-         
-        return dialog;       
+        
+        return dialog; 
     }
-
+    
+    
+    
 }

@@ -2,10 +2,13 @@
 <java version="18.0.2" class="java.beans.XMLDecoder">
  <object class="mitutoyo.data.Visualizador">
   <void property="resolucion">
-   <int>2</int>
+   <int>4</int>
+  </void>
+  <void property="tasaDeRefresco">
+   <int>4</int>
   </void>
   <void property="visualizador">
-   <string>TN Monocrome</string>
+   <string>LCD-6Digitos</string>
   </void>
  </object>
 </java>

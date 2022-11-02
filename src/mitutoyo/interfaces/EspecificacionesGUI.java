@@ -1,17 +1,41 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.interfaces;
 
 import jguiextensible.JGuiSimple;
 import mitutoyo.data.Especificaciones;
 
 /**
- *
+ * This class creates a graphical interface for the data structure with the same name
+ * 
  * @author a31r1z
  */
 public class EspecificacionesGUI extends JGuiSimple {
+
+    private static final long serialVersionUID = 1L;
 
     private final Especificaciones especificaciones = new Especificaciones();
     /**
@@ -34,22 +58,10 @@ public class EspecificacionesGUI extends JGuiSimple {
         dimensionesGUI1 = new mitutoyo.interfaces.DimensionesGUI();
 
         setName("Especificaciones"); // NOI18N
+        add(articuloGUI1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(articuloGUI1, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
-            .addComponent(dimensionesGUI1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(articuloGUI1, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                .addGap(0, 0, 0)
-                .addComponent(dimensionesGUI1, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                .addGap(1, 1, 1))
-        );
+        dimensionesGUI1.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+        add(dimensionesGUI1);
 
         getAccessibleContext().setAccessibleName("Especificaciones");
     }// </editor-fold>//GEN-END:initComponents
@@ -60,6 +72,11 @@ public class EspecificacionesGUI extends JGuiSimple {
     private mitutoyo.interfaces.DimensionesGUI dimensionesGUI1;
     // End of variables declaration//GEN-END:variables
    
+    /**
+     * Validates the data inserted in the diferent widgets of the gui
+     * 
+     * @return true of false if data inserted in the fields are valid
+     */
     @Override
     protected boolean validateData() {
             
@@ -67,6 +84,9 @@ public class EspecificacionesGUI extends JGuiSimple {
                
    }
     
+    /**
+     * Saves the data inserted in the gui
+     */
     @Override
     protected void saveData() {
         
@@ -77,9 +97,12 @@ public class EspecificacionesGUI extends JGuiSimple {
         
   }
   
+    /**
+     * Cleans the data inserted in the widgets of the gui
+     */
     @Override
-  protected void cleanData() {
-  
+    protected void cleanData() {
+    
       articuloGUI1.cleanData();
       dimensionesGUI1.cleanData();
       
@@ -87,6 +110,12 @@ public class EspecificacionesGUI extends JGuiSimple {
       
   }
   
+  /**
+     * Updates the value of diferent widgets notified by other component whose name is id.
+     * 
+     * @param id name of the component that notifies a change in his value
+     * @param value value that changes
+     */
     @Override
      protected void updateChanges(String id, Object value) {}
 

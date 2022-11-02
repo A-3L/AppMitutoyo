@@ -1,7 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.data;
 
 import java.beans.PropertyChangeListener;
@@ -12,16 +33,20 @@ import mitutoyo.Utilidades;
 import mitutoyo.interfaces.CertificadosGUI;
 
 /**
- *
+ * This is a data structure to save the fields´s values of the GUI with the same name as this class.
+ * 
  * @author a31r1z
  */
 public class Certificados implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
+    /**
+    * Creates an instance of Certificados.
+    */
     public Certificados() {
     }
-    
+  
     private String grado;
     private String tipoCalibracion; 
     private String tipoInspeccion;    
@@ -34,11 +59,18 @@ public class Certificados implements Serializable{
     private Integer numId;    
     private Integer sufijo;  
     
+     /**
+     * Creates a graphical interface to edit the properties of this class
+     * 
+     * @return one dialog with widgets for all the properties of this class
+     */
     public JGuiExtensible createDialog() {
                   
     return new CertificadosGUI(); 
     }
-     
+    /**
+     * This method clean all the values inserted in the properties
+     */ 
     public void borrarDatos() {
         
         this.setGrado(null);
@@ -54,13 +86,18 @@ public class Certificados implements Serializable{
         this.setSufijo(null);
        
     }
-      
+    /**
+     * This method saves all the values of the properties in an XML file.
+     */  
     public void guardarDatos() {
         
        Utilidades.saveInXml("Certificados.xml", this);
        
     }
 
+    /**
+     * The sufix of the certificate number
+     */
     public static final String PROP_SUFIJO = "sufijo";
 
     /**
@@ -83,7 +120,9 @@ public class Certificados implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_SUFIJO, oldSufijo, sufijo);
     }
 
-
+    /**
+     *  The id number of the certificate
+     */
     public static final String PROP_NUMID = "numId";
 
     /**
@@ -106,7 +145,9 @@ public class Certificados implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_NUMID, oldNumId, numId);
     }
 
-
+    /**
+     * The pattern measurement of the instrument
+     */
     public static final String PROP_MEDIDAPATRON = "medidaPatron";
 
     /**
@@ -129,7 +170,9 @@ public class Certificados implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_MEDIDAPATRON, oldMedidaPatron, medidaPatron);
     }
 
-
+    /**
+     *  The interval between measurements
+     */
     public static final String PROP_INTERVALO = "intervalo";
 
     /**
@@ -152,7 +195,9 @@ public class Certificados implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_INTERVALO, oldIntervalo, intervalo);
     }
 
-
+    /**
+     *  The desviation of the standard measurement
+     */
     public static final String PROP_DESVIACION = "desviacion";
 
     /**
@@ -175,7 +220,9 @@ public class Certificados implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_DESVIACION, oldDesviacion, desviacion);
     }
 
-
+    /**
+     *  The vertical angle of the measurement
+     */
     public static final String PROP_ANGULOV = "anguloV";
 
     /**
@@ -198,7 +245,9 @@ public class Certificados implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_ANGULOV, oldAnguloV, anguloV);
     }
 
-
+    /**
+     *  The horizontal angle of the measurement
+     */
     public static final String PROP_ANGULOHZ = "anguloHz";
 
     /**
@@ -221,7 +270,9 @@ public class Certificados implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_ANGULOHZ, oldAnguloHz, anguloHz);
     }
 
-
+    /**
+     *  True of false if the instrument have been inspectionated
+     */
     public static final String PROP_INSPECCIONADO = "inspeccionado";
 
     /**
@@ -244,7 +295,9 @@ public class Certificados implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_INSPECCIONADO, oldInspeccionado, inspeccionado);
     }
 
-
+    /**
+     *  The type of inspection carried out
+     */
     public static final String PROP_TIPOINSPECCION = "tipoInspeccion";
 
     /**
@@ -267,8 +320,9 @@ public class Certificados implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_TIPOINSPECCION, oldTipoInspeccion, tipoInspeccion);
     }
 
-    
-
+    /**
+     * The type of calibration carried out
+     */
     public static final String PROP_TIPOCALIBRACION = "tipoCalibracion";
 
     /**
@@ -291,7 +345,9 @@ public class Certificados implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_TIPOCALIBRACION, oldTipoCalibracion, tipoCalibracion);
     }
 
-
+    /**
+     * The grade of the calibration
+     */
     public static final String PROP_GRADO = "grado";
 
     /**
@@ -319,7 +375,7 @@ public class Certificados implements Serializable{
     /**
      * Add PropertyChangeListener.
      *
-     * @param listener
+     * @param listener listener to add
      */
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.addPropertyChangeListener(listener);
@@ -328,7 +384,7 @@ public class Certificados implements Serializable{
     /**
      * Remove PropertyChangeListener.
      *
-     * @param listener
+     * @param listener listener to remove
      */
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.removePropertyChangeListener(listener);

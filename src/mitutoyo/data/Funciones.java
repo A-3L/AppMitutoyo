@@ -1,7 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.data;
 
 import mitutoyo.interfaces.FuncionesGUI;
@@ -12,28 +33,39 @@ import java.io.Serializable;
 import jguiextensible.JGuiExtensible;
 
 /**
- *
+ * This is a data structure to save the fields´s values of the GUI with the same name as this class.
+ * 
  * @author a31r1z
  */
 public class Funciones implements Serializable{
     
     private static final long serialVersionUID = 1L;
 
+     /**
+    * Creates an instance of Funciones.
+    */
     public Funciones() {
     }
     
     private boolean ajusteFino;       
     private boolean selectorZeroAbs;   
     private boolean salidaDeDatos;    
-    private boolean cambioSentidoContaje;  
+    private boolean cambioSentidoContaje;
     private boolean valoracionGoNg;   
     private boolean bloqueo;
 
+     /**
+     * Creates a graphical interface to edit the properties of this class
+     * 
+     * @return one dialog with widgets for all the properties of this class
+     */
      public JGuiExtensible createDialog() {
                   
     return new FuncionesGUI(); 
     }
-    
+    /**
+     * This method clean all the values inserted in the properties
+     */
     public void borrarDatos() {
         
         setAjusteFino(false);
@@ -44,13 +76,18 @@ public class Funciones implements Serializable{
         setValoracionGoNg(false);
      
     }
-    
+    /**
+     * This method saves all the values of the properties in an XML file.
+     */
       public void guardarDatos() {
         
        Utilidades.saveInXml("Funciones.xml", this);
        
     }
     
+    /**
+     * If the instrument has a lock system
+     */
     public static final String PROP_BLOQUEO = "bloqueo";
 
     /**
@@ -73,7 +110,9 @@ public class Funciones implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_BLOQUEO, oldBloqueo, bloqueo);
     }
 
-
+    /**
+     * If the instrument has Go NoGo valoration 
+     */
     public static final String PROP_VALORACIONGONG = "valoracionGoNg";
 
     /**
@@ -95,7 +134,11 @@ public class Funciones implements Serializable{
         this.valoracionGoNg = valoracionGoNg;
         propertyChangeSupport.firePropertyChange(PROP_VALORACIONGONG, oldValoracionGoNg, valoracionGoNg);
     }
-
+    
+    /**
+     * If the instrument has change of counting direction
+     */
+    public static final String PROP_CAMBIOSENTIDOCONTAJE = "cambioSentidoContaje";
 
     /**
      * Get the value of cambioSentidoContaje
@@ -112,10 +155,15 @@ public class Funciones implements Serializable{
      * @param cambioSentidoContaje new value of cambioSentidoContaje
      */
     public void setCambioSentidoContaje(boolean cambioSentidoContaje) {
+        boolean oldCambioSentidoContaje = this.cambioSentidoContaje;
         this.cambioSentidoContaje = cambioSentidoContaje;
+        propertyChangeSupport.firePropertyChange(PROP_CAMBIOSENTIDOCONTAJE, oldCambioSentidoContaje, cambioSentidoContaje);
     }
 
 
+    /**
+     * If the instrument has data output
+     */
     public static final String PROP_SALIDADEDATOS = "salidaDeDatos";
 
     /**
@@ -138,7 +186,9 @@ public class Funciones implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_SALIDADEDATOS, oldSalidaDeDatos, salidaDeDatos);
     }
 
-
+    /**
+     * If the instrument has a Zero Absolut selector
+     */
     public static final String PROP_SELECTORZEROABS = "selectorZeroAbs";
 
     /**
@@ -161,7 +211,9 @@ public class Funciones implements Serializable{
         propertyChangeSupport.firePropertyChange(PROP_SELECTORZEROABS, oldSelectorZeroAbs, selectorZeroAbs);
     }
 
-
+    /**
+     * If the instrument has fine adjustment 
+     */
     public static final String PROP_AJUSTEFINO = "ajusteFino";
 
     /**
@@ -189,7 +241,7 @@ public class Funciones implements Serializable{
     /**
      * Add PropertyChangeListener.
      *
-     * @param listener
+     * @param listener listener to add
      */
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.addPropertyChangeListener(listener);
@@ -198,7 +250,7 @@ public class Funciones implements Serializable{
     /**
      * Remove PropertyChangeListener.
      *
-     * @param listener
+     * @param listener listener to remove
      */
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.removePropertyChangeListener(listener);

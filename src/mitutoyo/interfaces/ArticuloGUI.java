@@ -1,7 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.interfaces;
 
 import mitutoyo.Utilidades;
@@ -9,7 +30,8 @@ import mitutoyo.data.Articulo;
 import jguiextensible.JGuiSimple;
 
 /**
- *
+ * This class creates a graphical interface for the data structure with the same name.
+ * 
  * @author a31r1z
  */
 public class ArticuloGUI extends JGuiSimple {
@@ -44,7 +66,8 @@ public class ArticuloGUI extends JGuiSimple {
         setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         setName("Articulo"); // NOI18N
 
-        jGuiSimple1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Articulo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 12))); // NOI18N
+        jGuiSimple1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Articulo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bitstream Vera Sans", 1, 12))); // NOI18N
+        jGuiSimple1.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jGuiSimple1.setName("Articulo"); // NOI18N
 
         lblRefArticulo.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
@@ -99,15 +122,22 @@ public class ArticuloGUI extends JGuiSimple {
     private javax.swing.JLabel lblRefArticulo;
     private javax.swing.JLabel lblSerie;
     // End of variables declaration//GEN-END:variables
-    @Override
-  
     
+    /**
+     * Validates the data inserted in the diferent widgets of the gui
+     * 
+     * @return true of false if data inserted in the fields are valid
+     */
+    @Override
     protected boolean validateData() {
         
         return Utilidades.matcher(jtxtRefArticulo, "Ref.Articulo",this) &&
                Utilidades.matcher(jtxtSerie, "Serie",this);
     }
  
+    /**
+     * Saves the data inserted in the gui
+     */
     @Override
     protected void saveData() {
         
@@ -117,6 +147,9 @@ public class ArticuloGUI extends JGuiSimple {
         articulo.guardarDatos(); 
     }
     
+    /**
+     * Cleans the data inserted in the widgets of the gui
+     */
     @Override
     protected void cleanData() {
         
@@ -124,6 +157,12 @@ public class ArticuloGUI extends JGuiSimple {
         jtxtSerie.setText(null);
     }
     
+    /**
+     * Updates the value of diferent widgets notified by other component whose name is id.
+     * 
+     * @param id name of the component that notifies a change in his value
+     * @param value value that changes
+     */
       @Override
      protected void updateChanges(String id, Object value) {}
 

@@ -1,7 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.interfaces;
 
 import mitutoyo.Utilidades;
@@ -9,7 +30,8 @@ import mitutoyo.data.MetricaComparativa;
 import jguiextensible.JGuiSimple;
 
 /**
- *
+ * This class creates a graphical interface for the data structure with the same name
+ * 
  * @author a31r1z
  */
 public class MetricaComparativaGUI extends JGuiSimple {
@@ -48,7 +70,8 @@ public class MetricaComparativaGUI extends JGuiSimple {
         setName("Metrica Comparador"); // NOI18N
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
-        jguiMetricaComp.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Metrica comparativa", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 12))); // NOI18N
+        jguiMetricaComp.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Metrica comparativa", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bitstream Vera Sans", 1, 12))); // NOI18N
+        jguiMetricaComp.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         jftxErrorMax.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxErrorMax.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -138,12 +161,9 @@ public class MetricaComparativaGUI extends JGuiSimple {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jsldRangoMedidaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jsldRangoMedidaStateChanged
-           System.out.println("Notificacion Slide");
+           System.out.println("Notificacion RangoMedida");
         
         metDeComp.setRangoDeMedida(jsldRangoMedida.getValue());
-        
-             System.out.println("RANGOMEDIDA :"+metDeComp.getRangoDeMedida());
-        
         notifyChanges("rangoMedida", jsldRangoMedida.getValue());
     }//GEN-LAST:event_jsldRangoMedidaStateChanged
 
@@ -160,6 +180,11 @@ public class MetricaComparativaGUI extends JGuiSimple {
     // End of variables declaration//GEN-END:variables
 
 
+    /**
+     * Validates the data inserted in the diferent widgets of the gui
+     * 
+     * @return true of false if data inserted in the fields are valid
+     */
     @Override
     protected boolean validateData() {
         
@@ -168,6 +193,9 @@ public class MetricaComparativaGUI extends JGuiSimple {
                Utilidades.matcher(jftxEscala, "Escala",this);   
     }
    
+    /**
+     * Saves the data inserted in the gui
+     */
     @Override
      protected void saveData() {
      
@@ -179,6 +207,9 @@ public class MetricaComparativaGUI extends JGuiSimple {
          metDeComp.guardarDatos();
      }
      
+     /**
+     * Cleans the data inserted in the widgets of the gui
+     */
     @Override
      protected void cleanData() {
          
@@ -187,10 +218,15 @@ public class MetricaComparativaGUI extends JGuiSimple {
          jftxEscala.setValue(null);
          jsldRangoMedida.setValue(25);
          
-         metDeComp.borrarDatos();
-               
+         metDeComp.borrarDatos();              
      }
      
+     /**
+     * Updates the value of diferent widgets notified by other component whose name is id.
+     * 
+     * @param id name of the component that notifies a change in his value
+     * @param value value that changes
+     */
        @Override
      protected void updateChanges(String id, Object value) {}
 

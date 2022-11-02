@@ -1,22 +1,44 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/BeanForm.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.interfaces;
 
 import mitutoyo.Utilidades;
 import mitutoyo.data.MetricaMicrometrica;
-import javax.swing.JTextField;
 import jguiextensible.JGuiSimple;
-import jguiextensible.JGuiTabbed;
 
 /**
- *
+ * This class creates a graphical interface for the data structure with the same name
+ * 
  * @author a31r1z
  */
 public class MetricaMicrometricaGUI extends JGuiSimple {
+
+    private static final long serialVersionUID = 1L;
     
-    private MetricaMicrometrica metMicro = new MetricaMicrometrica();
+    private final MetricaMicrometrica metMicro = new MetricaMicrometrica();
 
     /**
      * Creates new form MetricaMicrometrica
@@ -48,7 +70,8 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
 
         setName("Metrica micrometrica"); // NOI18N
 
-        panelMetrMicrometrica.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Metrica Micrometrica", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 12))); // NOI18N
+        panelMetrMicrometrica.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Metrica Micrometrica", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bitstream Vera Sans", 1, 12))); // NOI18N
+        panelMetrMicrometrica.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         panelMetrMicrometrica.setName("Metrica micrometrica"); // NOI18N
 
         lblAvance.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
@@ -155,16 +178,24 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
     private javax.swing.JPanel panelMetrMicrometrica;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Validates the data inserted in the diferent widgets of the gui
+     * 
+     * @return true of false if data inserted in the fields are valid
+     */
     @Override
- protected boolean validateData( ) {
+    protected boolean validateData( ) {
              
     return  Utilidades.matcher(jftxAvance, "Avance",this) &&
             Utilidades.matcher(jftxPlanitud, "Planitud",this) &&
             Utilidades.matcher(jftxParalelismo, "Paralelismo",this) &&
             Utilidades.matcher(jftxPerpendicularidad, "Perpendicularidad",this) &&
             Utilidades.matcher(jftxRectitud, "Rectitud",this) ;
- }
+    }
  
+    /**
+     * Saves the data inserted in the gui
+     */
     @Override
     protected void saveData() {
         
@@ -177,6 +208,9 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
         metMicro.guardarDatos();
     }
     
+    /**
+     * Cleans the data inserted in the widgets of the gui
+     */
     @Override
     protected void cleanData() {
         
@@ -189,7 +223,13 @@ public class MetricaMicrometricaGUI extends JGuiSimple {
         metMicro.borrarDatos();
     }
     
-         @Override
+    /**
+     * Updates the value of diferent widgets notified by other component whose name is id.
+     * 
+     * @param id name of the component that notifies a change in his value
+     * @param value value that changes
+     */
+    @Override
     protected void updateChanges(String id, Object value) {
      
              System.out.println("Actualizando Avance");

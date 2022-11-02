@@ -1,19 +1,43 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Other/Simple.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.interfaces;
 
 import mitutoyo.Utilidades;
 import mitutoyo.data.Certificados;
 
 /**
- *
+ * This class creates a graphical interface for the data structure with the same name
+ * 
  * @author a31r1z
  */
 public class CertificadosGUI extends jguiextensible.JGuiSimple {
 
-    private Certificados cert= new Certificados();
+    private static final long serialVersionUID = 1L;
+
+    private final Certificados cert= new Certificados();
     /**
      * Creates new CertificadosGUIform JGuiSimple
      */
@@ -56,10 +80,12 @@ public class CertificadosGUI extends jguiextensible.JGuiSimple {
         lblNumId = new javax.swing.JLabel();
         jftxtNumId = new javax.swing.JFormattedTextField();
 
-        setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Certificados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 12))); // NOI18N
-        setName("Certificacdos"); // NOI18N
+        setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Certificados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bitstream Vera Sans", 1, 12))); // NOI18N
+        setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
+        setName("Certificados"); // NOI18N
 
-        jGuiSimple1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Inspeccion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 12))); // NOI18N
+        jGuiSimple1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Inspeccion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bitstream Vera Sans", 1, 12))); // NOI18N
+        jGuiSimple1.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jGuiSimple1.setName("Inspeccion"); // NOI18N
 
         lblGrado.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
@@ -126,7 +152,8 @@ public class CertificadosGUI extends jguiextensible.JGuiSimple {
                 .addComponent(jchbxInspeccionado))
         );
 
-        jGuiSimple2.setBorder(javax.swing.BorderFactory.createTitledBorder("Calibracion"));
+        jGuiSimple2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Calibracion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bitstream Vera Sans", 1, 12))); // NOI18N
+        jGuiSimple2.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jGuiSimple2.setName("Calibracion"); // NOI18N
 
         lblTipoCalibracion.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
@@ -135,7 +162,8 @@ public class CertificadosGUI extends jguiextensible.JGuiSimple {
         jbxTipoCalibracion.setFont(new java.awt.Font("URW Gothic", 1, 11)); // NOI18N
         jbxTipoCalibracion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-seleccione-", "JCSS", "DAkkS", "COFRAC", "RVA", "UKAS" }));
 
-        jGuiSimple3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Rangos de Error", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 12))); // NOI18N
+        jGuiSimple3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Rangos de Error", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bitstream Vera Sans", 1, 12))); // NOI18N
+        jGuiSimple3.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         jGuiSimple3.setName("Rangos de Error"); // NOI18N
 
         lblMedidaPatron.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
@@ -150,6 +178,7 @@ public class CertificadosGUI extends jguiextensible.JGuiSimple {
 
         jftxtDesviacion.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
         jftxtDesviacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jftxtDesviacion.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
 
         lblAnguloHz.setFont(new java.awt.Font("URW Gothic", 0, 13)); // NOI18N
         lblAnguloHz.setText("Angulo HZ");
@@ -315,6 +344,12 @@ public class CertificadosGUI extends jguiextensible.JGuiSimple {
     private javax.swing.JLabel lblTipoCalibracion;
     private javax.swing.JLabel lblTipoInspeccion;
     // End of variables declaration//GEN-END:variables
+    
+    /**
+     * Validates the data inserted in the diferent widgets of the gui
+     * 
+     * @return true of false if data inserted in the fields are valid
+     */
     @Override
    protected boolean validateData() {    
         
@@ -334,6 +369,9 @@ public class CertificadosGUI extends jguiextensible.JGuiSimple {
        
     }
 
+    /**
+     * Saves the data inserted in the gui
+     */
     @Override
     protected void saveData() {
         
@@ -352,6 +390,9 @@ public class CertificadosGUI extends jguiextensible.JGuiSimple {
         cert.guardarDatos();
     }
 
+    /**
+     * Cleans the data inserted in the widgets of the gui
+     */
     @Override
     protected void cleanData() {
         jbxTipoInspeccion.setSelectedIndex(0);
@@ -369,6 +410,12 @@ public class CertificadosGUI extends jguiextensible.JGuiSimple {
         cert.borrarDatos();
     }
 
+    /**
+     * Updates the value of diferent widgets notified by other component whose name is id.
+     * 
+     * @param id name of the component that notifies a change in his value
+     * @param value value that changes
+     */
     @Override
     protected void updateChanges(String id, Object value) {
          switch(id) {

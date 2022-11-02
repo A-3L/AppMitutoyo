@@ -1,7 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+/**
+ * AppMitutoyo is an application to show how works the implementation of the library JGuiExtensible
+ * that develops a reusable gui pattern.
+ * 
+ * Copyright (C) 2022 Alberto Eiriz Lopez
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * 
+*/
 package mitutoyo.data;
 
 import java.beans.PropertyChangeListener;
@@ -12,13 +33,17 @@ import mitutoyo.interfaces.SingularidadGUI;
 import mitutoyo.Utilidades;
 
 /**
- *
+ * This is a data structure to save the fields´s values of the GUI with the same name as this class.
+ * 
  * @author a31r1z
  */
 public class Singularidad  implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+    * Creates an instance of Singularidad.
+    */
     public Singularidad() {
         
     }
@@ -33,11 +58,18 @@ public class Singularidad  implements Serializable {
     private Integer valorRef;    
     private Integer margen;
     
+     /**
+     * Creates a graphical interface to edit the properties of this class
+     * 
+     * @return one dialog with widgets for all the properties of this class
+     */
      public JGuiExtensible createDialog() {
                   
     return new SingularidadGUI(); 
     }
-     
+    /**
+     * This method clean all the values inserted in the properties
+     */ 
     public void borrarDatos() {
         
         this.setDesvAbsoluta(null);
@@ -50,13 +82,19 @@ public class Singularidad  implements Serializable {
         this.setMargen(50);
         
     }
-      
+    
+    /**
+     * This method saves all the values of the properties in an XML file.
+     */
     public void guardarDatos() {
         
        Utilidades.saveInXml("Singularidad.xml", this);
        
     }
 
+    /**
+     * The deviation margin
+     */
     public static final String PROP_MARGEN = "margen";
 
     /**
@@ -79,7 +117,9 @@ public class Singularidad  implements Serializable {
         propertyChangeSupport.firePropertyChange(PROP_MARGEN, oldMargen, margen);
     }
 
-
+    /**
+     * The reference value
+     */
     public static final String PROP_VALORREF = "valorRef";
 
     /**
@@ -102,7 +142,9 @@ public class Singularidad  implements Serializable {
         propertyChangeSupport.firePropertyChange(PROP_VALORREF, oldValorRef, valorRef);
     }
 
-
+    /**
+     * The singularity feature of the measure
+     */
     public static final String PROP_SINGULARIDAD = "singularidad";
 
     /**
@@ -125,7 +167,9 @@ public class Singularidad  implements Serializable {
         propertyChangeSupport.firePropertyChange(PROP_SINGULARIDAD, oldSingularidad, singularidad);
     }
 
-
+    /**
+     * The average measure of all measurements
+     */
     public static final String PROP_PROMEDIO = "promedio";
 
     /**
@@ -148,7 +192,9 @@ public class Singularidad  implements Serializable {
         propertyChangeSupport.firePropertyChange(PROP_PROMEDIO, oldPromedio, promedio);
     }
 
-
+    /**
+     * The median of all measurements
+     */
     public static final String PROP_MEDIANA = "mediana";
 
     /**
@@ -171,7 +217,9 @@ public class Singularidad  implements Serializable {
         propertyChangeSupport.firePropertyChange(PROP_MEDIANA, oldMediana, mediana);
     }
 
-
+    /**
+     * The limit of all measurements
+     */
     public static final String PROP_LIMITE = "limite";
 
     /**
@@ -194,7 +242,9 @@ public class Singularidad  implements Serializable {
         propertyChangeSupport.firePropertyChange(PROP_LIMITE, oldLimite, limite);
     }
 
-
+    /**
+     * The typical deviation of all measurements
+     */
     public static final String PROP_DESVTIPICA = "desvTipica";
 
     /**
@@ -217,7 +267,9 @@ public class Singularidad  implements Serializable {
         propertyChangeSupport.firePropertyChange(PROP_DESVTIPICA, oldDesvTipica, desvTipica);
     }
 
-
+    /**
+     * The mean deviation of all measurements
+     */
     public static final String PROP_DESVMEDIA = "desvMedia";
 
     /**
@@ -240,7 +292,9 @@ public class Singularidad  implements Serializable {
         propertyChangeSupport.firePropertyChange(PROP_DESVMEDIA, oldDesvMedia, desvMedia);
     }
 
-
+    /**
+     * The absolute deviation of all measurements
+     */
     public static final String PROP_DESVABSOLUTA = "desvAbsoluta";
 
     /**
@@ -268,7 +322,7 @@ public class Singularidad  implements Serializable {
     /**
      * Add PropertyChangeListener.
      *
-     * @param listener
+     * @param listener listener to add
      */
     public void addPropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.addPropertyChangeListener(listener);
@@ -277,7 +331,7 @@ public class Singularidad  implements Serializable {
     /**
      * Remove PropertyChangeListener.
      *
-     * @param listener
+     * @param listener listener to remove
      */
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.removePropertyChangeListener(listener);
